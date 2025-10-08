@@ -1,0 +1,92 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Crisis Banner -->
+    <div class="crisis-banner">
+        <div class="container">
+            <p><strong>Crisis Support:</strong> If you or someone you know is in crisis, call or text <strong>988</strong> for the National Suicide and Crisis Lifeline</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>Breath of Life Ministries</h1>
+                    <p class="tagline">Suicide Prevention & Mental Health Ministry</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/#get-help">Get Help</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <slot />
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Breath of Life Ministries</h4>
+                    <p>Providing hope, healing, and support through Catholic mental health ministry and suicide prevention.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/resources">Resources</a></li>
+                        <li><a href="/#get-help">Get Help</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Crisis Support</h4>
+                    <p><strong>988</strong> - National Suicide and Crisis Lifeline</p>
+                    <p><strong>741741</strong> - Text HELLO for Crisis Text Line</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Breath of Life Ministries. All rights reserved.</p>
+                <p>Inspired by the <a href="https://catholicmhm.org" target="_blank">Association of Catholic Mental Health Ministers</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script is:inline src="/script.js"></script>
+</body>
+</html>

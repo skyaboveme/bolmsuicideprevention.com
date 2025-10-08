@@ -1,47 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Breath of Life Ministries - our mission, vision, and commitment to Catholic mental health ministry and suicide prevention.">
-    <title>About Us | Breath of Life Ministries</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Crisis Banner -->
-    <div class="crisis-banner">
-        <div class="container">
-            <p><strong>Crisis Support:</strong> If you or someone you know is in crisis, call or text <strong>988</strong> for the National Suicide and Crisis Lifeline</p>
-        </div>
-    </div>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-brand">
-                    <h1>Breath of Life Ministries</h1>
-                    <p class="tagline">Suicide Prevention & Mental Health Ministry</p>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="index.html#get-help">Get Help</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+<BaseLayout
+    title="About Us | Breath of Life Ministries"
+    description="Learn about Breath of Life Ministries - our mission, vision, and commitment to Catholic mental health ministry and suicide prevention."
+>
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
@@ -226,25 +190,25 @@
                 <div class="involvement-card">
                     <h3>Volunteer</h3>
                     <p>Share your time and talents by volunteering with support groups, training programs, or outreach initiatives.</p>
-                    <a href="index.html#contact" class="btn btn-primary">Learn More</a>
+                    <a href="/#contact" class="btn btn-primary">Learn More</a>
                 </div>
 
                 <div class="involvement-card">
                     <h3>Bring Training to Your Parish</h3>
                     <p>Host QPR training or mental health awareness programs at your parish or organization.</p>
-                    <a href="index.html#contact" class="btn btn-primary">Schedule Training</a>
+                    <a href="/#contact" class="btn btn-primary">Schedule Training</a>
                 </div>
 
                 <div class="involvement-card">
                     <h3>Support Our Mission</h3>
                     <p>Your financial support helps us provide free resources, training, and support to those in need.</p>
-                    <a href="index.html#contact" class="btn btn-primary">Donate</a>
+                    <a href="/#contact" class="btn btn-primary">Donate</a>
                 </div>
 
                 <div class="involvement-card">
                     <h3>Share Resources</h3>
                     <p>Help us spread awareness by sharing our resources with your faith community and social networks.</p>
-                    <a href="resources.html" class="btn btn-primary">View Resources</a>
+                    <a href="/resources" class="btn btn-primary">View Resources</a>
                 </div>
             </div>
         </div>
@@ -279,40 +243,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Breath of Life Ministries</h4>
-                    <p>Providing hope, healing, and support through Catholic mental health ministry and suicide prevention.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="index.html#get-help">Get Help</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Crisis Support</h4>
-                    <p><strong>988</strong> - National Suicide and Crisis Lifeline</p>
-                    <p><strong>741741</strong> - Text HELLO for Crisis Text Line</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Breath of Life Ministries. All rights reserved.</p>
-                <p>Inspired by the <a href="https://catholicmhm.org" target="_blank">Association of Catholic Mental Health Ministers</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+</BaseLayout>
