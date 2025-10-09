@@ -274,12 +274,14 @@ img {
     margin: 0;
     font-size: 0.95rem;
     font-weight: 500;
+    color: white;
 }
 
 .crisis-banner strong {
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+    color: white;
 }
 
 /* ============================================
