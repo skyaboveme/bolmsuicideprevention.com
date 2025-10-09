@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import InteractiveButton from '../components/InteractiveButton.astro';
+---
+
+<BaseLayout
+    title="What To Read In Time of Need | Breath of Life Ministries"
+    description="Scripture readings for comfort, guidance, and hope during difficult times. Find the perfect Bible passage for when you're struggling, worried, or in need of God's presence."
+>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>What To Read In Time of Need</h1>
+            <p>Scripture passages for comfort, guidance, and hope in every circumstance</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="gradient-bg">
+        <div class="container-narrow">
+            <div class="glass-card text-center">
+                <h2 class="text-gradient" style="margin-bottom: 1.5rem;">God's Word for Every Need</h2>
+                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-medium);">
+                    In times of joy or sorrow, fear or courage, God's Word provides comfort, wisdom, and strength.
+                    These carefully selected scripture passages speak to specific needs and circumstances we all face
+                    in our journey of faith.
+                </p>
+                <blockquote style="border-left-color: var(--primary-color); margin-top: 2rem;">
+                    "Your word is a lamp to my feet and a light to my path."
+                    <cite>- Psalm 119:105</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripture Readings Grid -->
+    <section>
+        <div class="container">
+            <h2 class="text-center text-gradient">Scripture for Every Circumstance</h2>
+            <p class="lead text-center">Find comfort and guidance in God's Word for your specific need</p>
+
+            <div class="grid-2">
+                <Card title="When in Sorrow" icon="😢" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read John 14</p>
+                    <p>"Let not your hearts be troubled. Believe in God; believe also in me. In my Father's house are many rooms..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Jesus comforts His disciples with promises of eternal peace and His abiding presence.</p>
+                </Card>
+
+                <Card title="When People Fail You" icon="💔" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Psalm 27</p>
+                    <p>"The LORD is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Find confidence that God will never abandon you, even when others do.</p>
+                </Card>
+
+                <Card title="When You Have Sinned" icon="🙏" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Psalm 51</p>
+                    <p>"Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">David's powerful prayer of repentance and God's abundant mercy.</p>
+                </Card>
+
+                <Card title="When You Worry" icon="😰" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Matthew 6:19-34</p>
+                    <p>"Therefore I tell you, do not be anxious about your life... Look at the birds of the air... Consider the lilies of the field..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Jesus teaches us to trust in God's provision and care for all our needs.</p>
+                </Card>
+
+                <Card title="When You Are in Danger" icon="🛡️" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Psalm 91</p>
+                    <p>"He who dwells in the shelter of the Most High will abide in the shadow of the Almighty..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Find protection and refuge under God's wings in times of peril.</p>
+                </Card>
+
+                <Card title="If You Have the Blues" icon="😔" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Psalm 34</p>
+                    <p>"I sought the LORD, and he answered me and delivered me from all my fears... The LORD is near to the brokenhearted..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">God's nearness to those who are crushed in spirit brings healing and hope.</p>
+                </Card>
+
+                <Card title="When God Seems Far Away" icon="🌫️" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Psalm 139</p>
+                    <p>"Where shall I go from your Spirit? Or where shall I flee from your presence?..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">God's omnipresence means He is always with us, knowing us intimately.</p>
+                </Card>
+
+                <Card title="If You Are Discouraged" icon="😞" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Isaiah 40</p>
+                    <p>"Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">God renews the strength of those who wait upon Him.</p>
+                </Card>
+
+                <Card title="If You Are Lonely or Fearful" icon="🕊️" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Psalm 23</p>
+                    <p>"The LORD is my shepherd; I shall not want... Even though I walk through the valley of the shadow of death, I will fear no evil..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">The most beloved psalm, offering comfort and assurance of God's care.</p>
+                </Card>
+
+                <Card title="If You Feel Down and Out" icon="⬇️" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Romans 8:39</p>
+                    <p>"Neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Nothing can separate you from God's unfailing love.</p>
+                </Card>
+
+                <Card title="When You Want Courage for Your Task" icon="💪" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Joshua 1</p>
+                    <p>"Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">God's command to Joshua as he faced an impossible mission.</p>
+                </Card>
+
+                <Card title="When the World Seems Bigger Than God" icon="🌍" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Psalm 90</p>
+                    <p>"Lord, you have been our dwelling place in all generations. Before the mountains were brought forth... from everlasting to everlasting you are God."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Remember God's eternal nature and perspective on all creation.</p>
+                </Card>
+
+                <Card title="When Leaving Home for Labor or Travel" icon="✈️" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Matthew 11:25-30</p>
+                    <p>"Come to me, all who labor and are heavy laden, and I will give you rest... For my yoke is easy, and my burden is light."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Jesus invites us to find rest and peace in Him during our journeys.</p>
+                </Card>
+
+                <Card title="If You Get Bitter or Critical" icon="😠" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read 1 Corinthians 13</p>
+                    <p>"Love is patient and kind; love does not envy or boast... Love bears all things, believes all things, hopes all things, endures all things."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">The beautiful passage on love that transforms hearts and attitudes.</p>
+                </Card>
+
+                <Card title="If Thinking of Investments and Returns" icon="💰" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Mark 10:17-31</p>
+                    <p>"What does it profit a man to gain the whole world and forfeit his soul?... But many who are first will be last, and the last first."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Jesus teaches about eternal treasures versus earthly possessions.</p>
+                </Card>
+
+                <Card title="For a Great Invitation & Opportunity" icon="🎁" variant="featured">
+                    <p style="font-size: 1.125rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">Read Isaiah 55</p>
+                    <p>"Come, everyone who thirsts, come to the waters... Seek the LORD while he may be found; call upon him while he is near..."</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">God's gracious invitation to receive His abundance freely.</p>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use This Resource -->
+    <section class="alt-bg">
+        <div class="container-narrow">
+            <h2 class="text-center text-gradient">How to Use This Resource</h2>
+            <p class="lead text-center">Making the most of scripture in times of need</p>
+
+            <div class="glass-card">
+                <div style="display: grid; gap: 1.5rem;">
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">📖 Read Slowly & Prayerfully</h3>
+                        <p>Don't rush through the passage. Read it slowly, allowing God's Word to speak to your heart. Consider reading it multiple times.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">🤲 Pray Before Reading</h3>
+                        <p>Ask the Holy Spirit to open your heart and mind to receive what God wants to communicate to you through His Word.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">💭 Meditate on Key Verses</h3>
+                        <p>Choose a verse or phrase that resonates with you. Repeat it throughout the day, letting it become a prayer and source of strength.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">📝 Journal Your Reflections</h3>
+                        <p>Write down insights, feelings, or prayers that arise as you read. This helps you remember how God has spoken to you.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">🔄 Return Often</h3>
+                        <p>Scripture reveals new insights each time we read it. Return to these passages regularly, especially in similar circumstances.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Additional Scripture Resources</h2>
+            <p class="lead text-center">More ways to encounter God through His Word</p>
+
+            <div class="grid-3">
+                <Card title="Catholic Bible Online" icon="📱">
+                    <p>Access the complete Catholic Bible online with search capabilities and study tools.</p>
+                    <InteractiveButton href="https://bible.usccb.org/" variant="outline" size="small" fullWidth={true}>
+                        Visit USCCB Bible
+                    </InteractiveButton>
+                </Card>
+
+                <Card title="Lectio Divina Guide" icon="🕯️">
+                    <p>Learn the ancient practice of sacred reading to pray with scripture more deeply.</p>
+                    <InteractiveButton href="/resources#prayer" variant="outline" size="small" fullWidth={true}>
+                        Prayer Resources
+                    </InteractiveButton>
+                </Card>
+
+                <Card title="Daily Mass Readings" icon="📅">
+                    <p>Follow along with the Church's daily scripture readings and reflections.</p>
+                    <InteractiveButton href="https://bible.usccb.org/daily-bible-reading" variant="outline" size="small" fullWidth={true}>
+                        Daily Readings
+                    </InteractiveButton>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Prayer -->
+    <section>
+        <div class="container-narrow text-center">
+            <div class="glass-card">
+                <h2 class="text-gradient" style="margin-bottom: 1.5rem;">A Prayer for Reading Scripture</h2>
+                <blockquote style="border: none; font-size: 1.125rem; line-height: 1.8; font-style: italic;">
+                    <p style="margin-bottom: 1.5rem;">
+                        "Heavenly Father, as I open Your Word, open my heart to receive Your truth.
+                        Send Your Holy Spirit to guide my reading and understanding.
+                        Speak to me through these sacred pages, and transform my life by Your grace.
+                        Help me to not just hear Your Word, but to live it."
+                    </p>
+                    <p style="font-weight: 600; font-style: normal; color: var(--primary-color);">Amen.</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="alt-bg">
+        <div class="container text-center">
+            <h2 class="text-gradient">Need More Support?</h2>
+            <p class="lead">Explore our other resources for mental health, prayer, and spiritual guidance</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <InteractiveButton href="/resources" variant="primary" size="large">
+                    View All Resources
+                </InteractiveButton>
+                <InteractiveButton href="/#contact" variant="outline" size="large">
+                    Contact Us
+                </InteractiveButton>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
