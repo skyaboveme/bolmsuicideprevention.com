@@ -119,6 +119,24 @@ import TestimonialCard from '../components/TestimonialCard.astro';
         </div>
     </section>
 
+    <!-- YouTube Video Section -->
+    <section class="gradient-bg">
+        <div class="container">
+            <div class="youtube-section">
+                <h2 class="text-center text-gradient" style="margin-bottom: 2rem;">A Message of Hope</h2>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/kXivmHLYa3I?start=5"
+                        title="Hope and Healing Message"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Catholic Teaching Section -->
     <section>
         <div class="container-narrow">
@@ -399,5 +417,30 @@ import TestimonialCard from '../components/TestimonialCard.astro';
         .video-content {
             padding: 3rem 1.5rem;
         }
+    }
+
+    /* YouTube Video Section Styles */
+    .youtube-section {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        background: #000;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--radius-xl);
     }
 </style>
