@@ -1,0 +1,171 @@
+---
+interface Props {
+    title: string;
+    subtitle?: string;
+    backgroundImage?: string;
+    height?: 'small' | 'medium' | 'large';
+}
+
+const { title, subtitle, backgroundImage = '/images/The_Hand_of_God_Collection_Banner.webp', height = 'large' } = Astro.props;
+---
+
+<section class={`hero-modern hero-${height}`}>
+    <div class="hero-background">
+        <img src={backgroundImage} alt="Hero background" />
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content-wrapper">
+        <div class="hero-content">
+            <h1 class="hero-title">{title}</h1>
+            {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+            <div class="hero-actions">
+                <slot />
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<style>
+    .hero-modern {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: white;
+    }
+
+    .hero-small { min-height: 40vh; }
+    .hero-medium { min-height: 60vh; }
+    .hero-large { min-height: 85vh; }
+
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .hero-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: kenBurns 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes kenBurns {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(44, 95, 141, 0.85), rgba(139, 71, 137, 0.85));
+        z-index: 1;
+    }
+
+    .hero-content-wrapper {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .hero-content {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: white;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 1s ease-out 0.3s backwards;
+    }
+
+    .hero-scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+        40% { transform: translateX(-50%) translateY(-10px); }
+        60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    .scroll-arrow {
+        width: 30px;
+        height: 50px;
+        border: 2px solid white;
+        border-radius: 25px;
+        position: relative;
+    }
+
+    .scroll-arrow::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background: white;
+        border-radius: 50%;
+        animation: scrollDown 2s infinite;
+    }
+
+    @keyframes scrollDown {
+        0% { top: 10px; opacity: 1; }
+        100% { top: 30px; opacity: 0; }
+    }
+
+    @media (max-width: 768px) {
+        .hero-small { min-height: 35vh; }
+        .hero-medium { min-height: 50vh; }
+        .hero-large { min-height: 70vh; }
+    }
+</style>

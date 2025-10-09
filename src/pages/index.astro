@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import InteractiveButton from '../components/InteractiveButton.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import Card from '../components/Card.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
 ---
 
 <BaseLayout
@@ -7,160 +12,279 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     description="Breath of Life Ministries - Catholic suicide prevention ministry providing hope, support, and resources for those experiencing mental health challenges."
 >
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h2>You Are Not Alone</h2>
-            <p>Finding hope and healing through faith, community, and compassionate support</p>
-            <div class="hero-buttons">
-                <a href="#get-help" class="btn btn-primary">Get Help Now</a>
-                <a href="/resources" class="btn btn-secondary">Explore Resources</a>
+    <HeroSection
+        title="You Are Not Alone"
+        subtitle="Finding hope and healing through faith, community, and compassionate support"
+        backgroundImage="/images/The_Hand_of_God_Collection_Banner.webp"
+        height="large"
+    >
+        <InteractiveButton href="#get-help" variant="primary" size="large">
+            Get Help Now
+        </InteractiveButton>
+        <InteractiveButton href="/resources" variant="outline" size="large">
+            Explore Resources
+        </InteractiveButton>
+    </HeroSection>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">988</div>
+                    <div class="stat-label">Crisis Lifeline</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Always Available</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Confidential</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Free</div>
+                    <div class="stat-label">No Cost Support</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="mission">
+    <!-- Mission Section with Image -->
+    <section class="gradient-bg">
         <div class="container">
-            <h2>Our Mission</h2>
-            <p class="lead">Breath of Life Ministries provides vital spiritual accompaniment for people experiencing mental health challenges and mental illness, as well as those who care for them. Rooted in Catholic teaching and compassion, we offer hope, resources, and community support for suicide prevention and mental wellness.</p>
+            <div class="image-text-section">
+                <div class="image-container">
+                    <img src="/images/prayinghands.webp" alt="Praying hands" />
+                </div>
+                <div class="animate-on-scroll">
+                    <h2 class="text-gradient">Our Mission</h2>
+                    <p class="lead">Breath of Life Ministries provides vital spiritual accompaniment for people experiencing mental health challenges and mental illness, as well as those who care for them.</p>
+                    <p>Rooted in Catholic teaching and compassion, we offer hope, resources, and community support for suicide prevention and mental wellness. Every person is created in the image and likeness of God, possessing infinite dignity and worth.</p>
+                    <InteractiveButton href="/about" variant="primary">
+                        Learn About Us
+                    </InteractiveButton>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Get Help Section -->
-    <section id="get-help" class="get-help">
+    <section id="get-help" class="alt-bg">
         <div class="container">
-            <h2>Immediate Help & Support</h2>
-            <div class="help-grid">
-                <div class="help-card urgent">
-                    <div class="help-icon">🆘</div>
-                    <h3>In Crisis?</h3>
+            <h2 class="text-center text-gradient">Immediate Help & Support</h2>
+            <p class="lead text-center">If you or someone you know is in crisis, help is available right now.</p>
+
+            <div class="grid-4">
+                <Card title="In Crisis?" icon="🆘" variant="urgent">
                     <p>If you're experiencing a mental health crisis:</p>
-                    <div class="crisis-contact">
-                        <p><strong>Call or Text: 988</strong></p>
-                        <p>National Suicide and Crisis Lifeline</p>
-                        <p class="small">Available 24/7, free and confidential</p>
+                    <div style="background: var(--crisis-red); color: white; padding: 1.5rem; border-radius: 12px; margin: 1rem 0;">
+                        <p style="color: white; margin: 0;"><strong style="font-size: 1.75rem; display: block; margin-bottom: 0.5rem;">Call or Text: 988</strong></p>
+                        <p style="color: white; margin: 0; font-size: 0.9rem;">National Suicide and Crisis Lifeline<br>Available 24/7, free and confidential</p>
                     </div>
-                </div>
+                </Card>
 
-                <div class="help-card">
-                    <div class="help-icon">💬</div>
-                    <h3>Crisis Text Line</h3>
+                <Card title="Crisis Text Line" icon="💬">
                     <p>Text <strong>HELLO</strong> to <strong>741741</strong></p>
-                    <p class="small">Connect with a crisis counselor via text</p>
-                </div>
+                    <p>Connect with a crisis counselor via text, anytime day or night.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Free, confidential, 24/7 support</p>
+                </Card>
 
-                <div class="help-card">
-                    <div class="help-icon">🌐</div>
-                    <h3>Online Chat</h3>
-                    <p>Visit <a href="https://988lifeline.org/chat/" target="_blank">988lifeline.org/chat</a></p>
-                    <p class="small">Chat with a trained counselor online</p>
-                </div>
+                <Card title="Online Chat" icon="🌐">
+                    <p>Visit <a href="https://988lifeline.org/chat/" target="_blank" style="font-weight: 600;">988lifeline.org/chat</a></p>
+                    <p>Chat with a trained counselor online through secure messaging.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Available 24/7</p>
+                </Card>
 
-                <div class="help-card">
-                    <div class="help-icon">⛪</div>
-                    <h3>Spiritual Support</h3>
-                    <p>Speak with a priest or pastoral minister</p>
-                    <p class="small">Find comfort in faith and community</p>
-                </div>
+                <Card title="Spiritual Support" icon="⛪">
+                    <p>Speak with a priest or pastoral minister in your area.</p>
+                    <p>Find comfort in faith, sacraments, and your parish community during difficult times.</p>
+                </Card>
             </div>
         </div>
     </section>
 
     <!-- Catholic Teaching Section -->
-    <section class="teaching">
-        <div class="container">
-            <h2>Catholic Teaching on Suicide & Mental Health</h2>
-            <div class="teaching-content">
-                <div class="teaching-text">
-                    <p>The Catholic Church recognizes that suicide is a grave matter, but emphasizes God's infinite mercy and understanding of mental health issues. The Church teaches that psychological disturbances, anguish, grave fear of hardship, suffering, or torture can diminish the responsibility of the person who dies by suicide.</p>
+    <section>
+        <div class="container-narrow">
+            <h2 class="text-center text-gradient">Catholic Teaching on Suicide & Mental Health</h2>
 
-                    <blockquote>
-                        "We should not despair of the eternal salvation of persons who have taken their own lives. By ways known to him alone, God can provide the opportunity for salutary repentance."
-                        <cite>- Catechism of the Catholic Church, 2283</cite>
-                    </blockquote>
+            <div style="margin: 3rem 0;">
+                <p style="text-align: center; font-size: 1.125rem; line-height: 1.8;">The Catholic Church recognizes that suicide is a grave matter, but emphasizes God's infinite mercy and understanding of mental health issues. The Church teaches that psychological disturbances, anguish, grave fear of hardship, suffering, or torture can diminish the responsibility of the person who dies by suicide.</p>
 
-                    <p>Our ministry approaches mental health and suicide prevention with compassion, recognizing that those who struggle deserve our prayers, support, and accompaniment on their journey toward healing.</p>
-                </div>
+                <blockquote>
+                    "We should not despair of the eternal salvation of persons who have taken their own lives. By ways known to him alone, God can provide the opportunity for salutary repentance."
+                    <cite>- Catechism of the Catholic Church, 2283</cite>
+                </blockquote>
+
+                <p style="text-align: center; font-size: 1.125rem; line-height: 1.8;">Our ministry approaches mental health and suicide prevention with compassion, recognizing that those who struggle deserve our prayers, support, and accompaniment on their journey toward healing.</p>
             </div>
         </div>
     </section>
 
     <!-- Programs Section -->
-    <section class="programs">
+    <section class="alt-bg">
         <div class="container">
-            <h2>Our Programs & Services</h2>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <h3>QPR Training</h3>
-                    <p><strong>Question. Persuade. Refer.</strong></p>
-                    <p>Learn the 3 simple steps anyone can use to help save a life from suicide. Our training programs equip community members to recognize warning signs and intervene effectively.</p>
-                </div>
+            <h2 class="text-center text-gradient">Our Programs & Services</h2>
+            <p class="lead text-center">Comprehensive support, training, and resources for mental health and suicide prevention</p>
 
-                <div class="program-card">
-                    <h3>Support Groups</h3>
-                    <p>Connect with others who understand the challenges of mental illness or the loss of a loved one to suicide. Find community, hope, and healing in a faith-filled environment.</p>
-                </div>
+            <div class="grid-3">
+                <FeatureCard
+                    icon="❓"
+                    title="QPR Training"
+                    description="Learn the 3 simple steps anyone can use to help save a life from suicide: Question, Persuade, and Refer. Our evidence-based training equips community members to recognize warning signs and intervene effectively."
+                    link="/#contact"
+                    linkText="Contact for Training"
+                />
 
-                <div class="program-card">
-                    <h3>Grief Ministry</h3>
-                    <p>Compassionate support for those who have lost a loved one to suicide. We offer specialized resources and accompaniment through the journey of grief and healing.</p>
-                </div>
+                <FeatureCard
+                    icon="🤝"
+                    title="Support Groups"
+                    description="Connect with others who understand the challenges of mental illness or the loss of a loved one to suicide. Find community, hope, and healing in a faith-filled environment where you're never alone."
+                    link="/#contact"
+                    linkText="Join a Group"
+                />
 
-                <div class="program-card">
-                    <h3>Education & Awareness</h3>
-                    <p>Workshops, seminars, and resources to break the stigma around mental illness and promote understanding within the Catholic community.</p>
+                <FeatureCard
+                    icon="💜"
+                    title="Grief Ministry"
+                    description="Compassionate support for those who have lost a loved one to suicide. We offer specialized resources, prayer support, and accompaniment through the journey of grief and healing."
+                    link="/#contact"
+                    linkText="Find Support"
+                />
+
+                <FeatureCard
+                    icon="📚"
+                    title="Education & Awareness"
+                    description="Workshops, seminars, and resources to break the stigma around mental illness and promote understanding within the Catholic community and beyond."
+                    link="/resources"
+                    linkText="View Resources"
+                />
+
+                <FeatureCard
+                    icon="🙏"
+                    title="Spiritual Accompaniment"
+                    description="Faith-based support that honors the Catholic tradition while providing practical help for those facing mental health challenges. Prayer, sacraments, and pastoral care."
+                    link="/about"
+                    linkText="Learn More"
+                />
+
+                <FeatureCard
+                    icon="⛪"
+                    title="Parish Partnerships"
+                    description="We partner with Catholic parishes to establish mental health ministries, providing consultation, training, and ongoing support to create welcoming, informed faith communities."
+                    link="/#contact"
+                    linkText="Partner With Us"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Saint Section -->
+    <section class="gradient-bg">
+        <div class="container">
+            <div class="image-text-section" style="flex-direction: row-reverse;">
+                <div class="image-container">
+                    <img src="/images/liseux.webp" alt="St. Thérèse of Lisieux" />
+                    <div class="image-overlay">
+                        <h3 style="color: white; margin: 0;">St. Thérèse of Lisieux</h3>
+                    </div>
+                </div>
+                <div class="animate-on-scroll">
+                    <h2 class="text-gradient">Patron Saints for Mental Health</h2>
+                    <p class="lead">Throughout history, the Church has recognized saints who intercede for those suffering from mental illness and distress.</p>
+                    <p><strong>St. Thérèse of Lisieux</strong> is invoked for depression and anxiety. Her "Little Way" teaches us that even in our smallest struggles, God's love is present.</p>
+                    <p><strong>St. Dymphna</strong> is the patron saint of those with mental illness and nervous disorders.</p>
+                    <p><strong>St. Benedict Joseph Labre</strong> suffered from mental illness himself and is a powerful intercessor for those who struggle.</p>
+                    <InteractiveButton href="/resources#prayer" variant="secondary">
+                        View Prayer Resources
+                    </InteractiveButton>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Resources Preview -->
-    <section class="resources-preview">
+    <section>
         <div class="container">
-            <h2>Featured Resources</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h3>When a Loved One Dies by Suicide</h3>
+            <h2 class="text-center text-gradient">Featured Resources</h2>
+            <p class="lead text-center">Books, training, and support materials for individuals, families, and faith communities</p>
+
+            <div class="grid-3">
+                <Card title="When a Loved One Dies by Suicide" variant="featured">
                     <p>Personal stories of loss, coping with grief, and finding hope through faith and community. Written by Catholics who have experienced this profound loss.</p>
-                    <a href="/resources#grief" class="btn-link">Learn More →</a>
-                </div>
+                    <InteractiveButton href="/resources#grief" variant="outline" size="small" fullWidth={true}>
+                        Learn More
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-card">
-                    <h3>Responding to Suicide</h3>
+                <Card title="Responding to Suicide" variant="featured">
                     <p>The first book written for Catholic leaders that takes a holistic approach to understanding suicide and ministering effectively in its aftermath.</p>
-                    <a href="/resources#leadership" class="btn-link">Learn More →</a>
-                </div>
+                    <InteractiveButton href="/resources#leadership" variant="outline" size="small" fullWidth={true}>
+                        Learn More
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-card">
-                    <h3>Prayer & Liturgy Resources</h3>
+                <Card title="Prayer & Liturgy Resources" variant="featured">
                     <p>Sacred resources for worship, prayer services, and liturgical guidance for mental health awareness and suicide prevention.</p>
-                    <a href="/resources#prayer" class="btn-link">Learn More →</a>
-                </div>
+                    <InteractiveButton href="/resources#prayer" variant="outline" size="small" fullWidth={true}>
+                        Learn More
+                    </InteractiveButton>
+                </Card>
             </div>
-            <div class="text-center" style="margin-top: 2rem;">
-                <a href="/resources" class="btn btn-primary">View All Resources</a>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <InteractiveButton href="/resources" variant="primary" size="large">
+                    View All Resources
+                </InteractiveButton>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Hope & Healing</h2>
+            <p class="lead text-center">Stories of faith, recovery, and the compassionate support that makes a difference</p>
+
+            <div class="grid-2">
+                <TestimonialCard
+                    quote="The Church's teaching on God's mercy gave me hope when I thought all was lost. Mental illness doesn't diminish God's love for us."
+                    author="Parish Member"
+                />
+
+                <TestimonialCard
+                    quote="QPR training equipped our parish to respond with compassion and confidence. We've become a community of hope for those who suffer."
+                    author="Parish Coordinator"
+                />
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
-            <h2>Connect With Us</h2>
+            <h2 class="text-center text-gradient">Connect With Us</h2>
+            <p class="lead text-center">We're here to support you on your journey toward healing and hope</p>
+
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Breath of Life Ministries</h3>
-                    <p>We're here to support you on your journey toward healing and hope.</p>
+                    <p>Bringing the compassion of Christ to those affected by mental illness and suicide.</p>
 
                     <div class="contact-details">
                         <p><strong>Email:</strong> <a href="mailto:info@bolmsuicideprevention.com">info@bolmsuicideprevention.com</a></p>
-                        <p><strong>For Ministry Support:</strong> <a href="mailto:support@bolmsuicideprevention.com">support@bolmsuicideprevention.com</a></p>
+                        <p><strong>Ministry Support:</strong> <a href="mailto:support@bolmsuicideprevention.com">support@bolmsuicideprevention.com</a></p>
                     </div>
 
-                    <div class="social-links">
-                        <h4>Follow Us</h4>
-                        <p>Stay connected for updates, resources, and hope.</p>
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-gradient-1); border-radius: var(--radius-lg);">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Get Involved</h4>
+                        <ul style="list-style: none; margin-left: 0;">
+                            <li style="margin-bottom: 0.75rem;">✓ Volunteer with our ministry</li>
+                            <li style="margin-bottom: 0.75rem;">✓ Bring QPR training to your parish</li>
+                            <li style="margin-bottom: 0.75rem;">✓ Share our resources</li>
+                            <li style="margin-bottom: 0.75rem;">✓ Support our mission</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -187,10 +311,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <InteractiveButton variant="primary" size="large" fullWidth={true}>
+                            Send Message
+                        </InteractiveButton>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 </BaseLayout>
+
+<style>
+    /* Additional page-specific styles */
+    .image-text-section[style*="flex-direction: row-reverse"] {
+        flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+        .image-text-section[style*="flex-direction: row-reverse"] {
+            flex-direction: column;
+        }
+    }
+</style>

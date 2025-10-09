@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import SaintCard from '../components/SaintCard.astro';
+import InteractiveButton from '../components/InteractiveButton.astro';
 ---
 
 <BaseLayout
@@ -15,279 +18,333 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <!-- Crisis Resources -->
-    <section class="resources-section">
+    <section>
         <div class="container">
-            <h2>Crisis & Immediate Support</h2>
-            <div class="resource-list">
-                <div class="resource-item highlighted">
-                    <h3>988 Suicide & Crisis Lifeline</h3>
-                    <p><strong>Call or Text: 988</strong></p>
-                    <p>Available 24/7 for anyone experiencing a mental health crisis or emotional distress. Free, confidential support from trained counselors.</p>
-                    <a href="https://988lifeline.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+            <h2 class="text-center text-gradient">Crisis & Immediate Support</h2>
+            <p class="lead text-center">If you or someone you know is in crisis, these resources are available 24/7</p>
 
-                <div class="resource-item highlighted">
-                    <h3>Crisis Text Line</h3>
-                    <p><strong>Text HELLO to 741741</strong></p>
+            <div class="grid-3">
+                <Card title="988 Suicide & Crisis Lifeline" variant="urgent" icon="🆘">
+                    <div style="background: var(--crisis-red); color: white; padding: 1.25rem; border-radius: var(--radius-md); margin: 1rem 0;">
+                        <p style="color: white; margin: 0;"><strong style="font-size: 1.5rem; display: block; margin-bottom: 0.5rem;">Call or Text: 988</strong></p>
+                        <p style="color: white; margin: 0; font-size: 0.9rem;">Available 24/7 for anyone experiencing a mental health crisis</p>
+                    </div>
+                    <InteractiveButton href="https://988lifeline.org" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
+
+                <Card title="Crisis Text Line" icon="💬">
+                    <p><strong style="font-size: 1.25rem;">Text HELLO to 741741</strong></p>
                     <p>Free 24/7 support via text message. Connect with a trained crisis counselor who can provide support and resources.</p>
-                    <a href="https://www.crisistextline.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://www.crisistextline.org" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>Veterans Crisis Line</h3>
-                    <p><strong>Call 988 then Press 1</strong> or <strong>Text 838255</strong></p>
+                <Card title="Veterans Crisis Line" icon="🎖️">
+                    <p><strong>Call 988 then Press 1</strong></p>
+                    <p><strong>Text 838255</strong></p>
                     <p>24/7 confidential support for veterans and their families, even if not enrolled in VA benefits or health care.</p>
-                    <a href="https://www.veteranscrisisline.net" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://www.veteranscrisisline.net" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
+            </div>
 
-                <div class="resource-item">
-                    <h3>The Trevor Project (LGBTQ Youth)</h3>
-                    <p><strong>Call 1-866-488-7386</strong> or <strong>Text START to 678678</strong></p>
-                    <p>Crisis intervention and suicide prevention services for LGBTQ young people ages 13-24.</p>
-                    <a href="https://www.thetrevorproject.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+            <div style="margin-top: 3rem;">
+                <div class="grid-2">
+                    <Card title="The Trevor Project (LGBTQ Youth)" icon="🌈">
+                        <p><strong>Call 1-866-488-7386</strong></p>
+                        <p><strong>Text START to 678678</strong></p>
+                        <p>Crisis intervention and suicide prevention services for LGBTQ young people ages 13-24.</p>
+                        <InteractiveButton href="https://www.thetrevorproject.org" variant="outline" size="small" fullWidth={true}>
+                            Visit Website
+                        </InteractiveButton>
+                    </Card>
 
-                <div class="resource-item">
-                    <h3>SAMHSA National Helpline</h3>
-                    <p><strong>1-800-662-4357</strong></p>
-                    <p>Substance Abuse and Mental Health Services Administration - Free, confidential, 24/7 treatment referral and information service.</p>
-                    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" class="btn-link">Visit Website →</a>
+                    <Card title="SAMHSA National Helpline" icon="🏥">
+                        <p><strong>1-800-662-4357</strong></p>
+                        <p>Substance Abuse and Mental Health Services Administration - Free, confidential, 24/7 treatment referral and information service.</p>
+                        <InteractiveButton href="https://www.samhsa.gov/find-help/national-helpline" variant="outline" size="small" fullWidth={true}>
+                            Visit Website
+                        </InteractiveButton>
+                    </Card>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Books & Publications -->
-    <section id="grief" class="resources-section alt-bg">
+    <section id="grief" class="alt-bg">
         <div class="container">
-            <h2>Books & Publications</h2>
-            <div class="resource-list">
-                <div class="resource-item">
-                    <h3>When a Loved One Dies by Suicide</h3>
+            <h2 class="text-center text-gradient">Books & Publications</h2>
+            <p class="lead text-center">Essential reading for individuals, families, and Catholic leaders</p>
+
+            <div class="grid-2" style="max-width: 1000px; margin: 0 auto;">
+                <Card title="When a Loved One Dies by Suicide" variant="featured" icon="📖">
                     <p>Written by Catholics who have lost a loved one to suicide, this book offers personal stories of loss, coping with crushing grief, finding comfort in faith and community, and discovering hope.</p>
                     <p><strong>Topics include:</strong></p>
-                    <ul>
-                        <li>Personal narratives of loss and healing</li>
-                        <li>Catholic perspectives on grief and hope</li>
-                        <li>Practical guidance for surviving family members</li>
-                        <li>Finding support in faith communities</li>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">Personal narratives of loss and healing</li>
+                        <li style="margin-bottom: 0.5rem;">Catholic perspectives on grief and hope</li>
+                        <li style="margin-bottom: 0.5rem;">Practical guidance for surviving family members</li>
+                        <li style="margin-bottom: 0.5rem;">Finding support in faith communities</li>
                     </ul>
-                </div>
+                </Card>
 
-                <div class="resource-item" id="leadership">
-                    <h3>Responding to Suicide: A Pastoral Handbook</h3>
+                <Card title="Responding to Suicide: A Pastoral Handbook" id="leadership" variant="featured" icon="📚">
                     <p>The first book written for Catholic leaders that takes a holistic approach to understanding suicide and ministering effectively in its aftermath.</p>
                     <p><strong>Topics include:</strong></p>
-                    <ul>
-                        <li>Understanding suicide from medical, psychological, and spiritual perspectives</li>
-                        <li>Pastoral care for those affected by suicide</li>
-                        <li>Liturgical considerations and funeral planning</li>
-                        <li>Creating supportive parish communities</li>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">Understanding suicide from multiple perspectives</li>
+                        <li style="margin-bottom: 0.5rem;">Pastoral care for those affected by suicide</li>
+                        <li style="margin-bottom: 0.5rem;">Liturgical considerations and funeral planning</li>
+                        <li style="margin-bottom: 0.5rem;">Creating supportive parish communities</li>
                     </ul>
-                </div>
-
-                <div class="resource-item">
-                    <h3>Hope and Healing: Catholic Resources on Mental Illness</h3>
-                    <p>A comprehensive guide exploring mental illness through the lens of Catholic faith, offering hope and practical support for individuals and families.</p>
-                </div>
+                </Card>
             </div>
         </div>
     </section>
 
     <!-- Training Programs -->
-    <section class="resources-section">
+    <section>
         <div class="container">
-            <h2>Training & Education Programs</h2>
-            <div class="resource-list">
-                <div class="resource-item">
-                    <h3>QPR (Question, Persuade, Refer) Training</h3>
+            <h2 class="text-center text-gradient">Training & Education Programs</h2>
+            <p class="lead text-center">Evidence-based programs that save lives and build compassionate communities</p>
+
+            <div class="grid-3">
+                <Card title="QPR Training" icon="❓" variant="featured">
+                    <p><strong>Question. Persuade. Refer.</strong></p>
                     <p>Learn the three simple steps anyone can take to help save a life from suicide:</p>
-                    <ul>
-                        <li><strong>Question:</strong> Ask directly about suicidal thoughts</li>
-                        <li><strong>Persuade:</strong> Encourage the person to seek help</li>
-                        <li><strong>Refer:</strong> Connect them with appropriate resources</li>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Question:</strong> Ask directly about suicidal thoughts</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Persuade:</strong> Encourage the person to seek help</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Refer:</strong> Connect them with appropriate resources</li>
                     </ul>
-                    <p>This evidence-based program equips community members to recognize warning signs and intervene effectively.</p>
-                    <a href="/#contact" class="btn-link">Contact us for training →</a>
-                </div>
+                    <InteractiveButton href="/#contact" variant="primary" size="small" fullWidth={true}>
+                        Contact for Training
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>Mental Health First Aid</h3>
+                <Card title="Mental Health First Aid" icon="🩹">
                     <p>An 8-hour training course that teaches participants how to help someone who is developing a mental health problem or experiencing a mental health crisis.</p>
-                </div>
+                    <p style="margin-top: 1rem;">Covers common mental health challenges, warning signs, and how to provide initial support.</p>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>Catholic Mental Health Ministry Formation</h3>
-                    <p>Specialized training for those called to mental health ministry within Catholic parishes and communities. Learn to provide spiritual accompaniment with compassion and understanding.</p>
-                </div>
+                <Card title="Catholic Mental Health Ministry Formation" icon="⛪">
+                    <p>Specialized training for those called to mental health ministry within Catholic parishes and communities.</p>
+                    <p style="margin-top: 1rem;">Learn to provide spiritual accompaniment with compassion, understanding, and practical skills.</p>
+                </Card>
             </div>
         </div>
     </section>
 
     <!-- Catholic Organizations -->
-    <section class="resources-section alt-bg">
+    <section class="alt-bg">
         <div class="container">
-            <h2>Catholic Mental Health Organizations</h2>
-            <div class="resource-list">
-                <div class="resource-item">
-                    <h3>Association of Catholic Mental Health Ministers</h3>
+            <h2 class="text-center text-gradient">Catholic Mental Health Organizations</h2>
+            <p class="lead text-center">Partners in mental health ministry and suicide prevention</p>
+
+            <div class="grid-2">
+                <Card title="Association of Catholic Mental Health Ministers" icon="✝️">
                     <p>Supporting Catholic parishes and dioceses in establishing mental health ministries. Provides resources, training, and networking opportunities for mental health ministers.</p>
-                    <a href="https://catholicmhm.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://catholicmhm.org" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>USCCB Mental Health Resources</h3>
+                <Card title="USCCB Mental Health Resources" icon="⛪">
                     <p>The United States Conference of Catholic Bishops offers guidance, pastoral letters, and resources on mental health ministry.</p>
-                    <a href="https://www.usccb.org/mentalhealth" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://www.usccb.org/mentalhealth" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>National Catholic Partnership on Disability</h3>
+                <Card title="National Catholic Partnership on Disability" icon="🤝">
                     <p>Advocates for the full inclusion of people with disabilities in all aspects of the Church and society, including mental health support.</p>
-                </div>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>Catholic Charities USA</h3>
+                <Card title="Catholic Charities USA" icon="❤️">
                     <p>Many local Catholic Charities agencies offer mental health counseling, support groups, and crisis services. Contact your local agency for available programs.</p>
-                </div>
+                </Card>
             </div>
         </div>
     </section>
 
     <!-- General Mental Health Organizations -->
-    <section class="resources-section">
+    <section>
         <div class="container">
-            <h2>Mental Health Organizations</h2>
-            <div class="resource-list">
-                <div class="resource-item">
-                    <h3>National Alliance on Mental Illness (NAMI)</h3>
+            <h2 class="text-center text-gradient">Mental Health Organizations</h2>
+            <p class="lead text-center">National organizations providing advocacy, education, and support</p>
+
+            <div class="grid-4">
+                <Card title="NAMI" icon="🌟">
+                    <p><strong>National Alliance on Mental Illness</strong></p>
                     <p>The nation's largest grassroots mental health organization. Offers support groups, education programs, and advocacy.</p>
-                    <a href="https://www.nami.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://www.nami.org" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>Mental Health America</h3>
+                <Card title="Mental Health America" icon="🏥">
                     <p>Leading nonprofit dedicated to promoting mental health, preventing mental illness, and achieving victory over mental illness through advocacy, education, research, and service.</p>
-                    <a href="https://www.mhanational.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://www.mhanational.org" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>American Foundation for Suicide Prevention (AFSP)</h3>
+                <Card title="AFSP" icon="💙">
+                    <p><strong>American Foundation for Suicide Prevention</strong></p>
                     <p>Dedicated to saving lives and bringing hope to those affected by suicide through research, education, advocacy, and support programs.</p>
-                    <a href="https://afsp.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://afsp.org" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
 
-                <div class="resource-item">
-                    <h3>Anxiety and Depression Association of America (ADAA)</h3>
+                <Card title="ADAA" icon="🧠">
+                    <p><strong>Anxiety and Depression Association of America</strong></p>
                     <p>Resources, education, and support for anxiety, depression, and related disorders.</p>
-                    <a href="https://adaa.org" target="_blank" class="btn-link">Visit Website →</a>
-                </div>
+                    <InteractiveButton href="https://adaa.org" variant="outline" size="small" fullWidth={true}>
+                        Visit Website
+                    </InteractiveButton>
+                </Card>
             </div>
         </div>
     </section>
 
-    <!-- Prayer & Spiritual Resources -->
-    <section id="prayer" class="resources-section alt-bg">
+    <!-- Patron Saints Section -->
+    <section id="prayer" class="gradient-bg">
         <div class="container">
-            <h2>Prayer & Spiritual Resources</h2>
-            <div class="resource-list">
-                <div class="resource-item">
-                    <h3>Prayers for Mental Health & Healing</h3>
-                    <div class="prayer-box">
-                        <h4>Prayer for Those Struggling with Mental Illness</h4>
-                        <p><em>Loving God, you are the source of all hope and healing. Be with those who struggle with mental illness. Grant them comfort in their pain, strength in their weakness, and hope in their despair. May they know that they are precious in your sight and never alone. Through Christ our Lord. Amen.</em></p>
-                    </div>
+            <h2 class="text-center" style="color: var(--primary-color);">Patron Saints for Mental Health</h2>
+            <p class="lead text-center" style="color: var(--text-medium);">Holy intercessors who understand suffering and offer hope</p>
 
-                    <div class="prayer-box">
-                        <h4>Prayer for Those Who Have Lost a Loved One to Suicide</h4>
-                        <p><em>Merciful Father, we entrust to your infinite love our beloved [name], who has died by suicide. In your boundless mercy, grant them eternal rest and peace. Console all who grieve this profound loss, and help us to trust in your compassion and understanding. May we find comfort in your promise of eternal life. Amen.</em></p>
-                    </div>
-                </div>
+            <div class="grid-3">
+                <SaintCard
+                    name="St. Thérèse of Lisieux"
+                    title="Patron for Depression and Anxiety"
+                    feastDay="October 1"
+                    image="/images/liseux.webp"
+                    description="Known for her 'Little Way' of spiritual childhood, St. Thérèse teaches us that even in our smallest struggles, God's love is present. She offers hope to those battling depression and anxiety, showing that holiness is found in trusting God through our daily challenges."
+                />
 
-                <div class="resource-item">
-                    <h3>Liturgical Resources</h3>
-                    <p>Resources for worship, prayer services, and liturgies focused on mental health awareness and suicide prevention:</p>
-                    <ul>
-                        <li>Mass intentions for mental health awareness</li>
-                        <li>Prayer service outlines</li>
-                        <li>Scripture readings on hope and healing</li>
-                        <li>Music and hymn suggestions</li>
-                        <li>Blessing prayers for mental health ministry</li>
-                    </ul>
-                </div>
+                <SaintCard
+                    name="St. Dymphna"
+                    title="Patron Saint of Mental Illness"
+                    feastDay="May 15"
+                    description="St. Dymphna, an Irish princess who fled to Belgium to escape her father's madness, is the patron saint of those suffering from mental illness, anxiety, and nervous disorders. Many seek her intercession for healing and peace of mind."
+                />
 
-                <div class="resource-item">
-                    <h3>Patron Saints for Mental Health</h3>
-                    <ul>
-                        <li><strong>St. Dymphna</strong> - Patron saint of those with mental illness and nervous disorders</li>
-                        <li><strong>St. Benedict Joseph Labre</strong> - Patron of those suffering from mental illness</li>
-                        <li><strong>St. Padre Pio</strong> - Known for his ministry to those suffering</li>
-                        <li><strong>St. Thérèse of Lisieux</strong> - For depression and anxiety</li>
-                    </ul>
-                </div>
+                <SaintCard
+                    name="St. Benedict Joseph Labre"
+                    title="Patron for Mental Illness"
+                    feastDay="April 16"
+                    description="A pilgrim and beggar who suffered from mental illness himself, St. Benedict Joseph Labre is a powerful advocate for those who struggle with mental health challenges. His life demonstrates God's love for the poorest and most vulnerable."
+                />
             </div>
+        </div>
+    </section>
+
+    <!-- Prayer Resources -->
+    <section class="alt-bg">
+        <div class="container-narrow">
+            <h2 class="text-center text-gradient">Prayers for Mental Health & Healing</h2>
+
+            <div class="glass-card" style="margin: 2rem 0;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Prayer for Those Struggling with Mental Illness</h3>
+                <p style="font-style: italic; font-size: 1.125rem; line-height: 1.8; color: var(--text-medium);">
+                    Loving God, you are the source of all hope and healing. Be with those who struggle with mental illness. Grant them comfort in their pain, strength in their weakness, and hope in their despair. May they know that they are precious in your sight and never alone. Through Christ our Lord. Amen.
+                </p>
+            </div>
+
+            <div class="glass-card" style="margin: 2rem 0;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Prayer for Those Who Have Lost a Loved One to Suicide</h3>
+                <p style="font-style: italic; font-size: 1.125rem; line-height: 1.8; color: var(--text-medium);">
+                    Merciful Father, we entrust to your infinite love our beloved [name], who has died by suicide. In your boundless mercy, grant them eternal rest and peace. Console all who grieve this profound loss, and help us to trust in your compassion and understanding. May we find comfort in your promise of eternal life. Amen.
+                </p>
+            </div>
+
+            <Card title="Liturgical Resources" variant="featured" icon="📿">
+                <p>Resources for worship, prayer services, and liturgies focused on mental health awareness and suicide prevention:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.5rem;">Mass intentions for mental health awareness</li>
+                    <li style="margin-bottom: 0.5rem;">Prayer service outlines</li>
+                    <li style="margin-bottom: 0.5rem;">Scripture readings on hope and healing</li>
+                    <li style="margin-bottom: 0.5rem;">Music and hymn suggestions</li>
+                    <li style="margin-bottom: 0.5rem;">Blessing prayers for mental health ministry</li>
+                </ul>
+            </Card>
         </div>
     </section>
 
     <!-- Warning Signs -->
-    <section class="resources-section">
+    <section>
         <div class="container">
-            <h2>Recognizing Warning Signs</h2>
-            <div class="warning-signs">
-                <div class="warning-column">
-                    <h3>Talk</h3>
-                    <p>If a person talks about:</p>
-                    <ul>
-                        <li>Killing themselves</li>
-                        <li>Feeling hopeless</li>
-                        <li>Having no reason to live</li>
-                        <li>Being a burden to others</li>
-                        <li>Feeling trapped</li>
-                        <li>Unbearable pain</li>
-                    </ul>
-                </div>
+            <h2 class="text-center text-gradient">Recognizing Warning Signs</h2>
+            <p class="lead text-center">Understanding the signs can help you save a life</p>
 
-                <div class="warning-column">
-                    <h3>Behavior</h3>
-                    <p>Behaviors that may signal risk:</p>
-                    <ul>
-                        <li>Increased use of alcohol or drugs</li>
-                        <li>Looking for ways to end their life</li>
-                        <li>Withdrawing from activities</li>
-                        <li>Isolating from family and friends</li>
-                        <li>Sleeping too much or too little</li>
-                        <li>Visiting or calling to say goodbye</li>
-                        <li>Giving away prized possessions</li>
-                        <li>Aggression or fatigue</li>
+            <div class="grid-3">
+                <Card title="Talk" icon="💬" variant="urgent">
+                    <p><strong>If a person talks about:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">Killing themselves</li>
+                        <li style="margin-bottom: 0.5rem;">Feeling hopeless</li>
+                        <li style="margin-bottom: 0.5rem;">Having no reason to live</li>
+                        <li style="margin-bottom: 0.5rem;">Being a burden to others</li>
+                        <li style="margin-bottom: 0.5rem;">Feeling trapped</li>
+                        <li style="margin-bottom: 0.5rem;">Unbearable pain</li>
                     </ul>
-                </div>
+                </Card>
 
-                <div class="warning-column">
-                    <h3>Mood</h3>
-                    <p>People who are considering suicide often display:</p>
-                    <ul>
-                        <li>Depression</li>
-                        <li>Anxiety</li>
-                        <li>Loss of interest</li>
-                        <li>Irritability</li>
-                        <li>Humiliation</li>
-                        <li>Agitation or rage</li>
-                        <li>Relief or sudden improvement (after a period of being down)</li>
+                <Card title="Behavior" icon="⚠️" variant="urgent">
+                    <p><strong>Behaviors that may signal risk:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">Increased use of alcohol or drugs</li>
+                        <li style="margin-bottom: 0.5rem;">Looking for ways to end their life</li>
+                        <li style="margin-bottom: 0.5rem;">Withdrawing from activities</li>
+                        <li style="margin-bottom: 0.5rem;">Isolating from family and friends</li>
+                        <li style="margin-bottom: 0.5rem;">Sleeping too much or too little</li>
+                        <li style="margin-bottom: 0.5rem;">Giving away prized possessions</li>
+                        <li style="margin-bottom: 0.5rem;">Saying goodbye to loved ones</li>
                     </ul>
-                </div>
+                </Card>
+
+                <Card title="Mood" icon="😔" variant="urgent">
+                    <p><strong>People who are considering suicide often display:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">Depression</li>
+                        <li style="margin-bottom: 0.5rem;">Anxiety</li>
+                        <li style="margin-bottom: 0.5rem;">Loss of interest</li>
+                        <li style="margin-bottom: 0.5rem;">Irritability</li>
+                        <li style="margin-bottom: 0.5rem;">Humiliation</li>
+                        <li style="margin-bottom: 0.5rem;">Agitation or rage</li>
+                        <li style="margin-bottom: 0.5rem;">Sudden improvement after being down</li>
+                    </ul>
+                </Card>
             </div>
 
-            <div class="help-action">
-                <h3>What to Do</h3>
-                <p>If you notice these warning signs in someone you know:</p>
-                <ol>
-                    <li><strong>Ask:</strong> "Are you thinking about suicide?" (Asking will not put the idea in their head)</li>
-                    <li><strong>Listen:</strong> Without judgment, let them share what they're feeling</li>
-                    <li><strong>Stay:</strong> Don't leave them alone if you believe they're in immediate danger</li>
-                    <li><strong>Connect:</strong> Help them reach out to crisis support (988) or other resources</li>
-                    <li><strong>Follow up:</strong> Check in, show you care, and continue to be supportive</li>
+            <div class="glass-card" style="margin-top: 3rem; background: var(--bg-gradient-2); color: white;">
+                <h3 style="color: white; margin-bottom: 1.5rem;">What to Do</h3>
+                <p style="color: white; margin-bottom: 1rem;">If you notice these warning signs in someone you know:</p>
+                <ol style="margin-left: 1.5rem; color: white;">
+                    <li style="margin-bottom: 0.75rem;"><strong>Ask:</strong> "Are you thinking about suicide?" (Asking will not put the idea in their head)</li>
+                    <li style="margin-bottom: 0.75rem;"><strong>Listen:</strong> Without judgment, let them share what they're feeling</li>
+                    <li style="margin-bottom: 0.75rem;"><strong>Stay:</strong> Don't leave them alone if you believe they're in immediate danger</li>
+                    <li style="margin-bottom: 0.75rem;"><strong>Connect:</strong> Help them reach out to crisis support (988) or other resources</li>
+                    <li style="margin-bottom: 0.75rem;"><strong>Follow up:</strong> Check in, show you care, and continue to be supportive</li>
                 </ol>
             </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="alt-bg">
+        <div class="container text-center">
+            <h2 class="text-gradient">Need More Information?</h2>
+            <p class="lead">Contact us to learn more about our resources, training programs, or how to bring mental health ministry to your parish.</p>
+            <InteractiveButton href="/#contact" variant="primary" size="large">
+                Contact Us
+            </InteractiveButton>
         </div>
     </section>
 </BaseLayout>

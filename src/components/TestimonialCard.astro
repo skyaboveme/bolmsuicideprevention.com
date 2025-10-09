@@ -1,0 +1,108 @@
+---
+interface Props {
+    quote: string;
+    author?: string;
+    role?: string;
+    image?: string;
+}
+
+const { quote, author, role, image } = Astro.props;
+---
+
+<div class="testimonial-card">
+    <div class="testimonial-quote-icon">"</div>
+    <blockquote class="testimonial-quote">
+        {quote}
+    </blockquote>
+    {(author || image) && (
+        <div class="testimonial-footer">
+            {image && (
+                <div class="testimonial-image">
+                    <img src={image} alt={author || 'Testimonial'} />
+                </div>
+            )}
+            {author && (
+                <div class="testimonial-author">
+                    <div class="testimonial-name">{author}</div>
+                    {role && <div class="testimonial-role">{role}</div>}
+                </div>
+            )}
+        </div>
+    )}
+</div>
+
+<style>
+    .testimonial-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        transition: all 0.3s ease;
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .testimonial-quote-icon {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 6rem;
+        color: var(--primary-color);
+        opacity: 0.1;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+
+    .testimonial-quote {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        font-style: italic;
+        margin: 0 0 1.5rem 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial-footer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .testimonial-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .testimonial-author {
+        flex-grow: 1;
+    }
+
+    .testimonial-name {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+    }
+
+    .testimonial-role {
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+</style>

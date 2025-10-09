@@ -1,0 +1,127 @@
+---
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    link?: string;
+    linkText?: string;
+}
+
+const { icon, title, description, link, linkText = 'Learn More' } = Astro.props;
+---
+
+<div class="feature-card">
+    <div class="feature-card-inner">
+        <div class="feature-icon-wrapper">
+            <div class="feature-icon">{icon}</div>
+        </div>
+        <h3 class="feature-title">{title}</h3>
+        <p class="feature-description">{description}</p>
+        {link && (
+            <a href={link} class="feature-link">
+                {linkText}
+                <span class="feature-arrow">→</span>
+            </a>
+        )}
+    </div>
+</div>
+
+<style>
+    .feature-card {
+        perspective: 1000px;
+        height: 100%;
+    }
+
+    .feature-card-inner {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-card-inner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+    }
+
+    .feature-card:hover .feature-card-inner::before {
+        left: 100%;
+    }
+
+    .feature-card:hover .feature-card-inner {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon-wrapper {
+        transform: rotate(5deg) scale(1.1);
+        box-shadow: 0 8px 16px rgba(44, 95, 141, 0.3);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        filter: brightness(0) invert(1);
+    }
+
+    .feature-title {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .feature-description {
+        color: var(--text-light);
+        line-height: 1.7;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-link {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: gap 0.3s ease;
+        margin-top: auto;
+    }
+
+    .feature-link:hover {
+        gap: 1rem;
+    }
+
+    .feature-arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .feature-link:hover .feature-arrow {
+        transform: translateX(5px);
+    }
+</style>

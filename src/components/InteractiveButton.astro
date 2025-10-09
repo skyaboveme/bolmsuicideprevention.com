@@ -1,0 +1,168 @@
+---
+interface Props {
+    href?: string;
+    variant?: 'primary' | 'secondary' | 'outline' | 'urgent';
+    size?: 'small' | 'medium' | 'large';
+    fullWidth?: boolean;
+}
+
+const { href, variant = 'primary', size = 'medium', fullWidth = false } = Astro.props;
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+    href={href}
+    class={`interactive-btn btn-${variant} btn-${size} ${fullWidth ? 'btn-full-width' : ''}`}
+>
+    <span class="btn-content">
+        <slot />
+    </span>
+    <span class="btn-ripple"></span>
+</Tag>
+
+<style>
+    .interactive-btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 50px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
+        text-decoration: none;
+        font-family: inherit;
+    }
+
+    .btn-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .btn-ripple {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+
+    .interactive-btn:hover .btn-ripple {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Sizes */
+    .btn-small {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-medium {
+        padding: 0.85rem 2rem;
+        font-size: 1rem;
+    }
+
+    .btn-large {
+        padding: 1.1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+
+    .btn-full-width {
+        width: 100%;
+    }
+
+    /* Variants */
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        box-shadow: 0 4px 15px rgba(44, 95, 141, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(44, 95, 141, 0.4);
+    }
+
+    .btn-primary:active {
+        transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+        background: linear-gradient(135deg, var(--accent-color), #a05b9e);
+        color: white;
+        box-shadow: 0 4px 15px rgba(139, 71, 137, 0.3);
+    }
+
+    .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(139, 71, 137, 0.4);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .btn-outline:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(44, 95, 141, 0.25);
+    }
+
+    .btn-urgent {
+        background: var(--crisis-red);
+        color: white;
+        box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+        animation: urgentPulse 2s ease-in-out infinite;
+    }
+
+    .btn-urgent:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
+        animation: none;
+    }
+
+    @keyframes urgentPulse {
+        0%, 100% {
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+        }
+        50% {
+            box-shadow: 0 4px 25px rgba(196, 30, 58, 0.6);
+        }
+    }
+
+    /* Accessibility */
+    .interactive-btn:focus-visible {
+        outline: 3px solid var(--primary-color);
+        outline-offset: 3px;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.interactive-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = this.querySelector('.btn-ripple');
+            if (ripple) {
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                setTimeout(() => {
+                    ripple.style.width = '300px';
+                    ripple.style.height = '300px';
+                }, 10);
+            }
+        });
+    });
+</script>

@@ -1,0 +1,88 @@
+---
+interface Props {
+    title?: string;
+    icon?: string;
+    variant?: 'default' | 'featured' | 'urgent';
+    hoverable?: boolean;
+}
+
+const { title, icon, variant = 'default', hoverable = true } = Astro.props;
+---
+
+<div class={`modern-card modern-card-${variant} ${hoverable ? 'modern-card-hoverable' : ''}`}>
+    {icon && <div class="modern-card-icon">{icon}</div>}
+    {title && <h3 class="modern-card-title">{title}</h3>}
+    <div class="modern-card-content">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .modern-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .modern-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .modern-card-hoverable:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .modern-card-hoverable:hover::before {
+        transform: scaleX(1);
+    }
+
+    .modern-card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        animation: iconFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes iconFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    .modern-card-title {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .modern-card-content {
+        color: var(--text-dark);
+    }
+
+    .modern-card-featured {
+        background: linear-gradient(135deg, rgba(44, 95, 141, 0.05), rgba(139, 71, 137, 0.05));
+        border: 2px solid var(--primary-color);
+    }
+
+    .modern-card-urgent {
+        background: linear-gradient(to bottom, rgba(196, 30, 58, 0.05), white);
+        border: 2px solid var(--crisis-red);
+    }
+
+    .modern-card-urgent .modern-card-title {
+        color: var(--crisis-red);
+    }
+</style>

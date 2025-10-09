@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import InteractiveButton from '../components/InteractiveButton.astro';
 ---
 
 <BaseLayout
@@ -15,232 +18,318 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <!-- Mission & Vision -->
-    <section class="mission-vision">
+    <section>
         <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card">
-                    <h2>Our Mission</h2>
-                    <p>Breath of Life Ministries exists to provide vital spiritual accompaniment and support for people experiencing mental health challenges and mental illness, as well as those who care for them. Rooted in Catholic teaching and driven by compassion, we strive to prevent suicide through education, training, resources, and community building.</p>
-                    <p>We believe that every person is created in the image and likeness of God, possessing infinite dignity and worth. Our mission is to walk alongside those who suffer, offering hope, understanding, and the healing presence of Christ.</p>
-                </div>
+            <div class="grid-2">
+                <Card variant="featured" icon="🎯">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Our Mission</h2>
+                    <p>Breath of Life Ministries exists to provide vital spiritual accompaniment and support for people experiencing mental health challenges and mental illness, as well as those who care for them.</p>
+                    <p>Rooted in Catholic teaching and driven by compassion, we strive to prevent suicide through education, training, resources, and community building.</p>
+                    <p style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-gradient-1); border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+                        <strong style="color: var(--primary-color);">We believe</strong> that every person is created in the image and likeness of God, possessing infinite dignity and worth. Our mission is to walk alongside those who suffer, offering hope, understanding, and the healing presence of Christ.
+                    </p>
+                </Card>
 
-                <div class="mv-card">
-                    <h2>Our Vision</h2>
-                    <p>We envision a Church and world where:</p>
-                    <ul>
-                        <li>Mental illness is understood with compassion and without stigma</li>
-                        <li>Those struggling with suicidal thoughts find immediate help and long-term support</li>
-                        <li>Every Catholic parish has trained mental health ministers</li>
-                        <li>Families affected by suicide receive comfort, understanding, and spiritual care</li>
-                        <li>Faith communities actively promote mental wellness and suicide prevention</li>
-                        <li>Hope and healing are accessible to all who seek them</li>
+                <Card variant="featured" icon="🌟">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Our Vision</h2>
+                    <p style="margin-bottom: 1rem;"><strong>We envision a Church and world where:</strong></p>
+                    <ul style="margin-left: 1.5rem; line-height: 2;">
+                        <li style="margin-bottom: 0.75rem;">Mental illness is understood with compassion and without stigma</li>
+                        <li style="margin-bottom: 0.75rem;">Those struggling with suicidal thoughts find immediate help and long-term support</li>
+                        <li style="margin-bottom: 0.75rem;">Every Catholic parish has trained mental health ministers</li>
+                        <li style="margin-bottom: 0.75rem;">Families affected by suicide receive comfort, understanding, and spiritual care</li>
+                        <li style="margin-bottom: 0.75rem;">Faith communities actively promote mental wellness and suicide prevention</li>
+                        <li style="margin-bottom: 0.75rem;">Hope and healing are accessible to all who seek them</li>
                     </ul>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story with Image -->
+    <section class="alt-bg">
+        <div class="container">
+            <div class="image-text-section">
+                <div class="image-container">
+                    <img src="/images/prayinghands.webp" alt="Praying hands" />
+                </div>
+                <div class="animate-on-scroll">
+                    <h2 class="text-gradient">Our Story</h2>
+                    <p class="lead">Born from a deep recognition of the urgent need for Catholic mental health ministry and suicide prevention.</p>
+                    <p>Too many individuals and families have suffered in silence, bearing the weight of mental illness without adequate spiritual support or understanding from their faith communities.</p>
+                    <p>Inspired by the compassionate work of the Association of Catholic Mental Health Ministers and guided by the Church's teachings on the dignity of every human person, we established this ministry to be a beacon of hope for those in darkness.</p>
+                    <p style="margin-top: 1.5rem; padding: 1.25rem; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                        Our name, <strong style="color: var(--primary-color);">"Breath of Life,"</strong> reflects our belief that God breathes new life into us, even in our darkest moments, offering renewal, healing, and hope.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Story -->
-    <section class="our-story alt-bg">
+    <!-- Core Values -->
+    <section>
         <div class="container">
-            <h2>Our Story</h2>
-            <div class="story-content">
-                <p>Breath of Life Ministries was born from a deep recognition of the urgent need for Catholic mental health ministry and suicide prevention. Too many individuals and families have suffered in silence, bearing the weight of mental illness without adequate spiritual support or understanding from their faith communities.</p>
+            <h2 class="text-center text-gradient">Our Core Values</h2>
+            <p class="lead text-center">The principles that guide our ministry and inspire our work</p>
 
-                <p>Inspired by the compassionate work of the Association of Catholic Mental Health Ministers and guided by the Church's teachings on the dignity of every human person, we established this ministry to be a beacon of hope for those in darkness. Our name, "Breath of Life," reflects our belief that God breathes new life into us, even in our darkest moments, offering renewal, healing, and hope.</p>
+            <div class="grid-3">
+                <FeatureCard
+                    icon="✝️"
+                    title="Faith-Centered"
+                    description="We ground our ministry in Catholic teaching while respecting the diverse spiritual journeys of those we serve. Faith is a source of strength and hope in healing."
+                />
 
-                <p>We recognize that suicide is a complex issue involving biological, psychological, social, and spiritual factors. The Catholic Church teaches that while suicide is a grave matter, God's mercy is infinite, and we must never lose hope for those who have died by suicide. This balanced, compassionate approach guides all our ministry efforts.</p>
+                <FeatureCard
+                    icon="❤️"
+                    title="Compassion"
+                    description="We approach every person with Christ-like compassion, understanding that mental illness and suicidal thoughts are not signs of weak faith but real struggles requiring support."
+                />
+
+                <FeatureCard
+                    icon="🤝"
+                    title="Community"
+                    description="No one should face mental health challenges alone. We foster supportive communities where people can find acceptance, understanding, and mutual support."
+                />
+
+                <FeatureCard
+                    icon="🌟"
+                    title="Hope"
+                    description="Even in the darkest times, hope is possible. We believe in the power of God's love to bring light into darkness and healing to broken hearts."
+                />
+
+                <FeatureCard
+                    icon="📚"
+                    title="Education"
+                    description="Knowledge saves lives. We provide evidence-based education on mental health, suicide prevention, and effective intervention strategies."
+                />
+
+                <FeatureCard
+                    icon="🛡️"
+                    title="Dignity"
+                    description="Every person possesses inherent dignity as a child of God. We honor this dignity by treating all with respect, confidentiality, and unwavering support."
+                />
             </div>
         </div>
     </section>
 
-    <!-- Our Values -->
-    <section class="values">
+    <!-- Timeline of Our Journey -->
+    <section class="alt-bg">
         <div class="container">
-            <h2>Our Core Values</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">✝️</div>
-                    <h3>Faith-Centered</h3>
-                    <p>We ground our ministry in Catholic teaching while respecting the diverse spiritual journeys of those we serve. Faith is a source of strength and hope in healing.</p>
+            <h2 class="text-center text-gradient">Our Journey</h2>
+            <p class="lead text-center">Milestones in our mission to bring hope and healing</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Founding Vision</h3>
+                        <p>Recognizing the critical need for Catholic mental health ministry, we established Breath of Life Ministries with a commitment to provide spiritual accompaniment for those affected by mental illness and suicide.</p>
+                    </div>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">❤️</div>
-                    <h3>Compassion</h3>
-                    <p>We approach every person with Christ-like compassion, understanding that mental illness and suicidal thoughts are not signs of weak faith but real struggles requiring support.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">First QPR Training</h3>
+                        <p>Launched our first Question, Persuade, Refer training program, equipping community members with life-saving skills to recognize warning signs and intervene effectively.</p>
+                    </div>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">🤝</div>
-                    <h3>Community</h3>
-                    <p>No one should face mental health challenges alone. We foster supportive communities where people can find acceptance, understanding, and mutual support.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Support Groups Begin</h3>
+                        <p>Started support groups for those living with mental illness and families who have lost loved ones to suicide, creating safe spaces for healing and hope.</p>
+                    </div>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">🌟</div>
-                    <h3>Hope</h3>
-                    <p>Even in the darkest times, hope is possible. We believe in the power of God's love to bring light into darkness and healing to broken hearts.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Parish Partnerships</h3>
+                        <p>Began collaborating with Catholic parishes to establish mental health ministries, providing consultation, training, and ongoing support to create welcoming faith communities.</p>
+                    </div>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">📚</div>
-                    <h3>Education</h3>
-                    <p>Knowledge saves lives. We provide evidence-based education on mental health, suicide prevention, and effective intervention strategies.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">🛡️</div>
-                    <h3>Dignity</h3>
-                    <p>Every person possesses inherent dignity as a child of God. We honor this dignity by treating all with respect, confidentiality, and unwavering support.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Growing Impact</h3>
+                        <p>Continuing to expand our reach through education, resources, and advocacy, bringing the message of hope and God's mercy to all who struggle with mental health challenges.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- What We Do -->
-    <section class="what-we-do alt-bg">
+    <section>
         <div class="container">
-            <h2>What We Do</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>🎓 Training & Education</h3>
-                    <p>We provide QPR (Question, Persuade, Refer) training and mental health first aid to equip community members with life-saving skills. Our specialized programs train parish leaders, ministers, and volunteers to recognize warning signs and respond effectively.</p>
-                </div>
+            <h2 class="text-center text-gradient">What We Do</h2>
+            <p class="lead text-center">Comprehensive programs and services for mental health and suicide prevention</p>
 
-                <div class="service-item">
-                    <h3>📖 Resources & Materials</h3>
-                    <p>We curate and develop comprehensive resources including books, prayer guides, liturgical materials, and educational content to support individuals, families, and faith communities.</p>
-                </div>
+            <div class="grid-3">
+                <Card title="Training & Education" icon="🎓" variant="featured">
+                    <p>We provide QPR (Question, Persuade, Refer) training and mental health first aid to equip community members with life-saving skills.</p>
+                    <p style="margin-top: 1rem;">Our specialized programs train parish leaders, ministers, and volunteers to recognize warning signs and respond effectively.</p>
+                </Card>
 
-                <div class="service-item">
-                    <h3>🫂 Support Groups</h3>
-                    <p>Our support groups provide safe spaces for those living with mental illness and for families who have lost loved ones to suicide. Here, participants find understanding, solidarity, and hope.</p>
-                </div>
+                <Card title="Resources & Materials" icon="📖" variant="featured">
+                    <p>We curate and develop comprehensive resources including books, prayer guides, liturgical materials, and educational content.</p>
+                    <p style="margin-top: 1rem;">Supporting individuals, families, and faith communities on their journey toward healing.</p>
+                </Card>
 
-                <div class="service-item">
-                    <h3>⛪ Parish Partnerships</h3>
-                    <p>We partner with Catholic parishes to establish mental health ministries, providing consultation, training, and ongoing support to create welcoming, informed faith communities.</p>
-                </div>
+                <Card title="Support Groups" icon="🫂" variant="featured">
+                    <p>Our support groups provide safe spaces for those living with mental illness and for families who have lost loved ones to suicide.</p>
+                    <p style="margin-top: 1rem;">Here, participants find understanding, solidarity, and hope.</p>
+                </Card>
 
-                <div class="service-item">
-                    <h3>🗣️ Advocacy & Awareness</h3>
-                    <p>We work to reduce stigma around mental illness, promote understanding of suicide as a public health issue, and advocate for increased access to mental health care and support services.</p>
-                </div>
+                <Card title="Parish Partnerships" icon="⛪" variant="featured">
+                    <p>We partner with Catholic parishes to establish mental health ministries, providing consultation, training, and ongoing support.</p>
+                    <p style="margin-top: 1rem;">Creating welcoming, informed faith communities.</p>
+                </Card>
 
-                <div class="service-item">
-                    <h3>🙏 Spiritual Support</h3>
-                    <p>Through prayer, sacramental preparation, and pastoral care, we offer spiritual accompaniment to those navigating mental health challenges and grief from suicide loss.</p>
-                </div>
+                <Card title="Advocacy & Awareness" icon="🗣️" variant="featured">
+                    <p>We work to reduce stigma around mental illness, promote understanding of suicide as a public health issue.</p>
+                    <p style="margin-top: 1rem;">Advocating for increased access to mental health care and support services.</p>
+                </Card>
+
+                <Card title="Spiritual Support" icon="🙏" variant="featured">
+                    <p>Through prayer, sacramental preparation, and pastoral care, we offer spiritual accompaniment to those navigating mental health challenges.</p>
+                    <p style="margin-top: 1rem;">Grief support for those affected by suicide loss.</p>
+                </Card>
             </div>
         </div>
     </section>
 
     <!-- Catholic Teaching -->
-    <section class="catholic-teaching">
+    <section class="gradient-bg">
         <div class="container">
-            <h2>Grounded in Catholic Teaching</h2>
-            <div class="teaching-grid">
-                <div class="teaching-item">
-                    <h3>On Human Dignity</h3>
-                    <blockquote>
+            <h2 class="text-center" style="color: var(--primary-color);">Grounded in Catholic Teaching</h2>
+            <p class="lead text-center" style="color: var(--text-medium);">Our ministry is rooted in the timeless wisdom and compassion of the Church</p>
+
+            <div class="grid-2">
+                <div class="glass-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">On Human Dignity</h3>
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
                         "God created mankind in his image; in the image of God he created them."
                         <cite>- Genesis 1:27</cite>
                     </blockquote>
-                    <p>Every person, regardless of their mental health status, possesses inherent dignity as a beloved child of God.</p>
+                    <p style="margin-top: 1rem;">Every person, regardless of their mental health status, possesses inherent dignity as a beloved child of God.</p>
                 </div>
 
-                <div class="teaching-item">
-                    <h3>On Suicide</h3>
-                    <blockquote>
+                <div class="glass-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">On Suicide</h3>
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
                         "We should not despair of the eternal salvation of persons who have taken their own lives. By ways known to him alone, God can provide the opportunity for salutary repentance. The Church prays for persons who have taken their own lives."
                         <cite>- Catechism of the Catholic Church, 2283</cite>
                     </blockquote>
-                    <p>While recognizing the gravity of suicide, the Church emphasizes God's mercy and the many factors that can diminish moral responsibility.</p>
+                    <p style="margin-top: 1rem;">While recognizing the gravity of suicide, the Church emphasizes God's mercy and the many factors that can diminish moral responsibility.</p>
                 </div>
 
-                <div class="teaching-item">
-                    <h3>On Compassion</h3>
-                    <blockquote>
+                <div class="glass-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">On Compassion</h3>
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
                         "Blessed are those who mourn, for they will be comforted."
                         <cite>- Matthew 5:4</cite>
                     </blockquote>
-                    <p>We are called to comfort those who suffer, bearing one another's burdens with love and understanding.</p>
+                    <p style="margin-top: 1rem;">We are called to comfort those who suffer, bearing one another's burdens with love and understanding.</p>
                 </div>
 
-                <div class="teaching-item">
-                    <h3>On Hope</h3>
-                    <blockquote>
+                <div class="glass-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">On Hope</h3>
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
                         "For I know well the plans I have in mind for you—oracle of the LORD—plans for your welfare and not for woe, so as to give you a future of hope."
                         <cite>- Jeremiah 29:11</cite>
                     </blockquote>
-                    <p>Even in suffering, God offers hope and a future. Mental illness does not diminish God's love or plans for us.</p>
+                    <p style="margin-top: 1rem;">Even in suffering, God offers hope and a future. Mental illness does not diminish God's love or plans for us.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Get Involved -->
-    <section class="get-involved alt-bg">
+    <section class="alt-bg">
         <div class="container">
-            <h2>Get Involved</h2>
-            <p class="lead">Join us in our mission to bring hope and healing to those affected by mental illness and suicide.</p>
+            <h2 class="text-center text-gradient">Get Involved</h2>
+            <p class="lead text-center">Join us in our mission to bring hope and healing to those affected by mental illness and suicide</p>
 
-            <div class="involvement-grid">
-                <div class="involvement-card">
-                    <h3>Volunteer</h3>
+            <div class="grid-4">
+                <Card title="Volunteer" icon="🙋">
                     <p>Share your time and talents by volunteering with support groups, training programs, or outreach initiatives.</p>
-                    <a href="/#contact" class="btn btn-primary">Learn More</a>
-                </div>
+                    <InteractiveButton href="/#contact" variant="primary" size="small" fullWidth={true}>
+                        Learn More
+                    </InteractiveButton>
+                </Card>
 
-                <div class="involvement-card">
-                    <h3>Bring Training to Your Parish</h3>
+                <Card title="Bring Training to Your Parish" icon="⛪">
                     <p>Host QPR training or mental health awareness programs at your parish or organization.</p>
-                    <a href="/#contact" class="btn btn-primary">Schedule Training</a>
-                </div>
+                    <InteractiveButton href="/#contact" variant="primary" size="small" fullWidth={true}>
+                        Schedule Training
+                    </InteractiveButton>
+                </Card>
 
-                <div class="involvement-card">
-                    <h3>Support Our Mission</h3>
+                <Card title="Support Our Mission" icon="💝">
                     <p>Your financial support helps us provide free resources, training, and support to those in need.</p>
-                    <a href="/#contact" class="btn btn-primary">Donate</a>
-                </div>
+                    <InteractiveButton href="/#contact" variant="primary" size="small" fullWidth={true}>
+                        Donate
+                    </InteractiveButton>
+                </Card>
 
-                <div class="involvement-card">
-                    <h3>Share Resources</h3>
+                <Card title="Share Resources" icon="📢">
                     <p>Help us spread awareness by sharing our resources with your faith community and social networks.</p>
-                    <a href="/resources" class="btn btn-primary">View Resources</a>
-                </div>
+                    <InteractiveButton href="/resources" variant="primary" size="small" fullWidth={true}>
+                        View Resources
+                    </InteractiveButton>
+                </Card>
             </div>
         </div>
     </section>
 
     <!-- Partnerships -->
-    <section class="partnerships">
+    <section>
         <div class="container">
-            <h2>Our Partners</h2>
-            <p class="lead">We are grateful to collaborate with organizations dedicated to mental health and suicide prevention:</p>
+            <h2 class="text-center text-gradient">Our Partners</h2>
+            <p class="lead text-center">We are grateful to collaborate with organizations dedicated to mental health and suicide prevention</p>
 
-            <div class="partner-list">
-                <div class="partner-item">
-                    <h3>Association of Catholic Mental Health Ministers</h3>
+            <div class="grid-4">
+                <Card title="Association of Catholic Mental Health Ministers" icon="✝️">
                     <p>Supporting mental health ministry throughout the Catholic Church in the United States.</p>
-                </div>
+                </Card>
 
-                <div class="partner-item">
-                    <h3>National Suicide Prevention Lifeline</h3>
+                <Card title="National Suicide Prevention Lifeline" icon="📞">
                     <p>Providing 24/7 crisis support through the 988 helpline.</p>
-                </div>
+                </Card>
 
-                <div class="partner-item">
-                    <h3>National Alliance on Mental Illness (NAMI)</h3>
-                    <p>The nation's largest grassroots mental health organization.</p>
-                </div>
+                <Card title="NAMI" icon="🌟">
+                    <p>National Alliance on Mental Illness - The nation's largest grassroots mental health organization.</p>
+                </Card>
 
-                <div class="partner-item">
-                    <h3>American Foundation for Suicide Prevention</h3>
+                <Card title="American Foundation for Suicide Prevention" icon="💙">
                     <p>Leading suicide prevention organization dedicated to saving lives.</p>
-                </div>
+                </Card>
             </div>
+        </div>
+    </section>
+
+    <!-- Recognition Statement -->
+    <section class="gradient-bg">
+        <div class="container text-center">
+            <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="text-gradient" style="margin-bottom: 1.5rem;">A Note on Suicide</h2>
+                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-medium);">
+                    We recognize that suicide is a complex issue involving biological, psychological, social, and spiritual factors. The Catholic Church teaches that while suicide is a grave matter, God's mercy is infinite, and we must never lose hope for those who have died by suicide.
+                </p>
+                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-medium); margin-top: 1.5rem;">
+                    This balanced, compassionate approach guides all our ministry efforts, honoring both the sanctity of life and the boundless love of God for all His children.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="alt-bg">
+        <div class="container text-center">
+            <h2 class="text-gradient">Ready to Make a Difference?</h2>
+            <p class="lead">Contact us to learn how you can support our mission or bring mental health ministry to your community.</p>
+            <InteractiveButton href="/#contact" variant="primary" size="large">
+                Contact Us Today
+            </InteractiveButton>
         </div>
     </section>
 </BaseLayout>
