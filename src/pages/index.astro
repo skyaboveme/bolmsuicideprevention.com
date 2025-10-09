@@ -15,7 +15,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     <HeroSection
         title="You Are Not Alone"
         subtitle="Finding hope and healing through faith, community, and compassionate support"
-        backgroundImage="/images/The_Hand_of_God_Collection_Banner.webp"
+        useVideo={true}
         height="large"
     >
         <InteractiveButton href="#get-help" variant="primary" size="large">
@@ -66,21 +66,6 @@ import TestimonialCard from '../components/TestimonialCard.astro';
                     </InteractiveButton>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="video-background">
-            <video autoplay loop muted playsinline>
-                <source src="/videos/jesus-hand.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-        <div class="container video-content">
-            <h2 style="color: white; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">God's Reaching Hand</h2>
-            <p style="color: white; font-size: 1.25rem; text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); max-width: 700px; margin: 0 auto;">"For I am the LORD your God who takes hold of your right hand and says to you, Do not fear; I will help you."</p>
-            <p style="color: rgba(255, 255, 255, 0.9); font-style: italic; margin-top: 0.5rem; text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);">- Isaiah 41:13</p>
         </div>
     </section>
 
@@ -363,59 +348,6 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     @media (max-width: 768px) {
         .image-text-section[style*="flex-direction: row-reverse"] {
             flex-direction: column;
-        }
-    }
-
-    /* Video Section Styles */
-    .video-section {
-        position: relative;
-        min-height: 60vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        padding: 0;
-    }
-
-    .video-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-    }
-
-    .video-background video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(44, 95, 141, 0.7), rgba(139, 71, 137, 0.7));
-        z-index: 1;
-    }
-
-    .video-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        padding: 4rem 2rem;
-    }
-
-    @media (max-width: 768px) {
-        .video-section {
-            min-height: 50vh;
-        }
-
-        .video-content {
-            padding: 3rem 1.5rem;
         }
     }
 

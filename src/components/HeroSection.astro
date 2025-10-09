@@ -3,15 +3,22 @@ interface Props {
     title: string;
     subtitle?: string;
     backgroundImage?: string;
+    useVideo?: boolean;
     height?: 'small' | 'medium' | 'large';
 }
 
-const { title, subtitle, backgroundImage = '/images/The_Hand_of_God_Collection_Banner.webp', height = 'large' } = Astro.props;
+const { title, subtitle, backgroundImage = '/images/The_Hand_of_God_Collection_Banner.webp', useVideo = false, height = 'large' } = Astro.props;
 ---
 
 <section class={`hero-modern hero-${height}`}>
     <div class="hero-background">
-        <img src={backgroundImage} alt="Hero background" />
+        {useVideo ? (
+            <video autoplay loop muted playsinline>
+                <source src="/videos/jesus-hand.mp4" type="video/mp4">
+            </video>
+        ) : (
+            <img src={backgroundImage} alt="Hero background" />
+        )}
         <div class="hero-overlay"></div>
     </div>
     <div class="container hero-content-wrapper">
@@ -52,10 +59,14 @@ const { title, subtitle, backgroundImage = '/images/The_Hand_of_God_Collection_B
         z-index: 0;
     }
 
-    .hero-background img {
+    .hero-background img,
+    .hero-background video {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .hero-background img {
         animation: kenBurns 20s ease-in-out infinite alternate;
     }
 
