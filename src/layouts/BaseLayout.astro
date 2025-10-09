@@ -47,8 +47,12 @@ const { title, description } = Astro.props;
                 <ul class="nav-menu">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a href="/resources">Resources</a></li>
-                    <li><a href="/read-in-time-of-need">Scripture</a></li>
+                    <li class="dropdown">
+                        <a href="/resources">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/read-in-time-of-need">Scripture Guide</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/#get-help">Get Help</a></li>
                     <li><a href="/#contact">Contact</a></li>
                 </ul>
@@ -79,7 +83,7 @@ const { title, description } = Astro.props;
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/resources">Resources</a></li>
-                        <li><a href="/read-in-time-of-need">Scripture</a></li>
+                        <li style="padding-left: 1rem;"><a href="/read-in-time-of-need">Scripture Guide</a></li>
                         <li><a href="/#get-help">Get Help</a></li>
                     </ul>
                 </div>
