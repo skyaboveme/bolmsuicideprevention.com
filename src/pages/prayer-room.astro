@@ -189,8 +189,83 @@ import InteractiveButton from '../components/InteractiveButton.astro';
         </div>
     </section>
 
+    <!-- Prayer 3: Prayer for Planting Peace -->
+    <section class="prayer-section gradient-bg">
+        <div class="container">
+            <div class="prayer-card">
+                <div class="prayer-header">
+                    <span class="prayer-number">Prayer 3</span>
+                    <h2 class="prayer-title">Prayer for Planting Peace</h2>
+                    <p class="prayer-attribution">In the style of the Prayer of St. Francis, by Lizzy Ojo Martens, Sanctuary Mental Health Ministries</p>
+                </div>
+
+                <div class="prayer-content">
+                    <div class="prayer-text">
+                        <p class="prayer-line">Lord as I reflect on the mental health challenges present within my community, as well as my own lived experience, I ask that you make me an instrument of your peace.</p>
+
+                        <p class="prayer-line emphasis">Where there is division, let me sow unity.</p>
+                        <p class="prayer-line emphasis">Where there is stigma, belonging.</p>
+                        <p class="prayer-line emphasis">Where there is unfamiliarity, awareness.</p>
+                        <p class="prayer-line emphasis">Where there is sorrow, joy.</p>
+                        <p class="prayer-line emphasis">Where there is silence or shame, light.</p>
+                        <p class="prayer-line emphasis">Where there is isolation, inclusion and companionship.</p>
+                        <p class="prayer-line emphasis">Where there is hopelessness, hope.</p>
+
+                        <p class="prayer-line">O Divine Counselor, grant that I may not so much see to be comforted as to comfort others, and to speak as to listen.</p>
+
+                        <p class="prayer-line">For it is giving that we receive.</p>
+
+                        <p class="prayer-line">And it is in your presence that we find peace.</p>
+
+                        <p class="prayer-amen"><strong>Amen.</strong></p>
+                    </div>
+
+                    <div class="prayer-actions">
+                        <button class="prayer-button" onclick="readPrayer('prayer3')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Listen to Prayer
+                        </button>
+                        <button class="prayer-button secondary" onclick="printPrayer('prayer3')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+                                <rect x="6" y="14" width="12" height="8"/>
+                            </svg>
+                            Print Prayer
+                        </button>
+                        <button class="prayer-button secondary" onclick="sharePrayer('prayer3')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"/>
+                                <circle cx="6" cy="12" r="3"/>
+                                <circle cx="18" cy="19" r="3"/>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                            </svg>
+                            Share Prayer
+                        </button>
+                    </div>
+
+                    <div class="prayer-image">
+                        <img src="/images/prayinghands.webp" alt="Praying hands" />
+                        <div class="image-caption">
+                            <p>"Blessed are the peacemakers, for they shall be called children of God." - Matthew 5:9</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prayer-reflection">
+                    <h3>Reflection</h3>
+                    <p>This beautiful prayer, inspired by the Prayer of St. Francis, calls us to be instruments of God's peace in addressing mental health challenges in our communities. It reminds us that we have the power to transform stigma into belonging, isolation into companionship, and hopelessness into hope.</p>
+                    <p>The prayer challenges us to move beyond seeking comfort for ourselves to actively comforting others, and to listen more than we speak. In a world where mental health struggles are often met with silence and shame, we are called to bring light, awareness, and compassionate presence. When we give of ourselves in service to others, we receive far more than we could imagine—and in God's presence, we find the peace that surpasses all understanding.</p>
+                    <p>This prayer was written by Lizzy Ojo Martens for Sanctuary Mental Health Ministries (<a href="https://sanctuarymentalhealth.org" target="_blank" rel="noopener noreferrer">sanctuarymentalhealth.org</a>), an organization dedicated to helping faith communities become sanctuaries of hope and healing for people affected by mental health challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- More Prayers Coming Soon -->
-    <section class="gradient-bg">
+    <section class="alt-bg">
         <div class="container-narrow">
             <div class="coming-soon">
                 <h2 class="text-gradient">More Prayers Coming Soon</h2>
