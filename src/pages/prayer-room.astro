@@ -1,0 +1,457 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import InteractiveButton from '../components/InteractiveButton.astro';
+---
+
+<BaseLayout
+    title="Prayer Room | Breath of Life Ministries"
+    description="A sacred space for prayer and reflection, offering multimedia prayers for those in need, especially those struggling with mental illness."
+>
+    <HeroSection
+        title="Prayer Room"
+        subtitle="A sacred space for prayer, reflection, and healing"
+        useVideo={false}
+        height="medium"
+    />
+
+    <!-- Introduction -->
+    <section>
+        <div class="container-narrow">
+            <div class="intro-text">
+                <p class="lead" style="text-align: center;">
+                    Welcome to our Prayer Room, a sacred space where you can pause, breathe, and connect with God.
+                    These prayers are offered for those experiencing mental health challenges, their families,
+                    and all who seek comfort and hope.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer 1: Mental Illness -->
+    <section class="prayer-section gradient-bg">
+        <div class="container">
+            <div class="prayer-card">
+                <div class="prayer-header">
+                    <span class="prayer-number">Prayer 1</span>
+                    <h2 class="prayer-title">Prayer for Those with Mental Illness</h2>
+                    <p class="prayer-attribution">With intercession of St. Dymphna, Patron of Mental Illness</p>
+                </div>
+
+                <div class="prayer-content">
+                    <div class="prayer-text">
+                        <p class="prayer-line">Lord, we pray for those who have a mental illness.</p>
+
+                        <p class="prayer-line">Help us understand that the way we talk about people with a mental illness affects the people themselves and how we treat the illness.</p>
+
+                        <p class="prayer-line">So often people who have a mental illness are known as their illness; people say that "she is bipolar," or "he is schizophrenic"; when we talk about mental illness, we should not use that phrase.</p>
+
+                        <p class="prayer-line">People who have cancer are not cancer; those with heart disease are not heart disease.</p>
+
+                        <p class="prayer-line emphasis">Let us always remember that people with a mental illness are not the illness – they are beautiful creations of God.</p>
+
+                        <p class="prayer-line">There is so much fear, ignorance and hurtful attitudes that the people who suffer from mental illness needlessly suffer further.</p>
+
+                        <p class="prayer-line">Help us to support and be compassionate to those with a mental illness, every bit as much as we support those who suffer from any other illness.</p>
+
+                        <p class="prayer-line">Grant courage to those for whom we pray and fill them with hope.</p>
+
+                        <p class="prayer-line">If it is according to Your Divine Will, grant them the recovery and cure they desire.</p>
+
+                        <p class="prayer-line emphasis">Help them to remember You love them; they are never alone.</p>
+
+                        <p class="prayer-closing">Saint Dymphna, Patron of those with a Mental Illness, pray for us.</p>
+
+                        <p class="prayer-amen"><strong>Amen.</strong></p>
+                    </div>
+
+                    <div class="prayer-actions">
+                        <button class="prayer-button" onclick="readPrayer('prayer1')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Listen to Prayer
+                        </button>
+                        <button class="prayer-button secondary" onclick="printPrayer('prayer1')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+                                <rect x="6" y="14" width="12" height="8"/>
+                            </svg>
+                            Print Prayer
+                        </button>
+                        <button class="prayer-button secondary" onclick="sharePrayer('prayer1')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"/>
+                                <circle cx="6" cy="12" r="3"/>
+                                <circle cx="18" cy="19" r="3"/>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                            </svg>
+                            Share Prayer
+                        </button>
+                    </div>
+
+                    <div class="prayer-image">
+                        <img src="/images/prayinghands.webp" alt="Praying hands" />
+                        <div class="image-caption">
+                            <p>"Cast all your anxieties on him, because he cares for you." - 1 Peter 5:7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prayer-reflection">
+                    <h3>Reflection</h3>
+                    <p>This prayer reminds us of the dignity of every person created in God's image. Mental illness does not define a person – it is a condition they experience, not who they are. As we pray for those struggling with mental health challenges, let us also examine our own hearts and the way we speak about and treat those who suffer.</p>
+                    <p>St. Dymphna, who herself fled persecution and is invoked as the patron saint of those with mental illness, intercedes for all who struggle with anxiety, depression, and other mental health conditions. May her prayers bring comfort and healing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Prayers Coming Soon -->
+    <section class="alt-bg">
+        <div class="container-narrow">
+            <div class="coming-soon">
+                <h2 class="text-gradient">More Prayers Coming Soon</h2>
+                <p class="lead">We are developing additional multimedia prayers for various needs:</p>
+                <ul class="prayer-list">
+                    <li>Prayer for Those in Crisis</li>
+                    <li>Prayer for Families of Those with Mental Illness</li>
+                    <li>Prayer for Hope in Darkness</li>
+                    <li>Prayer for Suicide Loss Survivors</li>
+                    <li>Prayer for Healthcare Workers and Caregivers</li>
+                </ul>
+                <p style="margin-top: 2rem; text-align: center;">Check back soon for more resources.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="gradient-bg">
+        <div class="container-narrow">
+            <div class="cta-box">
+                <h2 class="text-gradient">Need Immediate Help?</h2>
+                <p class="lead">If you or someone you know is in crisis, help is available right now.</p>
+                <div style="background: var(--crisis-red); color: white; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0;">
+                    <p style="color: white; margin: 0;"><strong style="font-size: 1.75rem; display: block; margin-bottom: 0.5rem;">Call or Text: 988</strong></p>
+                    <p style="color: white; margin: 0; font-size: 0.9rem;">National Suicide and Crisis Lifeline<br>Available 24/7, free and confidential</p>
+                </div>
+                <InteractiveButton href="/#get-help" variant="primary" size="large">
+                    Get Help Now
+                </InteractiveButton>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .intro-text {
+        padding: 2rem 0;
+    }
+
+    .prayer-section {
+        padding: 4rem 0;
+    }
+
+    .prayer-card {
+        background: white;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        overflow: hidden;
+        margin-bottom: 3rem;
+    }
+
+    .prayer-header {
+        background: var(--bg-gradient-1);
+        padding: 3rem 2rem 2rem;
+        text-align: center;
+    }
+
+    .prayer-number {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: var(--primary-color);
+        color: white;
+        border-radius: var(--radius-full);
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .prayer-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .prayer-attribution {
+        color: var(--text-muted);
+        font-style: italic;
+        font-size: 1rem;
+    }
+
+    .prayer-content {
+        padding: 3rem 2rem;
+    }
+
+    .prayer-text {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 2;
+    }
+
+    .prayer-line {
+        font-size: 1.125rem;
+        line-height: 2;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+    }
+
+    .prayer-line.emphasis {
+        font-weight: 600;
+        color: var(--primary-dark);
+        font-size: 1.25rem;
+    }
+
+    .prayer-closing {
+        font-size: 1.125rem;
+        font-style: italic;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .prayer-amen {
+        font-size: 1.25rem;
+        text-align: center;
+        margin-top: 1rem;
+        color: var(--primary-dark);
+    }
+
+    .prayer-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 3rem 0;
+        padding: 2rem;
+        background: var(--bg-gradient-1);
+        border-radius: var(--radius-lg);
+    }
+
+    .prayer-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--gradient-primary);
+        color: white;
+        border: none;
+        border-radius: var(--radius-full);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-md);
+    }
+
+    .prayer-button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .prayer-button.secondary {
+        background: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    .prayer-button.secondary:hover {
+        background: var(--primary-light);
+    }
+
+    .prayer-image {
+        max-width: 600px;
+        margin: 3rem auto 0;
+        text-align: center;
+    }
+
+    .prayer-image img {
+        width: 100%;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .image-caption {
+        margin-top: 1rem;
+        font-style: italic;
+        color: var(--text-muted);
+    }
+
+    .prayer-reflection {
+        background: var(--bg-gradient-1);
+        padding: 2rem;
+        margin: 2rem;
+        border-radius: var(--radius-lg);
+        border-left: 4px solid var(--primary-color);
+    }
+
+    .prayer-reflection h3 {
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+    }
+
+    .prayer-reflection p {
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .coming-soon {
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .prayer-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .prayer-list li {
+        padding: 1rem;
+        background: white;
+        margin-bottom: 0.75rem;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        font-size: 1.1rem;
+    }
+
+    .prayer-list li:before {
+        content: "🙏 ";
+        margin-right: 0.5rem;
+    }
+
+    .cta-box {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .prayer-header {
+            padding: 2rem 1rem 1.5rem;
+        }
+
+        .prayer-title {
+            font-size: 1.5rem;
+        }
+
+        .prayer-content {
+            padding: 2rem 1rem;
+        }
+
+        .prayer-line {
+            font-size: 1rem;
+        }
+
+        .prayer-line.emphasis {
+            font-size: 1.125rem;
+        }
+
+        .prayer-actions {
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .prayer-button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media print {
+        .prayer-actions,
+        nav,
+        footer,
+        .coming-soon,
+        .cta-box {
+            display: none !important;
+        }
+
+        .prayer-card {
+            box-shadow: none;
+            border: 1px solid #ccc;
+        }
+    }
+</style>
+
+<script>
+    function readPrayer(prayerId) {
+        // Get the prayer text
+        const prayerCard = document.querySelector('.prayer-card');
+        const prayerLines = prayerCard.querySelectorAll('.prayer-line, .prayer-closing, .prayer-amen');
+
+        // Combine all prayer text
+        let fullText = '';
+        prayerLines.forEach(line => {
+            fullText += line.textContent + ' ';
+        });
+
+        // Check if speech synthesis is supported
+        if ('speechSynthesis' in window) {
+            // Cancel any ongoing speech
+            window.speechSynthesis.cancel();
+
+            // Create new speech synthesis utterance
+            const utterance = new SpeechSynthesisUtterance(fullText);
+            utterance.rate = 0.8; // Slower, more contemplative pace
+            utterance.pitch = 1.0;
+            utterance.volume = 1.0;
+
+            // Speak the prayer
+            window.speechSynthesis.speak(utterance);
+
+            // Visual feedback
+            const button = event.target.closest('button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Pause';
+
+            utterance.onend = function() {
+                button.innerHTML = originalText;
+            };
+        } else {
+            alert('Sorry, your browser does not support text-to-speech. Please try using a modern browser like Chrome, Firefox, or Edge.');
+        }
+    }
+
+    function printPrayer(prayerId) {
+        window.print();
+    }
+
+    function sharePrayer(prayerId) {
+        const url = window.location.href;
+        const title = 'Prayer for Those with Mental Illness';
+        const text = 'I found this beautiful prayer and wanted to share it with you.';
+
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                text: text,
+                url: url
+            }).catch((error) => console.log('Error sharing:', error));
+        } else {
+            // Fallback: copy to clipboard
+            navigator.clipboard.writeText(`${title}\n\n${url}`).then(() => {
+                alert('Prayer link copied to clipboard! You can now paste and share it.');
+            }).catch((error) => {
+                console.log('Error copying to clipboard:', error);
+                alert(`Share this prayer: ${url}`);
+            });
+        }
+    }
+</script>
