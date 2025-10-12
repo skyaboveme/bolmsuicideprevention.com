@@ -111,8 +111,86 @@ import InteractiveButton from '../components/InteractiveButton.astro';
         </div>
     </section>
 
+    <!-- Prayer 2: St. John of God -->
+    <section class="prayer-section alt-bg">
+        <div class="container">
+            <div class="prayer-card">
+                <div class="prayer-header">
+                    <span class="prayer-number">Prayer 2</span>
+                    <h2 class="prayer-title">Prayer for Those with Mental Illness</h2>
+                    <p class="prayer-attribution">With intercession of St. John of God, Patron of Mental Illness</p>
+                </div>
+
+                <div class="prayer-content">
+                    <div class="prayer-text">
+                        <p class="prayer-line">Lord we Pray for those who have a Mental Illness.</p>
+
+                        <p class="prayer-line">There is so much fear, ignorance and hurtful attitudes that the people who suffer from mental illness needlessly suffer further.</p>
+
+                        <p class="prayer-line">Help us to support and be compassionate to those with a mental illness, every bit as much as we support those who suffer from any other illness.</p>
+
+                        <p class="prayer-line emphasis">Let us always remember that people with a mental illness are not the illness – they are beautiful creations of God.</p>
+
+                        <p class="prayer-line">St. John of God, you understand and witnessed the difficulties of living with a mental illness.</p>
+
+                        <p class="prayer-line">You lived in the darkness but found hope.</p>
+
+                        <p class="prayer-line quote">You wrote: "When you feel depressed, have recourse to the Passion of Jesus Christ, our Lord, and his precious wounds, and you will feel great consolation".</p>
+
+                        <p class="prayer-line">Lord our God, grant courage to those for whom we pray and fill them with hope.</p>
+
+                        <p class="prayer-line emphasis">Help them to remember You love them; they are never alone.</p>
+
+                        <p class="prayer-closing">Saint John of God, Patron of those with a Mental Illness, pray for us.</p>
+
+                        <p class="prayer-amen"><strong>Amen.</strong></p>
+                    </div>
+
+                    <div class="prayer-actions">
+                        <button class="prayer-button" onclick="readPrayer('prayer2')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Listen to Prayer
+                        </button>
+                        <button class="prayer-button secondary" onclick="printPrayer('prayer2')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+                                <rect x="6" y="14" width="12" height="8"/>
+                            </svg>
+                            Print Prayer
+                        </button>
+                        <button class="prayer-button secondary" onclick="sharePrayer('prayer2')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"/>
+                                <circle cx="6" cy="12" r="3"/>
+                                <circle cx="18" cy="19" r="3"/>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                            </svg>
+                            Share Prayer
+                        </button>
+                    </div>
+
+                    <div class="prayer-image">
+                        <img src="/images/prayinghands.webp" alt="Praying hands" />
+                        <div class="image-caption">
+                            <p>"The Lord is near to the brokenhearted and saves the crushed in spirit." - Psalm 34:18</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prayer-reflection">
+                    <h3>Reflection</h3>
+                    <p>St. John of God (1495-1550) personally experienced mental illness and understood the suffering it brings. After a profound conversion experience, he dedicated his life to caring for the sick and those with mental illness. His own struggles gave him deep compassion for others who suffered.</p>
+                    <p>His words remind us that even in the depths of depression and darkness, we can find consolation in turning to Christ's Passion. When we meditate on Jesus' suffering, we remember that God himself entered into human pain and redeemed it. We are never alone in our struggles – Christ walks with us through every dark valley.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- More Prayers Coming Soon -->
-    <section class="alt-bg">
+    <section class="gradient-bg">
         <div class="container-narrow">
             <div class="coming-soon">
                 <h2 class="text-gradient">More Prayers Coming Soon</h2>
@@ -275,6 +353,14 @@ import InteractiveButton from '../components/InteractiveButton.astro';
         font-weight: 600;
         color: var(--primary-dark);
         font-size: 1.25rem;
+    }
+
+    .prayer-line.quote {
+        font-style: italic;
+        padding-left: 2rem;
+        border-left: 3px solid var(--primary-color);
+        margin: 2rem 0;
+        color: var(--primary-dark);
     }
 
     .prayer-closing {
@@ -453,8 +539,9 @@ import InteractiveButton from '../components/InteractiveButton.astro';
 
 <script>
     function readPrayer(prayerId) {
-        // Get the prayer text
-        const prayerCard = document.querySelector('.prayer-card');
+        // Get the specific prayer card by finding the button's parent prayer card
+        const button = event.target.closest('button');
+        const prayerCard = button.closest('.prayer-card');
         const prayerLines = prayerCard.querySelectorAll('.prayer-line, .prayer-closing, .prayer-amen');
 
         // Combine all prayer text
@@ -478,7 +565,6 @@ import InteractiveButton from '../components/InteractiveButton.astro';
             window.speechSynthesis.speak(utterance);
 
             // Visual feedback
-            const button = event.target.closest('button');
             const originalText = button.innerHTML;
             button.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Pause';
 
@@ -496,18 +582,20 @@ import InteractiveButton from '../components/InteractiveButton.astro';
 
     function sharePrayer(prayerId) {
         const url = window.location.href;
-        const title = 'Prayer for Those with Mental Illness';
+        const button = event.target.closest('button');
+        const prayerCard = button.closest('.prayer-card');
+        const prayerTitle = prayerCard.querySelector('.prayer-title').textContent;
         const text = 'I found this beautiful prayer and wanted to share it with you.';
 
         if (navigator.share) {
             navigator.share({
-                title: title,
+                title: prayerTitle,
                 text: text,
                 url: url
             }).catch((error) => console.log('Error sharing:', error));
         } else {
             // Fallback: copy to clipboard
-            navigator.clipboard.writeText(`${title}\n\n${url}`).then(() => {
+            navigator.clipboard.writeText(`${prayerTitle}\n\n${url}`).then(() => {
                 alert('Prayer link copied to clipboard! You can now paste and share it.');
             }).catch((error) => {
                 console.log('Error copying to clipboard:', error);
