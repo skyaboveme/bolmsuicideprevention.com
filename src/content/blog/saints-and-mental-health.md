@@ -3,6 +3,7 @@ title: 'The Saints and Mental Health: Finding Hope in Holy Struggles'
 description: 'Discover how many beloved Catholic saints struggled with depression, anxiety, and mental illness - and how their stories offer hope and comfort to those suffering today.'
 pubDate: 2025-10-11
 author: 'Breath of Life Ministries'
+image: '/images/Saint-Tapestry.jpeg'
 tags: ['Saints', 'Mental Health', 'Depression', 'Anxiety', 'Hope', 'Faith']
 featured: true
 ---
