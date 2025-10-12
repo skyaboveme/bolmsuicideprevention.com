@@ -1,0 +1,552 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import InteractiveButton from '../components/InteractiveButton.astro';
+---
+
+<BaseLayout
+    title="Video Library | Breath of Life Ministries"
+    description="Educational videos, guided prayers, expert interviews, and training resources for mental health awareness and suicide prevention from a Catholic perspective."
+>
+    <HeroSection
+        title="Video Library"
+        subtitle="Educational content, guided prayers, and expert insights"
+        useVideo={false}
+        height="medium"
+    />
+
+    <!-- Introduction -->
+    <section>
+        <div class="container-narrow">
+            <div class="intro-text">
+                <p class="lead" style="text-align: center;">
+                    Welcome to our Video Library. Here you'll find educational videos on mental health,
+                    guided prayers and meditations, expert interviews, and training resources to support
+                    your journey toward healing and understanding.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Video -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Featured Video</h2>
+            <div class="featured-video-container">
+                <div class="video-card featured">
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/kXivmHLYa3I?start=5"
+                            title="Message of Hope"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>A Message of Hope and Healing</h3>
+                        <p>An inspiring message about finding hope in times of darkness and the power of faith in mental health recovery.</p>
+                        <div class="video-tags">
+                            <span class="tag">Hope</span>
+                            <span class="tag">Faith</span>
+                            <span class="tag">Recovery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Videos -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Understanding Mental Health</h2>
+            <p class="lead text-center">Educational content about mental illness, treatment, and Catholic perspectives</p>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="placeholder-icon">📚</div>
+                        <p>QPR Training Overview</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Introduction to QPR</h3>
+                        <p>Learn the basics of Question, Persuade, and Refer - three simple steps anyone can use to help prevent suicide.</p>
+                        <div class="video-tags">
+                            <span class="tag">Training</span>
+                            <span class="tag">Prevention</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="placeholder-icon">🧠</div>
+                        <p>Understanding Depression</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Depression and Faith</h3>
+                        <p>Understanding depression from both a clinical and Catholic perspective, including when to seek help.</p>
+                        <div class="video-tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">Depression</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="placeholder-icon">👥</div>
+                        <p>Supporting Loved Ones</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>How to Help Someone in Crisis</h3>
+                        <p>Practical guidance for family members and friends on how to support someone experiencing a mental health crisis.</p>
+                        <div class="video-tags">
+                            <span class="tag">Family Support</span>
+                            <span class="tag">Crisis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="placeholder-icon">⛪</div>
+                        <p>Church Teaching</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Catholic Teaching on Suicide</h3>
+                        <p>Understanding what the Catholic Church teaches about suicide, mental illness, and God's infinite mercy.</p>
+                        <div class="video-tags">
+                            <span class="tag">Catholic Teaching</span>
+                            <span class="tag">Theology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guided Prayers & Meditations -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Guided Prayers & Meditations</h2>
+            <p class="lead text-center">Spiritual resources for prayer, reflection, and healing</p>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder prayer">
+                        <div class="placeholder-icon">🙏</div>
+                        <p>Prayer for Peace</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Guided Prayer for Inner Peace</h3>
+                        <p>A 10-minute guided prayer for those experiencing anxiety, fear, or restlessness of spirit.</p>
+                        <div class="video-tags">
+                            <span class="tag">Prayer</span>
+                            <span class="tag">Anxiety</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder prayer">
+                        <div class="placeholder-icon">✨</div>
+                        <p>Lectio Divina</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Lectio Divina: Psalm 23</h3>
+                        <p>A guided meditation on the Lord as our Shepherd, offering comfort and hope in times of darkness.</p>
+                        <div class="video-tags">
+                            <span class="tag">Meditation</span>
+                            <span class="tag">Scripture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder prayer">
+                        <div class="placeholder-icon">💫</div>
+                        <p>Breathing Prayer</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Breath Prayer for Anxiety</h3>
+                        <p>Learn a simple breath prayer technique to calm your mind and connect with God's presence.</p>
+                        <div class="video-tags">
+                            <span class="tag">Prayer</span>
+                            <span class="tag">Mindfulness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder prayer">
+                        <div class="placeholder-icon">🌅</div>
+                        <p>Morning Prayer</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Morning Prayer for Hope</h3>
+                        <p>Start your day with a prayer of gratitude, hope, and trust in God's loving care.</p>
+                        <div class="video-tags">
+                            <span class="tag">Daily Prayer</span>
+                            <span class="tag">Hope</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Interviews -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Expert Interviews & Discussions</h2>
+            <p class="lead text-center">Conversations with mental health professionals, theologians, and ministry leaders</p>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder interview">
+                        <div class="placeholder-icon">🎤</div>
+                        <p>Expert Interview</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Mental Health in the Parish</h3>
+                        <p>Interview with a pastoral minister about creating mentally healthy parish communities.</p>
+                        <div class="video-tags">
+                            <span class="tag">Ministry</span>
+                            <span class="tag">Parish Life</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder interview">
+                        <div class="placeholder-icon">💬</div>
+                        <p>Panel Discussion</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Suicide Prevention in Faith Communities</h3>
+                        <p>Panel discussion with experts on effective suicide prevention strategies for parishes and Catholic organizations.</p>
+                        <div class="video-tags">
+                            <span class="tag">Prevention</span>
+                            <span class="tag">Community</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder interview">
+                        <div class="placeholder-icon">🩺</div>
+                        <p>Clinical Perspective</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Integrating Faith and Mental Health Treatment</h3>
+                        <p>A Catholic therapist discusses how faith can support, not replace, professional mental health care.</p>
+                        <div class="video-tags">
+                            <span class="tag">Treatment</span>
+                            <span class="tag">Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder interview">
+                        <div class="placeholder-icon">📖</div>
+                        <p>Theological Reflection</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Suffering and God's Love</h3>
+                        <p>A theologian reflects on the mystery of suffering and God's presence in our darkest moments.</p>
+                        <div class="video-tags">
+                            <span class="tag">Theology</span>
+                            <span class="tag">Suffering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Resources -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Training & Workshops</h2>
+            <p class="lead text-center">Resources for mental health ministers, parish leaders, and volunteers</p>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder training">
+                        <div class="placeholder-icon">🎓</div>
+                        <p>QPR Training</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Full QPR Training Course</h3>
+                        <p>Complete Question, Persuade, and Refer gatekeeper training for suicide prevention.</p>
+                        <div class="video-tags">
+                            <span class="tag">Training</span>
+                            <span class="tag">Certification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder training">
+                        <div class="placeholder-icon">⛪</div>
+                        <p>Parish Training</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Starting a Mental Health Ministry</h3>
+                        <p>Step-by-step guidance for parishes wanting to establish mental health ministries.</p>
+                        <div class="video-tags">
+                            <span class="tag">Ministry</span>
+                            <span class="tag">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder training">
+                        <div class="placeholder-icon">🤝</div>
+                        <p>Facilitator Training</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Leading Support Groups</h3>
+                        <p>Training for those who want to facilitate mental health support groups in their community.</p>
+                        <div class="video-tags">
+                            <span class="tag">Support Groups</span>
+                            <span class="tag">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder training">
+                        <div class="placeholder-icon">💡</div>
+                        <p>Workshop Recording</p>
+                    </div>
+                    <div class="video-info">
+                        <h3>Responding to Mental Health Crises</h3>
+                        <p>Workshop on how to respond effectively and compassionately to mental health crises in your community.</p>
+                        <div class="video-tags">
+                            <span class="tag">Crisis Response</span>
+                            <span class="tag">Training</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="alt-bg">
+        <div class="container-narrow">
+            <div class="coming-soon-box">
+                <h2 class="text-gradient">More Videos Coming Soon</h2>
+                <p class="lead">We are continuously adding new content to our Video Library. Check back regularly for:</p>
+                <ul class="coming-soon-list">
+                    <li>Testimonials and recovery stories</li>
+                    <li>Additional guided meditations</li>
+                    <li>Catholic mental health webinars</li>
+                    <li>Saints and mental health series</li>
+                    <li>Coping skills demonstrations</li>
+                    <li>Family support resources</li>
+                </ul>
+                <p style="margin-top: 2rem;">Have a suggestion for video content? <a href="/#contact">Contact us</a> with your ideas!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="gradient-bg">
+        <div class="container-narrow">
+            <div class="cta-box">
+                <h2 class="text-gradient">Need Immediate Help?</h2>
+                <p class="lead">If you or someone you know is in crisis, help is available right now.</p>
+                <div style="background: var(--crisis-red); color: white; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0;">
+                    <p style="color: white; margin: 0;"><strong style="font-size: 1.75rem; display: block; margin-bottom: 0.5rem;">Call or Text: 988</strong></p>
+                    <p style="color: white; margin: 0; font-size: 0.9rem;">National Suicide and Crisis Lifeline<br>Available 24/7, free and confidential</p>
+                </div>
+                <InteractiveButton href="/#get-help" variant="primary" size="large">
+                    Get Help Now
+                </InteractiveButton>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .intro-text {
+        padding: 2rem 0;
+    }
+
+    .featured-video-container {
+        max-width: 900px;
+        margin: 2rem auto;
+    }
+
+    .video-card {
+        background: white;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .video-card.featured {
+        box-shadow: var(--shadow-xl);
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video-placeholder {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .video-placeholder.prayer {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .video-placeholder.interview {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .video-placeholder.training {
+        background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    }
+
+    .placeholder-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem;
+        opacity: 0.3;
+    }
+
+    .video-placeholder p {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-info {
+        padding: 1.5rem;
+    }
+
+    .video-info h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: var(--heading-color);
+    }
+
+    .video-info p {
+        color: var(--text-color);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .video-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        border-radius: var(--radius-full);
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .coming-soon-box {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: white;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .coming-soon-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem auto;
+        max-width: 500px;
+        text-align: left;
+    }
+
+    .coming-soon-list li {
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+        background: var(--bg-gradient-1);
+        border-radius: var(--radius-lg);
+        font-size: 1.05rem;
+    }
+
+    .coming-soon-list li:before {
+        content: "▶ ";
+        color: var(--primary-color);
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+
+    .cta-box {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .video-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+        }
+
+        .video-placeholder p {
+            font-size: 1rem;
+        }
+    }
+</style>
