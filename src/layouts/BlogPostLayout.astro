@@ -1,0 +1,269 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  image?: string;
+  tags?: string[];
+}
+
+const { title, description, pubDate, author, image, tags = [] } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}).format(pubDate);
+---
+
+<BaseLayout title={`${title} | Breath of Life Ministries Blog`} description={description}>
+  <article class="blog-post">
+    <div class="blog-header">
+      <div class="container-narrow">
+        <a href="/blog" class="back-link">← Back to Blog</a>
+        <h1 class="blog-title">{title}</h1>
+        <div class="blog-meta">
+          <span class="blog-author">{author}</span>
+          <span class="blog-date">{formattedDate}</span>
+        </div>
+        {tags.length > 0 && (
+          <div class="blog-tags">
+            {tags.map(tag => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+
+    {image && (
+      <div class="blog-hero-image">
+        <img src={image} alt={title} />
+      </div>
+    )}
+
+    <div class="blog-content">
+      <div class="container-narrow">
+        <slot />
+      </div>
+    </div>
+
+    <div class="blog-footer">
+      <div class="container-narrow">
+        <div class="blog-footer-content">
+          <h3>Need Support?</h3>
+          <p>If you or someone you know is in crisis, call or text <strong>988</strong> for the National Suicide and Crisis Lifeline.</p>
+          <a href="/#get-help" class="btn btn-primary">Get Help Now</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-post {
+    padding-top: 2rem;
+  }
+
+  .blog-header {
+    background: var(--bg-gradient-1);
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .back-link:hover {
+    transform: translateX(-4px);
+    color: var(--primary-dark);
+  }
+
+  .blog-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .blog-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .blog-author,
+  .blog-date {
+    font-size: 0.95rem;
+  }
+
+  .blog-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .blog-hero-image {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .blog-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .blog-content {
+    padding: 2rem 0 4rem;
+  }
+
+  .blog-content :global(h2) {
+    font-size: 2rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--heading-color);
+  }
+
+  .blog-content :global(h3) {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--heading-color);
+  }
+
+  .blog-content :global(p) {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+  }
+
+  .blog-content :global(blockquote) {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: var(--bg-gradient-1);
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--radius-lg);
+    font-style: italic;
+  }
+
+  .blog-content :global(blockquote p) {
+    margin: 0;
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+  }
+
+  .blog-content :global(li) {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-content :global(a) {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .blog-content :global(a:hover) {
+    color: var(--primary-dark);
+  }
+
+  .blog-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .blog-footer {
+    background: var(--primary-light);
+    padding: 3rem 0;
+    margin-top: 3rem;
+  }
+
+  .blog-footer-content {
+    text-align: center;
+  }
+
+  .blog-footer-content h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+  }
+
+  .blog-footer-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 768px) {
+    .blog-title {
+      font-size: 2rem;
+    }
+
+    .blog-content :global(p),
+    .blog-content :global(li) {
+      font-size: 1rem;
+    }
+
+    .blog-content :global(h2) {
+      font-size: 1.5rem;
+    }
+
+    .blog-content :global(h3) {
+      font-size: 1.25rem;
+    }
+  }
+</style>
