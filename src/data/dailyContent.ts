@@ -23,6 +23,16 @@ export interface PrayerIntention {
   focus: string;
 }
 
+export interface WhyYouAreImportant {
+  message: string;
+  source: string;
+}
+
+export interface PositiveThought {
+  thought: string;
+  source: string;
+}
+
 export const scriptures: DailyScripture[] = [
   {
     verse: "Come to me, all you who are weary and burdened, and I will give you rest.",
@@ -305,6 +315,132 @@ export const prayerIntentions: PrayerIntention[] = [
   }
 ];
 
+export const whyYouAreImportant: WhyYouAreImportant[] = [
+  {
+    message: "You are created in the image and likeness of God, bearing His divine imprint in your very being.",
+    source: "Genesis 1:27, Catechism 356-357"
+  },
+  {
+    message: "God knows you by name and has counted every hair on your head. You are personally known and loved.",
+    source: "Luke 12:7, Isaiah 43:1"
+  },
+  {
+    message: "Christ gave His life for you. You are worth the blood of God Himself.",
+    source: "Romans 5:8, 1 Peter 1:18-19"
+  },
+  {
+    message: "You have infinite dignity that cannot be diminished by illness, failure, or circumstances.",
+    source: "Pope John Paul II, CCC 1700"
+  },
+  {
+    message: "God has a unique plan for your life that only you can fulfill. You are irreplaceable.",
+    source: "Jeremiah 29:11, Ephesians 2:10"
+  },
+  {
+    message: "You are a beloved child of God, adopted into His family through baptism.",
+    source: "1 John 3:1, Galatians 4:6-7"
+  },
+  {
+    message: "The Holy Spirit dwells within you, making you a temple of the living God.",
+    source: "1 Corinthians 6:19, CCC 1265"
+  },
+  {
+    message: "Your life has meaning and purpose, even when you cannot see or feel it.",
+    source: "Ecclesiastes 3:11, Pope Francis"
+  },
+  {
+    message: "God's love for you is unconditional and unchanging, not based on your performance.",
+    source: "Romans 8:38-39, Catechism 219"
+  },
+  {
+    message: "You are called to holiness and eternal life with God. Your destiny is Heaven.",
+    source: "1 Thessalonians 4:7, CCC 1716"
+  },
+  {
+    message: "Even in your weakness and struggle, you reveal God's power and glory.",
+    source: "2 Corinthians 12:9, Pope Benedict XVI"
+  },
+  {
+    message: "Your suffering has redemptive value when united with Christ's suffering.",
+    source: "Colossians 1:24, Pope John Paul II"
+  },
+  {
+    message: "You are part of the Body of Christ, and the Church needs your unique gifts.",
+    source: "1 Corinthians 12:27, CCC 791"
+  },
+  {
+    message: "God rejoices over you with singing. You bring joy to the heart of God.",
+    source: "Zephaniah 3:17, Luke 15:7"
+  },
+  {
+    message: "Your existence is not an accident. God willed you into being and sustains you in love.",
+    source: "Psalm 139:13-16, CCC 301"
+  }
+];
+
+export const positiveThoughts: PositiveThought[] = [
+  {
+    thought: "This difficult moment will pass. God's mercy is new every morning.",
+    source: "Lamentations 3:22-23"
+  },
+  {
+    thought: "I am stronger than I think. With God, all things are possible.",
+    source: "Philippians 4:13, Matthew 19:26"
+  },
+  {
+    thought: "My worth is not determined by my feelings or circumstances today.",
+    source: "Catholic Teaching on Dignity"
+  },
+  {
+    thought: "God is writing a story with my life, and this chapter is not the end.",
+    source: "Jeremiah 29:11"
+  },
+  {
+    thought: "I am loved by the Creator of the universe, and nothing can separate me from that love.",
+    source: "Romans 8:38-39"
+  },
+  {
+    thought: "Small steps forward are still progress. God delights in my efforts.",
+    source: "St. Thérèse's Little Way"
+  },
+  {
+    thought: "I don't have to be perfect. God's grace is sufficient for me.",
+    source: "2 Corinthians 12:9"
+  },
+  {
+    thought: "Asking for help is a sign of wisdom, not weakness.",
+    source: "Proverbs 11:14"
+  },
+  {
+    thought: "My struggles do not define me. I am a beloved child of God.",
+    source: "1 John 3:1"
+  },
+  {
+    thought: "Today I choose hope. Even the darkest night will end and the sun will rise.",
+    source: "Psalm 30:5"
+  },
+  {
+    thought: "I am not alone. God walks with me, and His angels surround me.",
+    source: "Psalm 91:11, Deuteronomy 31:6"
+  },
+  {
+    thought: "My life has purpose and meaning, even when I cannot see it.",
+    source: "Pope Francis, Evangelii Gaudium"
+  },
+  {
+    thought: "I can do hard things with God's help. He will give me the strength I need.",
+    source: "Isaiah 41:10"
+  },
+  {
+    thought: "Every saint had a past, and every sinner has a future. I can begin again.",
+    source: "St. Augustine"
+  },
+  {
+    thought: "God's love for me does not depend on my productivity, performance, or perfection.",
+    source: "Catechism 2559"
+  }
+];
+
 // Get content based on day of year for consistency
 export function getDailyContent() {
   const now = new Date();
@@ -318,5 +454,7 @@ export function getDailyContent() {
     saintQuote: saintQuotes[dayOfYear % saintQuotes.length],
     mentalHealthTip: mentalHealthTips[dayOfYear % mentalHealthTips.length],
     prayerIntention: prayerIntentions[dayOfYear % prayerIntentions.length],
+    whyImportant: whyYouAreImportant[dayOfYear % whyYouAreImportant.length],
+    positiveThought: positiveThoughts[dayOfYear % positiveThoughts.length],
   };
 }

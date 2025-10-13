@@ -56,6 +56,22 @@ const today = new Date().toLocaleDateString('en-US', {
                 <p class="intention-content">{dailyContent.prayerIntention.intention}</p>
                 <button class="pray-button" onclick="prayIntention()">I'll Pray for This</button>
             </div>
+
+            <!-- Why You Are Important -->
+            <div class="reflection-card important-card">
+                <div class="card-icon">⭐</div>
+                <h3>Why You Are Important</h3>
+                <p class="important-message">{dailyContent.whyImportant.message}</p>
+                <cite class="source-cite">— {dailyContent.whyImportant.source}</cite>
+            </div>
+
+            <!-- Positive Thought -->
+            <div class="reflection-card positive-card">
+                <div class="card-icon">🌟</div>
+                <h3>Positive Thought</h3>
+                <p class="positive-message">{dailyContent.positiveThought.thought}</p>
+                <cite class="source-cite">— {dailyContent.positiveThought.source}</cite>
+            </div>
         </div>
     </div>
 </section>
@@ -145,6 +161,14 @@ const today = new Date().toLocaleDateString('en-US', {
         background: linear-gradient(90deg, #2196F3, #1976D2);
     }
 
+    .important-card::before {
+        background: linear-gradient(90deg, #FFD700, #FFA500);
+    }
+
+    .positive-card::before {
+        background: linear-gradient(90deg, #00BCD4, #0097A7);
+    }
+
     .reflection-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -220,6 +244,23 @@ const today = new Date().toLocaleDateString('en-US', {
         font-size: 1.05rem;
         line-height: 1.7;
         color: var(--text-color);
+    }
+
+    .important-message,
+    .positive-message {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+
+    .source-cite {
+        display: block;
+        font-style: italic;
+        color: var(--primary-color);
+        font-size: 0.9rem;
+        margin-top: 1rem;
     }
 
     .pray-button {
