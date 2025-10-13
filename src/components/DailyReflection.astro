@@ -23,7 +23,7 @@ const today = new Date().toLocaleDateString('en-US', {
                 <div class="card-icon">📖</div>
                 <h3>Scripture for Today</h3>
                 <blockquote class="daily-scripture">
-                    "{dailyContent.scripture.verse}"
+                    <span class="quote-text">{dailyContent.scripture.verse}</span>
                     <cite>— {dailyContent.scripture.reference}</cite>
                 </blockquote>
                 <p class="reflection-text">{dailyContent.scripture.reflection}</p>
@@ -34,7 +34,7 @@ const today = new Date().toLocaleDateString('en-US', {
                 <div class="card-icon">✝️</div>
                 <h3>Wisdom from the Saints</h3>
                 <blockquote class="daily-quote">
-                    "{dailyContent.saintQuote.quote}"
+                    <span class="quote-text">{dailyContent.saintQuote.quote}</span>
                     <cite>— {dailyContent.saintQuote.saint}</cite>
                 </blockquote>
                 <p class="reflection-text">{dailyContent.saintQuote.context}</p>
@@ -173,6 +173,15 @@ const today = new Date().toLocaleDateString('en-US', {
         margin: 1.5rem 0;
         padding: 0;
         border: none;
+        position: relative;
+    }
+
+    .quote-text::before {
+        content: '"';
+    }
+
+    .quote-text::after {
+        content: '"';
     }
 
     .daily-scripture cite,
