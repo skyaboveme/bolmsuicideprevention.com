@@ -56,59 +56,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact Form Handling
+// Contact Form Handling with Formspree
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
+        const formStatus = document.getElementById('form-status');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
 
-        // Basic validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all fields.');
-            return;
-        }
+        // Disable button and show loading state
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
 
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-        // In a real implementation, you would send this to a server
-        // For now, we'll show a success message
-        alert('Thank you for your message! We will get back to you soon.\n\nNote: This is a demo form. In production, this would be sent to the ministry email.');
-
-        // Reset form
-        contactForm.reset();
-
-        // In production, you might want to use a service like:
-        // - Formspree (https://formspree.io/)
-        // - EmailJS (https://www.emailjs.com/)
-        // - Your own backend API
-
-        /* Example with EmailJS:
-        emailjs.send('service_id', 'template_id', {
-            from_name: name,
-            from_email: email,
-            subject: subject,
-            message: message
-        }).then(
-            function(response) {
-                alert('Message sent successfully!');
+            if (response.ok) {
+                // Success
+                formStatus.style.display = 'block';
+                formStatus.style.padding = '1rem';
+                formStatus.style.background = 'var(--success-green, #28a745)';
+                formStatus.style.color = 'white';
+                formStatus.style.borderRadius = 'var(--radius-md)';
+                formStatus.textContent = 'Thank you for your message! We will get back to you soon.';
                 contactForm.reset();
-            },
-            function(error) {
-                alert('Failed to send message. Please try again.');
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            } else {
+                // Error from Formspree
+                throw new Error('Form submission failed');
             }
-        );
-        */
+        } catch (error) {
+            // Error handling
+            formStatus.style.display = 'block';
+            formStatus.style.padding = '1rem';
+            formStatus.style.background = 'var(--crisis-red, #c41e3a)';
+            formStatus.style.color = 'white';
+            formStatus.style.borderRadius = 'var(--radius-md)';
+            formStatus.textContent = 'Oops! There was a problem sending your message. Please try again or email us directly at Breathoflifeministry3@gmail.com';
+        } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        }
     });
 }
 
