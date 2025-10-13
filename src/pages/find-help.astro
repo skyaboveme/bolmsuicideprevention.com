@@ -1,0 +1,349 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<BaseLayout
+    title="Find Help | Breath of Life Ministries"
+    description="Find Catholic therapists, crisis support, support groups, and spiritual resources. Connect with human help for mental health and suicide prevention."
+>
+    <HeroSection
+        title="Find the Help You Need"
+        subtitle="Connecting you to caring professionals, priests, and support"
+        useVideo={false}
+        height="medium"
+    />
+
+    <!-- Immediate Crisis Support -->
+    <section style="background: var(--crisis-red); color: white;">
+        <div class="container">
+            <div style="text-align: center; padding: 2rem 0;">
+                <h2 style="color: white; margin-bottom: 1rem;">🆘 In Crisis? Get Help Right Now</h2>
+                <div class="crisis-options">
+                    <div class="crisis-option">
+                        <h3 style="color: white;">Call or Text</h3>
+                        <p style="color: white; font-size: 2rem; font-weight: 700; margin: 0.5rem 0;">988</p>
+                        <p style="color: white; font-size: 0.9rem;">National Suicide & Crisis Lifeline<br>24/7, Free, Confidential</p>
+                        <a href="tel:988" class="crisis-action-button">📞 Call 988 Now</a>
+                    </div>
+                    <div class="crisis-option">
+                        <h3 style="color: white;">Text Support</h3>
+                        <p style="color: white; font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0;">Text HELLO to 741741</p>
+                        <p style="color: white; font-size: 0.9rem;">Crisis Text Line<br>24/7, Free, Confidential</p>
+                        <a href="sms:741741&body=HELLO" class="crisis-action-button">💬 Text Now</a>
+                    </div>
+                    <div class="crisis-option">
+                        <h3 style="color: white;">Online Chat</h3>
+                        <p style="color: white; font-size: 1.2rem; font-weight: 600; margin: 0.5rem 0;">988lifeline.org/chat</p>
+                        <p style="color: white; font-size: 0.9rem;">Online Crisis Chat<br>24/7, Free, Confidential</p>
+                        <a href="https://988lifeline.org/chat/" target="_blank" rel="noopener noreferrer" class="crisis-action-button">💻 Chat Online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Catholic Mental Health Professionals -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Catholic Therapists & Counselors</h2>
+            <p class="lead text-center">Find mental health professionals who respect your faith</p>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>🔍 CatholicTherapist.com</h3>
+                    <p>Directory of Catholic therapists, psychologists, and counselors across the United States. Search by location and specialty.</p>
+                    <a href="https://www.catholictherapists.com/" target="_blank" rel="noopener noreferrer" class="resource-button">Find a Therapist →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>💬 Pastoral Solutions Institute</h3>
+                    <p>Catholic tele-counseling available nationwide. Licensed therapists provide faith-integrated mental health care via phone or video.</p>
+                    <a href="https://www.catholtherapy.com/" target="_blank" rel="noopener noreferrer" class="resource-button">Learn More →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>❤️ Catholic Charities</h3>
+                    <p>Contact your local diocese's Catholic Charities for affordable counseling services, sliding scale fees, and support groups.</p>
+                    <a href="https://www.catholiccharitiesusa.org/find-help/" target="_blank" rel="noopener noreferrer" class="resource-button">Find Local Office →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🏥 Catholic Healthcare</h3>
+                    <p>Many Catholic hospitals offer mental health services. Contact the pastoral care department for referrals to Catholic providers.</p>
+                    <a href="https://www.chausa.org/" target="_blank" rel="noopener noreferrer" class="resource-button">Find Catholic Hospital →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spiritual Support -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Spiritual Guidance & Prayer Support</h2>
+            <p class="lead text-center">Connect with priests, spiritual directors, and faith-based resources</p>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>⛪ Talk to Your Priest</h3>
+                    <p>Your parish priest can provide spiritual counseling, hear your confession, pray with you, and connect you to resources. Don't hesitate to reach out.</p>
+                    <p style="margin-top: 1rem; padding: 1rem; background: var(--bg-gradient-1); border-radius: var(--radius-md);">
+                        <strong>What to say:</strong><br>"Father, I'm struggling with my mental health and could use spiritual support. Could we meet or talk?"
+                    </p>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🕊️ Spiritual Direction</h3>
+                    <p>A spiritual director can help you navigate faith questions during mental illness, discern God's voice from symptoms, and grow spiritually.</p>
+                    <a href="https://www.sdiworld.org/find-a-spiritual-director/directory" target="_blank" rel="noopener noreferrer" class="resource-button">Find Director →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>📿 Pray the Rosary</h3>
+                    <p>The repetitive, meditative nature of the Rosary can calm anxiety and bring peace. Pray with our guided resources or the Hallow app.</p>
+                    <a href="/prayer-room" class="resource-button">Prayer Resources →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>✝️ Eucharistic Adoration</h3>
+                    <p>Spend time in the presence of Jesus in the Blessed Sacrament. Many find profound peace and healing in Adoration.</p>
+                    <a href="https://masstimes.org/" target="_blank" rel="noopener noreferrer" class="resource-button">Find Adoration Chapel →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Groups -->
+    <section>
+        <div class="container">
+            <h2 class="text-center text-gradient">Support Groups & Communities</h2>
+            <p class="lead text-center">You don't have to walk this journey alone</p>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>🤝 NAMI Support Groups</h3>
+                    <p>National Alliance on Mental Illness offers free peer-led support groups for those with mental illness and their families.</p>
+                    <a href="https://www.nami.org/Support-Education/Support-Groups" target="_blank" rel="noopener noreferrer" class="resource-button">Find Group →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>💙 DBSA Support Groups</h3>
+                    <p>Depression and Bipolar Support Alliance provides peer support groups nationwide for mood disorders.</p>
+                    <a href="https://www.dbsalliance.org/support/chapters-and-support-groups/" target="_blank" rel="noopener noreferrer" class="resource-button">Find Group →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🕊️ Grief Support (Suicide Loss)</h3>
+                    <p>American Foundation for Suicide Prevention offers support groups specifically for those who have lost someone to suicide.</p>
+                    <a href="https://afsp.org/find-support" target="_blank" rel="noopener noreferrer" class="resource-button">Find Group →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>⛪ Parish Mental Health Ministry</h3>
+                    <p>Ask your parish about mental health ministries, support groups, or Stephen Ministry for one-on-one Christian care.</p>
+                    <a href="https://catholicmhm.org/" target="_blank" rel="noopener noreferrer" class="resource-button">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Resources -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Specialized Support</h2>
+            <p class="lead text-center">Resources for specific situations and populations</p>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>🎖️ Veterans Crisis Line</h3>
+                    <p>Specialized support for veterans, service members, and their families. Press 1 after calling 988.</p>
+                    <a href="https://www.veteranscrisisline.net/" target="_blank" rel="noopener noreferrer" class="resource-button">Call 988, Press 1 →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🏳️‍🌈 Trevor Project</h3>
+                    <p>Crisis intervention for LGBTQ+ youth under 25. Call 1-866-488-7386 or text START to 678678.</p>
+                    <a href="https://www.thetrevorproject.org/" target="_blank" rel="noopener noreferrer" class="resource-button">Get Help →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>💊 SAMHSA Treatment Locator</h3>
+                    <p>Find addiction treatment, mental health services, and dual diagnosis programs. Call 1-800-662-4357.</p>
+                    <a href="https://findtreatment.samhsa.gov/" target="_blank" rel="noopener noreferrer" class="resource-button">Find Treatment →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>👶 Postpartum Support</h3>
+                    <p>Postpartum Support International provides resources for perinatal mood and anxiety disorders. Call 1-800-944-4773.</p>
+                    <a href="https://www.postpartum.net/" target="_blank" rel="noopener noreferrer" class="resource-button">Get Support →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books & Apps -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Helpful Apps & Books</h2>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>📱 Hallow App</h3>
+                    <p>Catholic prayer and meditation app with guided prayers, Rosary, and mental health-focused content.</p>
+                    <a href="https://hallow.com/" target="_blank" rel="noopener noreferrer" class="resource-button">Download App →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>📱 Calm or Headspace</h3>
+                    <p>Meditation and mindfulness apps that can help with anxiety and stress management.</p>
+                </div>
+
+                <div class="resource-card">
+                    <h3>📚 "The Catholic Guide to Depression"</h3>
+                    <p>By Aaron Kheriaty, MD & John Cihak, MD. Integrates Catholic faith with clinical understanding of depression.</p>
+                </div>
+
+                <div class="resource-card">
+                    <h3>📚 "Sunflower Sidewalks"</h3>
+                    <p>By Joe Sikorra. A Catholic perspective on navigating anxiety, depression, and finding joy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Note -->
+    <section>
+        <div class="container-narrow">
+            <div class="important-note">
+                <h3>💡 Important Reminders</h3>
+                <ul>
+                    <li><strong>It's okay to use secular resources.</strong> While we list Catholic-specific resources, any licensed therapist, support group, or hospital can help you. Don't delay getting help because you can't find a Catholic provider.</li>
+                    <li><strong>Insurance and costs:</strong> Most therapists accept insurance. Catholic Charities offers sliding scale fees. The 988 Lifeline is always free.</li>
+                    <li><strong>Emergency care:</strong> If you're in immediate danger, go to your nearest emergency room or call 911. Mental health emergencies are real emergencies.</li>
+                    <li><strong>Medication is okay:</strong> Taking psychiatric medication is not a lack of faith. It's treating a medical condition, just like taking insulin for diabetes.</li>
+                    <li><strong>This takes courage:</strong> Reaching out for help is brave, not weak. You're doing the right thing by being here.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .crisis-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .crisis-option {
+        text-align: center;
+    }
+
+    .crisis-action-button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: white;
+        color: var(--crisis-red);
+        text-decoration: none;
+        border-radius: var(--radius-lg);
+        font-weight: 700;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .crisis-action-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .resource-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        transition: all 0.3s ease;
+    }
+
+    .resource-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .resource-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .resource-card p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .resource-button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: var(--radius-lg);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .resource-button:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+    }
+
+    .important-note {
+        background: var(--bg-gradient-1);
+        padding: 2rem;
+        border-radius: var(--radius-xl);
+        border-left: 4px solid var(--primary-color);
+    }
+
+    .important-note h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .important-note ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .important-note li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    .important-note li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .crisis-options {
+            grid-template-columns: 1fr;
+        }
+
+        .resource-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
