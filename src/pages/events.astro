@@ -1,0 +1,309 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import InteractiveButton from '../components/InteractiveButton.astro';
+---
+
+<BaseLayout
+    title="Events | Breath of Life Ministries"
+    description="Upcoming events, masses, and gatherings from Breath of Life Ministries for mental health support and suicide prevention."
+>
+    <!-- Hero Section -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="text-gradient">Upcoming Events</h1>
+            <p class="lead">Join us for prayer, remembrance, and community support</p>
+        </div>
+    </section>
+
+    <!-- Featured Event -->
+    <section>
+        <div class="container">
+            <div class="event-featured">
+                <div class="event-badge">Featured Event</div>
+                <h2 class="text-gradient">Remembrance Mass</h2>
+
+                <div class="event-details-grid">
+                    <div class="event-detail">
+                        <div class="event-icon">📅</div>
+                        <div>
+                            <div class="event-label">Date</div>
+                            <div class="event-value">Sunday, November 23rd, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="event-detail">
+                        <div class="event-icon">🕐</div>
+                        <div>
+                            <div class="event-label">Time</div>
+                            <div class="event-value">10:00 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="event-detail">
+                        <div class="event-icon">⛪</div>
+                        <div>
+                            <div class="event-label">Location</div>
+                            <div class="event-value">Saint Mary of the Assumption Catholic Church</div>
+                            <div class="event-address">405 Saint Marys Road, Rosanky, Texas 78953</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-description">
+                    <p>Join us for a special Mass of Remembrance as we honor and pray for those we have lost to suicide and support those who continue to grieve. This sacred gathering offers a space for healing, hope, and communion with others who understand the journey of loss.</p>
+
+                    <p>All are welcome. Come find comfort in faith and community as we remember our loved ones and celebrate God's eternal mercy and love.</p>
+                </div>
+
+                <div class="event-actions">
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Saint+Mary+of+the+Assumption+Catholic+Church+405+Saint+Marys+Road+Rosanky+Texas+78953"
+                        target="_blank"
+                        class="btn btn-primary"
+                    >
+                        Get Directions
+                    </a>
+                    <a
+                        href="https://www.facebook.com/events/4216163445308265"
+                        target="_blank"
+                        class="btn btn-outline"
+                    >
+                        View on Facebook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Remembrance Mass Section -->
+    <section class="alt-bg">
+        <div class="container">
+            <div class="grid-2">
+                <Card title="What to Expect" icon="🙏">
+                    <ul class="event-list">
+                        <li>Traditional Catholic Mass</li>
+                        <li>Special prayers for those lost to suicide</li>
+                        <li>Remembrance of loved ones</li>
+                        <li>Time for reflection and healing</li>
+                        <li>Community support and fellowship</li>
+                    </ul>
+                </Card>
+
+                <Card title="Who Should Attend" icon="💜">
+                    <p>This Mass is for anyone who:</p>
+                    <ul class="event-list">
+                        <li>Has lost a loved one to suicide</li>
+                        <li>Is supporting someone who is grieving</li>
+                        <li>Wants to learn more about our ministry</li>
+                        <li>Seeks healing through faith and prayer</li>
+                        <li>Wishes to honor those we've lost</li>
+                    </ul>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <div class="container-narrow text-center">
+            <h2 class="text-gradient">Questions About This Event?</h2>
+            <p class="lead">We're here to help. Contact us for more information or if you need support.</p>
+
+            <div style="margin-top: 2rem;">
+                <InteractiveButton href="/#contact" variant="primary" size="large">
+                    Contact Us
+                </InteractiveButton>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-gradient-1); border-radius: var(--radius-lg);">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">In Crisis?</h3>
+                <p style="margin-bottom: 0.5rem;">If you or someone you know is experiencing a mental health crisis:</p>
+                <p style="font-size: 1.5rem; font-weight: 700; color: var(--crisis-red); margin: 1rem 0;">Call or Text: 988</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">National Suicide and Crisis Lifeline - Available 24/7</p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .page-header {
+        background: var(--bg-gradient-1);
+        padding: 4rem 0 3rem;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .event-featured {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem;
+        background: white;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        position: relative;
+    }
+
+    .event-badge {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.5rem;
+    }
+
+    .event-featured h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .event-details-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+        padding: 2rem;
+        background: var(--bg-gradient-1);
+        border-radius: var(--radius-lg);
+    }
+
+    .event-detail {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .event-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .event-label {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+
+    .event-value {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+    .event-address {
+        font-size: 1rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+    }
+
+    .event-description {
+        margin: 2rem 0;
+        line-height: 1.8;
+    }
+
+    .event-description p {
+        margin-bottom: 1rem;
+    }
+
+    .event-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: var(--radius-lg);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .btn-primary {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    .btn-outline:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .event-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+    }
+
+    .event-list li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .event-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+        }
+
+        .event-featured {
+            padding: 2rem 1.5rem;
+        }
+
+        .event-featured h2 {
+            font-size: 1.75rem;
+        }
+
+        .event-details-grid {
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .event-actions {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+            min-width: auto;
+        }
+    }
+</style>
