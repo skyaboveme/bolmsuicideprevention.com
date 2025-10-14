@@ -53,7 +53,18 @@ import InteractiveButton from '../components/InteractiveButton.astro';
                 <div class="event-description">
                     <p>Join us for a special Mass of Remembrance as we honor and pray for those we have lost to suicide and support those who continue to grieve. This sacred gathering offers a space for healing, hope, and communion with others who understand the journey of loss.</p>
 
-                    <p>All are welcome. Come find comfort in faith and community as we remember our loved ones and celebrate God's eternal mercy and love.</p>
+                    <div class="registration-notice">
+                        <h3>Pre-Registration Required</h3>
+                        <p><strong>Your pre-registration is essential</strong> as we will be providing each participating family with a beautiful flower and a small lantern.</p>
+                    </div>
+
+                    <h3 style="color: var(--primary-color); margin-top: 2rem; margin-bottom: 1rem;">What to Bring</h3>
+                    <p>Upon arrival, we ask that you bring a <strong>framed photograph of your loved one, no larger than 8x10 inches</strong>, to be placed on a designated remembrance table.</p>
+
+                    <h3 style="color: var(--primary-color); margin-top: 2rem; margin-bottom: 1rem;">The Remembrance Ceremony</h3>
+                    <p>The event will include a meaningful procession where each family will have the opportunity to place their provided flower by their loved one's photograph. Following this, you will be invited to light your lantern and gently place it alongside the flower and photo. This collection of flowers and lit lanterns will then be blessed by Father during the mass.</p>
+
+                    <p style="margin-top: 1.5rem;">All are welcome. Come find comfort in faith and community as we remember our loved ones and celebrate God's eternal mercy and love.</p>
                 </div>
 
                 <div class="event-actions">
@@ -214,6 +225,25 @@ import InteractiveButton from '../components/InteractiveButton.astro';
 
     .event-description p {
         margin-bottom: 1rem;
+    }
+
+    .registration-notice {
+        background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+        border-left: 4px solid var(--crisis-red);
+        padding: 1.5rem;
+        border-radius: var(--radius-lg);
+        margin: 2rem 0;
+    }
+
+    .registration-notice h3 {
+        color: var(--crisis-red);
+        font-size: 1.25rem;
+        margin: 0 0 0.75rem 0;
+    }
+
+    .registration-notice p {
+        margin: 0;
+        color: var(--text-color);
     }
 
     .event-actions {
