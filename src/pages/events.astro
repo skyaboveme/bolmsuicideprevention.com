@@ -69,18 +69,18 @@ import InteractiveButton from '../components/InteractiveButton.astro';
 
                 <div class="event-actions">
                     <a
+                        href="https://www.facebook.com/events/4216163445308265"
+                        target="_blank"
+                        class="btn btn-register"
+                    >
+                        Register Here
+                    </a>
+                    <a
                         href="https://www.google.com/maps/search/?api=1&query=Saint+Mary+of+the+Assumption+Catholic+Church+405+Saint+Marys+Road+Rosanky+Texas+78953"
                         target="_blank"
                         class="btn btn-primary"
                     >
                         Get Directions
-                    </a>
-                    <a
-                        href="https://www.facebook.com/events/4216163445308265"
-                        target="_blank"
-                        class="btn btn-outline"
-                    >
-                        View on Facebook
                     </a>
                 </div>
             </div>
@@ -274,6 +274,19 @@ import InteractiveButton from '../components/InteractiveButton.astro';
         background: var(--primary-dark);
         transform: translateY(-2px);
         box-shadow: var(--shadow-lg);
+    }
+
+    .btn-register {
+        background: var(--crisis-red);
+        color: white;
+        font-size: 1.125rem;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    }
+
+    .btn-register:hover {
+        background: #b91c1c;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
     }
 
     .btn-outline {
