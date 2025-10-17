@@ -51,65 +51,41 @@ import FeatureCard from '../components/FeatureCard.astro';
 
                         <!-- Volunteer Interests (Checkboxes) -->
                         <div class="form-group">
-                            <label style="margin-bottom: 1rem; display: block;">Areas of Interest (check all that apply) *</label>
-                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Support Group Facilitator" style="margin-right: 0.5rem;">
-                                    Support Group Facilitator
+                            <label>Areas of Interest (check all that apply) *</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="Support Group Facilitator">
+                                    <span>Support Group Facilitator</span>
                                 </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="QPR Training Assistant" style="margin-right: 0.5rem;">
-                                    QPR Training Assistant
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="QPR Training Assistant">
+                                    <span>QPR Training Assistant</span>
                                 </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Parish Liaison" style="margin-right: 0.5rem;">
-                                    Parish Liaison
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="Parish Liaison">
+                                    <span>Parish Liaison</span>
                                 </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Events Coordinator" style="margin-right: 0.5rem;">
-                                    Events Coordinator
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="Events Coordinator">
+                                    <span>Events Coordinator</span>
                                 </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Resource Developer" style="margin-right: 0.5rem;">
-                                    Resource Developer
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="Resource Developer">
+                                    <span>Resource Developer</span>
                                 </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Crisis Support Volunteer" style="margin-right: 0.5rem;">
-                                    Crisis Support Volunteer
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="Crisis Support Volunteer">
+                                    <span>Crisis Support Volunteer</span>
                                 </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Office & Administrative Support" style="margin-right: 0.5rem;">
-                                    Office & Administrative Support
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="Office & Administrative Support">
+                                    <span>Office & Administrative Support</span>
                                 </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Outreach & Advocacy" style="margin-right: 0.5rem;">
-                                    Outreach & Advocacy
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interest[]" value="Outreach & Advocacy">
+                                    <span>Outreach & Advocacy</span>
                                 </label>
                             </div>
-                        </div>
-
-                        <!-- Availability -->
-                        <div class="form-group">
-                            <label for="availability">Your Availability *</label>
-                            <select id="availability" name="availability" required>
-                                <option value="">Please select...</option>
-                                <option value="2-4 hours per month">2-4 hours per month</option>
-                                <option value="5-10 hours per month">5-10 hours per month</option>
-                                <option value="2-4 hours per week">2-4 hours per week</option>
-                                <option value="Flexible/As needed">Flexible/As needed</option>
-                            </select>
-                        </div>
-
-                        <!-- Previous Experience -->
-                        <div class="form-group">
-                            <label for="experience">Relevant Experience or Skills</label>
-                            <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience, skills, or training you have (mental health, ministry, education, event planning, writing, etc.)"></textarea>
-                        </div>
-
-                        <!-- Why Volunteer -->
-                        <div class="form-group">
-                            <label for="why">Why do you want to volunteer with us? *</label>
-                            <textarea id="why" name="why" rows="4" required placeholder="Share what draws you to this ministry and how you hope to make an impact"></textarea>
                         </div>
 
                         <!-- Additional Comments -->
@@ -456,7 +432,42 @@ import FeatureCard from '../components/FeatureCard.astro';
         min-height: 100px;
     }
 
-    input[type="checkbox"] {
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+        .checkbox-group {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .checkbox-label {
+        display: flex;
+        align-items: center;
         cursor: pointer;
+        padding: 0.5rem;
+        border-radius: var(--radius-sm);
+        transition: background-color 0.2s ease;
+    }
+
+    .checkbox-label:hover {
+        background-color: rgba(78, 109, 154, 0.05);
+    }
+
+    .checkbox-label input[type="checkbox"] {
+        margin-right: 0.5rem;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .checkbox-label span {
+        font-size: 0.9375rem;
+        color: var(--text-dark);
     }
 </style>
