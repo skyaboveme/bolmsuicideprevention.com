@@ -24,7 +24,12 @@ import FeatureCard from '../components/FeatureCard.astro';
 
             <div style="max-width: 700px; margin: 0 auto;">
                 <Card variant="featured">
-                    <form action="https://formspree.io/f/xkgndzop" method="POST" class="contact-form">
+                    <form id="volunteerForm" class="contact-form">
+                        <!-- Hidden Web3Forms fields -->
+                        <input type="hidden" name="access_key" value="2de251b1-ff71-436b-9a51-d3d42fd9531b">
+                        <input type="hidden" name="subject" value="New Volunteer Application">
+                        <input type="hidden" name="from_name" value="Volunteer Form - Breath of Life Ministries">
+
                         <!-- Name -->
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -54,35 +59,35 @@ import FeatureCard from '../components/FeatureCard.astro';
                             <label>Areas of Interest (check all that apply) *</label>
                             <div class="checkbox-group">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="Support Group Facilitator">
+                                    <input type="checkbox" name="interests" value="Support Group Facilitator">
                                     <span>Support Group Facilitator</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="QPR Training Assistant">
+                                    <input type="checkbox" name="interests" value="QPR Training Assistant">
                                     <span>QPR Training Assistant</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="Parish Liaison">
+                                    <input type="checkbox" name="interests" value="Parish Liaison">
                                     <span>Parish Liaison</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="Events Coordinator">
+                                    <input type="checkbox" name="interests" value="Events Coordinator">
                                     <span>Events Coordinator</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="Resource Developer">
+                                    <input type="checkbox" name="interests" value="Resource Developer">
                                     <span>Resource Developer</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="Crisis Support Volunteer">
+                                    <input type="checkbox" name="interests" value="Crisis Support Volunteer">
                                     <span>Crisis Support Volunteer</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="Office & Administrative Support">
+                                    <input type="checkbox" name="interests" value="Office & Administrative Support">
                                     <span>Office & Administrative Support</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="Outreach & Advocacy">
+                                    <input type="checkbox" name="interests" value="Outreach & Advocacy">
                                     <span>Outreach & Advocacy</span>
                                 </label>
                             </div>
@@ -95,9 +100,11 @@ import FeatureCard from '../components/FeatureCard.astro';
                         </div>
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
                             Submit Volunteer Application
                         </button>
+
+                        <p id="formMessage" style="margin-top: 1rem; font-size: 0.875rem; text-align: center; display: none;"></p>
 
                         <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-medium); text-align: center;">
                             We'll review your application and contact you within 3-5 business days to discuss next steps.
@@ -471,3 +478,75 @@ import FeatureCard from '../components/FeatureCard.astro';
         color: var(--text-dark);
     }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('volunteerForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Validate that at least one checkbox is selected
+            const checkboxes = form.querySelectorAll('input[name="interests"]:checked');
+            if (checkboxes.length === 0) {
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#d32f2f';
+                formMessage.textContent = 'Please select at least one area of interest.';
+                return;
+            }
+
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.style.display = 'none';
+
+            // Collect form data
+            const formData = new FormData(form);
+
+            // Convert checkboxes to comma-separated string
+            const interests = [];
+            checkboxes.forEach(cb => interests.push(cb.value));
+            formData.delete('interests');
+            formData.append('interests', interests.join(', '));
+
+            // Convert FormData to JSON
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(object)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = '#2e7d32';
+                    formMessage.textContent = 'Thank you! Your volunteer application has been submitted successfully. We\'ll be in touch soon!';
+                    form.reset();
+                    submitBtn.textContent = 'Submit Volunteer Application';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#d32f2f';
+                formMessage.textContent = 'An error occurred. Please try again or email us directly at Breathoflifeministry3@gmail.com';
+            } finally {
+                submitBtn.disabled = false;
+                if (formMessage.style.color !== '#2e7d32') {
+                    submitBtn.textContent = 'Submit Volunteer Application';
+                }
+            }
+        });
+    });
+</script>
