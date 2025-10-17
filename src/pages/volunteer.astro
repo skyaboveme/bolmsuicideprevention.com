@@ -1,0 +1,462 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+---
+
+<BaseLayout
+    title="Volunteer With Us | Breath of Life Ministries"
+    description="Join our mission to bring hope and healing. Volunteer opportunities in mental health ministry, suicide prevention training, support groups, and community outreach."
+>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Volunteer With Us</h1>
+            <p>Share your gifts and make a lasting impact in mental health ministry and suicide prevention</p>
+        </div>
+    </section>
+
+    <!-- Why Volunteer -->
+    <section>
+        <div class="container">
+            <h2 class="text-center text-gradient">Why Volunteer With Us?</h2>
+            <p class="lead text-center">Your time and talents can save lives and bring hope to those who need it most</p>
+
+            <div class="grid-3">
+                <FeatureCard
+                    icon="💝"
+                    title="Make a Difference"
+                    description="Your service directly impacts individuals and families affected by mental illness and suicide, offering them hope and support in their darkest moments."
+                />
+
+                <FeatureCard
+                    icon="🌱"
+                    title="Grow in Faith"
+                    description="Deepen your own faith journey by serving others, witnessing God's healing power, and living out the Gospel call to love our neighbors."
+                />
+
+                <FeatureCard
+                    icon="🤝"
+                    title="Build Community"
+                    description="Join a compassionate team of volunteers committed to breaking stigma, supporting healing, and creating communities of hope and understanding."
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Opportunities -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Volunteer Opportunities</h2>
+            <p class="lead text-center">Find the role that matches your gifts and availability</p>
+
+            <div class="grid-2">
+                <Card title="Support Group Facilitator" icon="🫂" variant="featured">
+                    <p><strong>Time Commitment:</strong> 2-4 hours per month</p>
+                    <p style="margin-top: 1rem;">Help facilitate support groups for those living with mental illness or families who have lost loved ones to suicide. Training provided.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Create safe, welcoming spaces</li>
+                        <li>Guide group discussions</li>
+                        <li>Provide compassionate listening</li>
+                    </ul>
+                </Card>
+
+                <Card title="QPR Training Assistant" icon="🎓" variant="featured">
+                    <p><strong>Time Commitment:</strong> 4-6 hours per month</p>
+                    <p style="margin-top: 1rem;">Assist with Question, Persuade, Refer (QPR) suicide prevention training sessions. Help with setup, registration, and participant support.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Support training logistics</li>
+                        <li>Welcome participants</li>
+                        <li>Distribute materials</li>
+                    </ul>
+                </Card>
+
+                <Card title="Parish Liaison" icon="⛪" variant="featured">
+                    <p><strong>Time Commitment:</strong> 3-5 hours per month</p>
+                    <p style="margin-top: 1rem;">Serve as a bridge between our ministry and local parishes, helping to establish mental health ministries in faith communities.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Connect with parish leaders</li>
+                        <li>Share resources and materials</li>
+                        <li>Coordinate awareness events</li>
+                    </ul>
+                </Card>
+
+                <Card title="Events Coordinator" icon="📅" variant="featured">
+                    <p><strong>Time Commitment:</strong> 5-10 hours per month</p>
+                    <p style="margin-top: 1rem;">Help plan and coordinate events such as awareness walks, remembrance services, educational seminars, and fundraisers.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Organize community events</li>
+                        <li>Manage volunteer teams</li>
+                        <li>Handle logistics and coordination</li>
+                    </ul>
+                </Card>
+
+                <Card title="Resource Developer" icon="📚" variant="featured">
+                    <p><strong>Time Commitment:</strong> 3-6 hours per month</p>
+                    <p style="margin-top: 1rem;">Create educational materials, prayer guides, blog content, or social media posts to support our outreach and education efforts.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Write educational content</li>
+                        <li>Develop prayer resources</li>
+                        <li>Create social media materials</li>
+                    </ul>
+                </Card>
+
+                <Card title="Crisis Support Volunteer" icon="📞" variant="featured">
+                    <p><strong>Time Commitment:</strong> Variable</p>
+                    <p style="margin-top: 1rem;">Provide follow-up support and resource connection for individuals who reach out to our ministry. Requires specialized training.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Connect people to resources</li>
+                        <li>Provide compassionate listening</li>
+                        <li>Follow-up support</li>
+                    </ul>
+                </Card>
+
+                <Card title="Office & Administrative Support" icon="💼" variant="featured">
+                    <p><strong>Time Commitment:</strong> 2-4 hours per week</p>
+                    <p style="margin-top: 1rem;">Assist with day-to-day operations including data entry, phone calls, mailings, donor communications, and general office tasks.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Administrative tasks</li>
+                        <li>Donor communications</li>
+                        <li>Office organization</li>
+                    </ul>
+                </Card>
+
+                <Card title="Outreach & Advocacy" icon="🗣️" variant="featured">
+                    <p><strong>Time Commitment:</strong> 3-5 hours per month</p>
+                    <p style="margin-top: 1rem;">Help spread awareness about mental health and suicide prevention in the community through presentations, tabling events, and advocacy efforts.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Community presentations</li>
+                        <li>Awareness campaigns</li>
+                        <li>Advocacy initiatives</li>
+                    </ul>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Look For -->
+    <section>
+        <div class="container">
+            <h2 class="text-center text-gradient">What We Look For in Volunteers</h2>
+            <p class="lead text-center">You don't need special qualifications—just a compassionate heart and willingness to serve</p>
+
+            <div class="grid-3">
+                <Card icon="❤️">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Compassion & Empathy</h3>
+                    <p>A heart for those who are suffering and the ability to offer non-judgmental support and understanding.</p>
+                </Card>
+
+                <Card icon="🤐">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Confidentiality</h3>
+                    <p>Commitment to maintaining strict confidentiality and respecting the privacy of those we serve.</p>
+                </Card>
+
+                <Card icon="💪">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Reliability</h3>
+                    <p>Ability to honor time commitments and follow through on responsibilities with consistency.</p>
+                </Card>
+
+                <Card icon="📖">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Willingness to Learn</h3>
+                    <p>Openness to training on mental health topics, suicide prevention, and best practices in ministry.</p>
+                </Card>
+
+                <Card icon="✝️">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Faith Commitment</h3>
+                    <p>Active Catholic faith and alignment with Church teaching (for most roles, though some are open to all).</p>
+                </Card>
+
+                <Card icon="🫂">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Team Spirit</h3>
+                    <p>Ability to work collaboratively with staff, other volunteers, and community partners.</p>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Support -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center" style="color: var(--primary-color);">Training & Support for Volunteers</h2>
+            <p class="lead text-center" style="color: var(--text-medium);">We invest in our volunteers with comprehensive training and ongoing support</p>
+
+            <div class="grid-2">
+                <div class="glass-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Initial Training</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 2;">
+                        <li>Orientation to Breath of Life Ministries</li>
+                        <li>Mental health basics and suicide prevention</li>
+                        <li>QPR (Question, Persuade, Refer) certification</li>
+                        <li>Role-specific training for your position</li>
+                        <li>Confidentiality and boundaries</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Ongoing Support</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 2;">
+                        <li>Regular supervision and check-ins</li>
+                        <li>Continuing education opportunities</li>
+                        <li>Access to mental health resources</li>
+                        <li>Volunteer appreciation events</li>
+                        <li>Community of fellow volunteers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Sign-Up Form -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Sign Up to Volunteer</h2>
+            <p class="lead text-center">Tell us about yourself and how you'd like to serve. We'll be in touch soon!</p>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <Card variant="featured">
+                    <form action="https://formspree.io/f/xkgndzop" method="POST" class="contact-form">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <!-- Parish -->
+                        <div class="form-group">
+                            <label for="parish">Parish/Church (if applicable)</label>
+                            <input type="text" id="parish" name="parish">
+                        </div>
+
+                        <!-- Volunteer Interests (Checkboxes) -->
+                        <div class="form-group">
+                            <label style="margin-bottom: 1rem; display: block;">Areas of Interest (check all that apply) *</label>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Support Group Facilitator" style="margin-right: 0.5rem;">
+                                    Support Group Facilitator
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="QPR Training Assistant" style="margin-right: 0.5rem;">
+                                    QPR Training Assistant
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Parish Liaison" style="margin-right: 0.5rem;">
+                                    Parish Liaison
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Events Coordinator" style="margin-right: 0.5rem;">
+                                    Events Coordinator
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Resource Developer" style="margin-right: 0.5rem;">
+                                    Resource Developer
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Crisis Support Volunteer" style="margin-right: 0.5rem;">
+                                    Crisis Support Volunteer
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Office & Administrative Support" style="margin-right: 0.5rem;">
+                                    Office & Administrative Support
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Outreach & Advocacy" style="margin-right: 0.5rem;">
+                                    Outreach & Advocacy
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="form-group">
+                            <label for="availability">Your Availability *</label>
+                            <select id="availability" name="availability" required>
+                                <option value="">Please select...</option>
+                                <option value="2-4 hours per month">2-4 hours per month</option>
+                                <option value="5-10 hours per month">5-10 hours per month</option>
+                                <option value="2-4 hours per week">2-4 hours per week</option>
+                                <option value="Flexible/As needed">Flexible/As needed</option>
+                            </select>
+                        </div>
+
+                        <!-- Previous Experience -->
+                        <div class="form-group">
+                            <label for="experience">Relevant Experience or Skills</label>
+                            <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience, skills, or training you have (mental health, ministry, education, event planning, writing, etc.)"></textarea>
+                        </div>
+
+                        <!-- Why Volunteer -->
+                        <div class="form-group">
+                            <label for="why">Why do you want to volunteer with us? *</label>
+                            <textarea id="why" name="why" rows="4" required placeholder="Share what draws you to this ministry and how you hope to make an impact"></textarea>
+                        </div>
+
+                        <!-- Additional Comments -->
+                        <div class="form-group">
+                            <label for="comments">Questions or Additional Information</label>
+                            <textarea id="comments" name="comments" rows="3" placeholder="Anything else you'd like us to know?"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
+                            Submit Volunteer Application
+                        </button>
+
+                        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-medium); text-align: center;">
+                            We'll review your application and contact you within 3-5 business days to discuss next steps.
+                        </p>
+                    </form>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <h2 class="text-center text-gradient">Hear From Our Volunteers</h2>
+            <p class="lead text-center">Stories from those who have found meaning and purpose in serving</p>
+
+            <div class="grid-2">
+                <Card variant="featured">
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
+                        "Volunteering with Breath of Life has been one of the most rewarding experiences of my life. Seeing people find hope again through our support groups reminds me why we do this work."
+                        <cite style="margin-top: 1rem; display: block; color: var(--text-medium);">- Maria, Support Group Facilitator</cite>
+                    </blockquote>
+                </Card>
+
+                <Card variant="featured">
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
+                        "The QPR training I received as a volunteer literally saved my neighbor's life. This ministry equips us to make a real difference in our communities."
+                        <cite style="margin-top: 1rem; display: block; color: var(--text-medium);">- John, Training Assistant</cite>
+                    </blockquote>
+                </Card>
+
+                <Card variant="featured">
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
+                        "I lost my brother to suicide five years ago. Volunteering here has helped me turn my grief into something meaningful—helping other families find support and healing."
+                        <cite style="margin-top: 1rem; display: block; color: var(--text-medium);">- Sarah, Parish Liaison</cite>
+                    </blockquote>
+                </Card>
+
+                <Card variant="featured">
+                    <blockquote style="border-left-color: var(--primary-color); margin: 0;">
+                        "This ministry has deepened my faith more than I ever expected. Witnessing God's healing power in people's lives is truly transformative."
+                        <cite style="margin-top: 1rem; display: block; color: var(--text-medium);">- David, Events Coordinator</cite>
+                    </blockquote>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="text-center text-gradient">Frequently Asked Questions</h2>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <Card>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">Do I need prior experience in mental health?</h3>
+                    <p>No! We provide comprehensive training for all volunteers. What matters most is compassion, reliability, and willingness to learn.</p>
+                </Card>
+
+                <Card>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">Is there a minimum time commitment?</h3>
+                    <p>Most roles require 2-10 hours per month, but this varies by position. We'll work with your schedule to find the right fit.</p>
+                </Card>
+
+                <Card>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">Do I need to be Catholic to volunteer?</h3>
+                    <p>Most roles require active Catholic faith, but some positions (like administrative support or events) are open to all who support our mission.</p>
+                </Card>
+
+                <Card>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">What if I have my own mental health challenges?</h3>
+                    <p>Many of our volunteers have personal experience with mental illness. This can be a valuable asset, but we ask that volunteers be in a stable place in their own recovery.</p>
+                </Card>
+
+                <Card>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">Is there a background check required?</h3>
+                    <p>Yes, for certain roles (especially those involving direct service with vulnerable populations), we require background checks to ensure safety.</p>
+                </Card>
+
+                <Card>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.75rem;">Can I volunteer remotely?</h3>
+                    <p>Yes! Some roles like resource development, social media, and administrative support can be done remotely. Let us know your preferences.</p>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section>
+        <div class="container text-center">
+            <h2 class="text-gradient">Questions About Volunteering?</h2>
+            <p class="lead">We're here to help you find the perfect role for your gifts and availability.</p>
+            <p style="margin-top: 2rem;">
+                <strong>Contact our Volunteer Coordinator:</strong><br>
+                <a href="mailto:Breathoflifeministry3@gmail.com" style="color: var(--primary-color); font-size: 1.125rem;">Breathoflifeministry3@gmail.com</a>
+            </p>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .contact-form {
+        margin-top: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        font-size: 1rem;
+        font-family: 'Lato', sans-serif;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group input[type="tel"]:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    input[type="checkbox"] {
+        cursor: pointer;
+    }
+</style>

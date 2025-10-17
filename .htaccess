@@ -1,0 +1,12 @@
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect www to non-www (choose this option)
+RewriteCond %{HTTP_HOST} ^www\.bolmsuicideprevention\.com [NC]
+RewriteRule ^(.*)$ https://bolmsuicideprevention.com/$1 [L,R=301]
+
+# OR redirect non-www to www (comment out above and uncomment below if you prefer www)
+# RewriteCond %{HTTP_HOST} ^bolmsuicideprevention\.com [NC]
+# RewriteRule ^(.*)$ https://www.bolmsuicideprevention.com/$1 [L,R=301]
