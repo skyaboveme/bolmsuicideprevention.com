@@ -16,8 +16,124 @@ import FeatureCard from '../components/FeatureCard.astro';
         </div>
     </section>
 
-    <!-- Why Volunteer -->
+    <!-- Volunteer Sign-Up Form -->
     <section>
+        <div class="container">
+            <h2 class="text-center text-gradient">Sign Up to Volunteer</h2>
+            <p class="lead text-center">Tell us about yourself and how you'd like to serve. We'll be in touch soon!</p>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <Card variant="featured">
+                    <form action="https://formspree.io/f/xkgndzop" method="POST" class="contact-form">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <!-- Parish -->
+                        <div class="form-group">
+                            <label for="parish">Parish/Church (if applicable)</label>
+                            <input type="text" id="parish" name="parish">
+                        </div>
+
+                        <!-- Volunteer Interests (Checkboxes) -->
+                        <div class="form-group">
+                            <label style="margin-bottom: 1rem; display: block;">Areas of Interest (check all that apply) *</label>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Support Group Facilitator" style="margin-right: 0.5rem;">
+                                    Support Group Facilitator
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="QPR Training Assistant" style="margin-right: 0.5rem;">
+                                    QPR Training Assistant
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Parish Liaison" style="margin-right: 0.5rem;">
+                                    Parish Liaison
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Events Coordinator" style="margin-right: 0.5rem;">
+                                    Events Coordinator
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Resource Developer" style="margin-right: 0.5rem;">
+                                    Resource Developer
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Crisis Support Volunteer" style="margin-right: 0.5rem;">
+                                    Crisis Support Volunteer
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Office & Administrative Support" style="margin-right: 0.5rem;">
+                                    Office & Administrative Support
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="interest[]" value="Outreach & Advocacy" style="margin-right: 0.5rem;">
+                                    Outreach & Advocacy
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="form-group">
+                            <label for="availability">Your Availability *</label>
+                            <select id="availability" name="availability" required>
+                                <option value="">Please select...</option>
+                                <option value="2-4 hours per month">2-4 hours per month</option>
+                                <option value="5-10 hours per month">5-10 hours per month</option>
+                                <option value="2-4 hours per week">2-4 hours per week</option>
+                                <option value="Flexible/As needed">Flexible/As needed</option>
+                            </select>
+                        </div>
+
+                        <!-- Previous Experience -->
+                        <div class="form-group">
+                            <label for="experience">Relevant Experience or Skills</label>
+                            <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience, skills, or training you have (mental health, ministry, education, event planning, writing, etc.)"></textarea>
+                        </div>
+
+                        <!-- Why Volunteer -->
+                        <div class="form-group">
+                            <label for="why">Why do you want to volunteer with us? *</label>
+                            <textarea id="why" name="why" rows="4" required placeholder="Share what draws you to this ministry and how you hope to make an impact"></textarea>
+                        </div>
+
+                        <!-- Additional Comments -->
+                        <div class="form-group">
+                            <label for="comments">Questions or Additional Information</label>
+                            <textarea id="comments" name="comments" rows="3" placeholder="Anything else you'd like us to know?"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
+                            Submit Volunteer Application
+                        </button>
+
+                        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-medium); text-align: center;">
+                            We'll review your application and contact you within 3-5 business days to discuss next steps.
+                        </p>
+                    </form>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Volunteer -->
+    <section class="alt-bg">
         <div class="container">
             <h2 class="text-center text-gradient">Why Volunteer With Us?</h2>
             <p class="lead text-center">Your time and talents can save lives and bring hope to those who need it most</p>
@@ -202,122 +318,6 @@ import FeatureCard from '../components/FeatureCard.astro';
                         <li>Community of fellow volunteers</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Volunteer Sign-Up Form -->
-    <section class="alt-bg">
-        <div class="container">
-            <h2 class="text-center text-gradient">Sign Up to Volunteer</h2>
-            <p class="lead text-center">Tell us about yourself and how you'd like to serve. We'll be in touch soon!</p>
-
-            <div style="max-width: 700px; margin: 0 auto;">
-                <Card variant="featured">
-                    <form action="https://formspree.io/f/xkgndzop" method="POST" class="contact-form">
-                        <!-- Name -->
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <!-- Phone -->
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-
-                        <!-- Parish -->
-                        <div class="form-group">
-                            <label for="parish">Parish/Church (if applicable)</label>
-                            <input type="text" id="parish" name="parish">
-                        </div>
-
-                        <!-- Volunteer Interests (Checkboxes) -->
-                        <div class="form-group">
-                            <label style="margin-bottom: 1rem; display: block;">Areas of Interest (check all that apply) *</label>
-                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Support Group Facilitator" style="margin-right: 0.5rem;">
-                                    Support Group Facilitator
-                                </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="QPR Training Assistant" style="margin-right: 0.5rem;">
-                                    QPR Training Assistant
-                                </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Parish Liaison" style="margin-right: 0.5rem;">
-                                    Parish Liaison
-                                </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Events Coordinator" style="margin-right: 0.5rem;">
-                                    Events Coordinator
-                                </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Resource Developer" style="margin-right: 0.5rem;">
-                                    Resource Developer
-                                </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Crisis Support Volunteer" style="margin-right: 0.5rem;">
-                                    Crisis Support Volunteer
-                                </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Office & Administrative Support" style="margin-right: 0.5rem;">
-                                    Office & Administrative Support
-                                </label>
-                                <label style="display: flex; align-items: center; cursor: pointer;">
-                                    <input type="checkbox" name="interest[]" value="Outreach & Advocacy" style="margin-right: 0.5rem;">
-                                    Outreach & Advocacy
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Availability -->
-                        <div class="form-group">
-                            <label for="availability">Your Availability *</label>
-                            <select id="availability" name="availability" required>
-                                <option value="">Please select...</option>
-                                <option value="2-4 hours per month">2-4 hours per month</option>
-                                <option value="5-10 hours per month">5-10 hours per month</option>
-                                <option value="2-4 hours per week">2-4 hours per week</option>
-                                <option value="Flexible/As needed">Flexible/As needed</option>
-                            </select>
-                        </div>
-
-                        <!-- Previous Experience -->
-                        <div class="form-group">
-                            <label for="experience">Relevant Experience or Skills</label>
-                            <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience, skills, or training you have (mental health, ministry, education, event planning, writing, etc.)"></textarea>
-                        </div>
-
-                        <!-- Why Volunteer -->
-                        <div class="form-group">
-                            <label for="why">Why do you want to volunteer with us? *</label>
-                            <textarea id="why" name="why" rows="4" required placeholder="Share what draws you to this ministry and how you hope to make an impact"></textarea>
-                        </div>
-
-                        <!-- Additional Comments -->
-                        <div class="form-group">
-                            <label for="comments">Questions or Additional Information</label>
-                            <textarea id="comments" name="comments" rows="3" placeholder="Anything else you'd like us to know?"></textarea>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
-                            Submit Volunteer Application
-                        </button>
-
-                        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-medium); text-align: center;">
-                            We'll review your application and contact you within 3-5 business days to discuss next steps.
-                        </p>
-                    </form>
-                </Card>
             </div>
         </div>
     </section>
