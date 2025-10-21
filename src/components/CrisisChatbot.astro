@@ -1,0 +1,439 @@
+---
+// Crisis Chatbot Component - Always directs users to human support
+---
+
+<div id="crisis-chatbot-container">
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open crisis support chat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="chat-label">Need Help?</span>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window" class="chatbot-window" style="display: none;">
+        <div class="chatbot-header">
+            <div>
+                <h3>Crisis Support Chat</h3>
+                <p class="chatbot-subtitle">Connecting you to human help</p>
+            </div>
+            <button id="chatbot-close" class="chatbot-close" aria-label="Close chat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div id="chatbot-messages" class="chatbot-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p><strong>Hello, I'm here to connect you with human support.</strong></p>
+                    <p>I'm an automated assistant, and I want to make sure you get the real help you deserve from a trained professional.</p>
+                    <p>How are you feeling today?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbot-input-container">
+            <input
+                type="text"
+                id="chatbot-input"
+                class="chatbot-input"
+                placeholder="Type your message..."
+                aria-label="Type your message"
+            />
+            <button id="chatbot-send" class="chatbot-send-btn" aria-label="Send message">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+
+        <div class="chatbot-disclaimer">
+            This is an automated system. For immediate crisis support, please contact a human counselor.
+        </div>
+    </div>
+</div>
+
+<style>
+    #crisis-chatbot-container {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: var(--z-modal);
+    }
+
+    .chatbot-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.5rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: var(--radius-full);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: var(--shadow-xl);
+        transition: all var(--transition-base);
+        font-family: var(--font-sans);
+    }
+
+    .chatbot-toggle:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-2xl);
+    }
+
+    .chat-label {
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+    }
+
+    .chatbot-window {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 380px;
+        max-width: calc(100vw - 40px);
+        height: 550px;
+        max-height: calc(100vh - 150px);
+        background: white;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-2xl);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .chatbot-header {
+        background: var(--bg-gradient-2);
+        color: white;
+        padding: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .chatbot-header h3 {
+        font-size: 1.125rem;
+        margin: 0;
+        font-family: var(--font-sans);
+    }
+
+    .chatbot-subtitle {
+        font-size: 0.875rem;
+        opacity: 0.9;
+        margin: 0.25rem 0 0 0;
+    }
+
+    .chatbot-close {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--transition-fast);
+    }
+
+    .chatbot-close:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .chatbot-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        background: var(--bg-lighter);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .message {
+        display: flex;
+        animation: messageSlideIn 0.3s ease-out;
+    }
+
+    @keyframes messageSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .bot-message {
+        justify-content: flex-start;
+    }
+
+    .user-message {
+        justify-content: flex-end;
+    }
+
+    .message-content {
+        max-width: 80%;
+        padding: 0.875rem 1.125rem;
+        border-radius: var(--radius-lg);
+        line-height: 1.5;
+        font-size: 0.95rem;
+    }
+
+    .bot-message .message-content {
+        background: white;
+        color: var(--text-dark);
+        border: 1px solid var(--border-color);
+    }
+
+    .bot-message .message-content p {
+        margin: 0.5rem 0;
+    }
+
+    .bot-message .message-content p:first-child {
+        margin-top: 0;
+    }
+
+    .bot-message .message-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .user-message .message-content {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .crisis-info {
+        background: var(--crisis-red);
+        color: white;
+        padding: 1rem;
+        border-radius: var(--radius-md);
+        margin: 0.5rem 0;
+        font-weight: 600;
+    }
+
+    .chatbot-input-container {
+        display: flex;
+        gap: 0.5rem;
+        padding: 1rem;
+        background: white;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .chatbot-input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        font-size: 0.95rem;
+        font-family: var(--font-sans);
+        outline: none;
+        transition: all var(--transition-fast);
+    }
+
+    .chatbot-input:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(44, 95, 141, 0.1);
+    }
+
+    .chatbot-send-btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        width: 42px;
+        height: 42px;
+        border-radius: var(--radius-lg);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--transition-fast);
+    }
+
+    .chatbot-send-btn:hover {
+        background: var(--primary-dark);
+    }
+
+    .chatbot-send-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .chatbot-disclaimer {
+        padding: 0.75rem 1rem;
+        background: var(--bg-light);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+        #crisis-chatbot-container {
+            bottom: 80px;
+            right: 20px;
+        }
+
+        .chatbot-toggle {
+            padding: 0.875rem 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        .chat-label {
+            display: none;
+        }
+
+        .chatbot-window {
+            bottom: 80px;
+            right: 20px;
+            width: calc(100vw - 40px);
+            height: calc(100vh - 180px);
+        }
+    }
+</style>
+
+<script>
+    // Crisis Chatbot Logic
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotInput = document.getElementById('chatbot-input') as HTMLInputElement;
+    const chatbotSend = document.getElementById('chatbot-send');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+
+    // Array of response templates - all direct to human support
+    const responses = [
+        {
+            message: "Thank you for reaching out. I'm an automated system, and I want to make sure you get the best help possible from a real person who is trained to support you.",
+            crisis: true
+        },
+        {
+            message: "I hear you, and I want to help. The most important thing is to connect you with a trained counselor who can provide the support you need right now.",
+            crisis: true
+        },
+        {
+            message: "Your feelings matter, and you deserve real human support. I'm here to guide you to the right resources, not to replace professional help.",
+            crisis: true
+        },
+        {
+            message: "I appreciate you sharing that with me. As an automated system, I want to make sure you're connected with someone who can truly help - a real person trained in crisis support.",
+            crisis: true
+        },
+        {
+            message: "What you're going through is important, and you deserve to talk to someone who can really listen and help. Let me connect you to human support.",
+            crisis: true
+        }
+    ];
+
+    const crisisResources = `
+        <div class="crisis-info">
+            <p style="margin: 0 0 0.5rem 0; font-weight: 700; font-size: 1.1rem;">📞 Call or Text: 988</p>
+            <p style="margin: 0; font-size: 0.9rem;">National Suicide & Crisis Lifeline<br>24/7 • Free • Confidential</p>
+        </div>
+        <p>You can also:</p>
+        <p>💬 Text <strong>HELLO</strong> to <strong>741741</strong> (Crisis Text Line)</p>
+        <p>🌐 Chat online: <a href="https://988lifeline.org/chat/" target="_blank" style="color: white; text-decoration: underline;">988lifeline.org/chat</a></p>
+    `;
+
+    let messageCount = 0;
+
+    // Toggle chatbot window
+    chatbotToggle?.addEventListener('click', () => {
+        chatbotWindow!.style.display = 'flex';
+        chatbotToggle.style.display = 'none';
+        chatbotInput?.focus();
+    });
+
+    chatbotClose?.addEventListener('click', () => {
+        chatbotWindow!.style.display = 'none';
+        chatbotToggle!.style.display = 'flex';
+    });
+
+    // Send message function
+    function sendMessage() {
+        const message = chatbotInput?.value.trim();
+        if (!message) return;
+
+        // Add user message to chat
+        addMessage(message, 'user');
+        chatbotInput!.value = '';
+
+        // Simulate typing delay, then respond
+        setTimeout(() => {
+            generateBotResponse();
+        }, 800);
+    }
+
+    // Add message to chat
+    function addMessage(text: string, sender: 'user' | 'bot') {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+        contentDiv.innerHTML = text;
+
+        messageDiv.appendChild(contentDiv);
+        chatbotMessages?.appendChild(messageDiv);
+
+        // Scroll to bottom
+        chatbotMessages!.scrollTop = chatbotMessages!.scrollHeight;
+    }
+
+    // Generate bot response - always directs to human help
+    function generateBotResponse() {
+        messageCount++;
+
+        // Select a response template
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+        let responseHTML = `<p>${randomResponse.message}</p>`;
+
+        // Always include crisis resources
+        responseHTML += crisisResources;
+
+        // Every few messages, add encouragement
+        if (messageCount % 3 === 0) {
+            responseHTML += `<p style="margin-top: 1rem; font-style: italic;">Remember: Reaching out for help is a sign of strength, not weakness. Real people are ready to support you 24/7.</p>`;
+        }
+
+        addMessage(responseHTML, 'bot');
+    }
+
+    // Send message on button click
+    chatbotSend?.addEventListener('click', sendMessage);
+
+    // Send message on Enter key
+    chatbotInput?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+</script>

@@ -1,5 +1,6 @@
 ---
 import CrisisButton from '../components/CrisisButton.astro';
+import CrisisChatbot from '../components/CrisisChatbot.astro';
 
 interface Props {
   title: string;
@@ -78,6 +79,9 @@ const { title, description } = Astro.props;
 
     <!-- Floating Crisis Button -->
     <CrisisButton />
+
+    <!-- Crisis Chatbot -->
+    <CrisisChatbot />
 
     <!-- Footer -->
     <footer>
