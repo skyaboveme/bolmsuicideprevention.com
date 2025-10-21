@@ -29,9 +29,9 @@
         <div id="chatbot-messages" class="chatbot-messages">
             <div class="message bot-message">
                 <div class="message-content">
-                    <p><strong>Hello, I'm here to connect you with human support.</strong></p>
-                    <p>I'm an automated assistant, and I want to make sure you get the real help you deserve from a trained professional.</p>
-                    <p>How are you feeling today?</p>
+                    <p><strong>⚠️ IMPORTANT: I am a chatbot, NOT a real person.</strong></p>
+                    <p><strong>You need to talk to a REAL HUMAN for help.</strong></p>
+                    <p>I'm only here to connect you to trained crisis counselors who can truly support you. Please reach out to a real person using the resources I'll provide.</p>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="chatbot-disclaimer">
-            This is an automated system. For immediate crisis support, please contact a human counselor.
+            <strong>⚠️ I AM A CHATBOT - NOT A REAL PERSON. You need to talk to a REAL HUMAN counselor for help.</strong>
         </div>
     </div>
 </div>
@@ -331,23 +331,23 @@
     // Array of response templates - all direct to human support
     const responses = [
         {
-            message: "Thank you for reaching out. I'm an automated system, and I want to make sure you get the best help possible from a real person who is trained to support you.",
+            message: "<strong>I am a CHATBOT, not a real person.</strong> You need to talk to a REAL HUMAN who is trained to help you. Please use the crisis resources below to connect with a real counselor.",
             crisis: true
         },
         {
-            message: "I hear you, and I want to help. The most important thing is to connect you with a trained counselor who can provide the support you need right now.",
+            message: "<strong>Remember: I am only a chatbot.</strong> I cannot provide the help you need. You deserve to talk to a REAL HUMAN counselor who can truly support you. Please reach out now using the resources below.",
             crisis: true
         },
         {
-            message: "Your feelings matter, and you deserve real human support. I'm here to guide you to the right resources, not to replace professional help.",
+            message: "<strong>This is an automated chatbot - NOT a real person.</strong> What you're experiencing matters, and you need REAL HUMAN support from trained professionals. Please contact a crisis counselor immediately.",
             crisis: true
         },
         {
-            message: "I appreciate you sharing that with me. As an automated system, I want to make sure you're connected with someone who can truly help - a real person trained in crisis support.",
+            message: "<strong>IMPORTANT: I am a chatbot, NOT a human.</strong> I cannot help you the way a real person can. Please talk to a REAL HUMAN crisis counselor using the contact information below.",
             crisis: true
         },
         {
-            message: "What you're going through is important, and you deserve to talk to someone who can really listen and help. Let me connect you to human support.",
+            message: "<strong>I'm just a chatbot - you need REAL HUMAN help.</strong> Trained crisis counselors are available 24/7 to listen and support you. Please reach out to a real person right now.",
             crisis: true
         }
     ];
@@ -421,7 +421,7 @@
 
         // Every few messages, add encouragement
         if (messageCount % 3 === 0) {
-            responseHTML += `<p style="margin-top: 1rem; font-style: italic;">Remember: Reaching out for help is a sign of strength, not weakness. Real people are ready to support you 24/7.</p>`;
+            responseHTML += `<p style="margin-top: 1rem; font-style: italic;"><strong>I am a chatbot and cannot help you.</strong> Please talk to a REAL HUMAN counselor. They are ready to support you 24/7, and reaching out is a sign of strength.</p>`;
         }
 
         addMessage(responseHTML, 'bot');
