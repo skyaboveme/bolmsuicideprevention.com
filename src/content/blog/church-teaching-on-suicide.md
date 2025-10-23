@@ -133,7 +133,7 @@ If you are experiencing suicidal thoughts, please understand:
 
 The Church's teaching calls us to:
 
-- **Prevent suicide through awareness and support.** Offer mental health ministry, QPR training, and compassionate accompaniment.
+- **Prevent suicide through awareness and support.** Offer mental health ministry, suicide prevention training, and compassionate accompaniment.
 
 - **Break the stigma.** Talk openly about mental illness. Create communities where people feel safe seeking help.
 

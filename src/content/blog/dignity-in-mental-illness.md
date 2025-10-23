@@ -173,7 +173,7 @@ If people with mental illness always bear God's image and have an inalienable ri
 **Parish ministries should include:**
 - Mental health awareness and education
 - Support groups for those with mental illness and their families
-- QPR (Question, Persuade, Refer) training for leadership
+- Suicide prevention training for leadership
 - Clear protocols for responding to mental health crises
 - Connection to Catholic mental health professionals
 
