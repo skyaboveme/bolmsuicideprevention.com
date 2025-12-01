@@ -1,6 +1,7 @@
 ---
 import CrisisButton from '../components/CrisisButton.astro';
 import CrisisChatbot from '../components/CrisisChatbot.astro';
+import LanguageToggle from '../components/LanguageToggle.astro';
 
 interface Props {
   title: string;
@@ -35,7 +36,7 @@ const { title, description } = Astro.props;
     <!-- Crisis Banner -->
     <div class="crisis-banner">
         <div class="container">
-            <p><strong>Crisis Support:</strong> If you or someone you know is in crisis, call or text <strong>988</strong> for the National Suicide and Crisis Lifeline</p>
+            <p><strong data-i18n="crisis.bannerLabel">Crisis Support:</strong> <span data-i18n="crisis.bannerText">If you or someone you know is in crisis, call or text</span> <strong>988</strong> <span data-i18n="crisis.forThe">for the National Suicide and Crisis Lifeline</span></p>
         </div>
     </div>
 
@@ -44,31 +45,37 @@ const { title, description } = Astro.props;
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <h1>Breath of Life Ministries</h1>
-                    <p class="tagline">Suicide Prevention & Mental Health Ministry</p>
+                    <h1 data-i18n="header.title">Breath of Life Ministries</h1>
+                    <p class="tagline" data-i18n="header.tagline">Suicide Prevention & Mental Health Ministry</p>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li><a href="/" data-i18n="nav.home">Home</a></li>
+                    <li><a href="/about" data-i18n="nav.about">About</a></li>
                     <li class="dropdown">
-                        <a href="/resources">Resources</a>
+                        <a href="/resources" data-i18n="nav.resources">Resources</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/find-prayer">Find a Prayer</a></li>
-                            <li><a href="/read-in-time-of-need">Scripture Guide</a></li>
-                            <li><a href="/prayer-room">Prayer Room</a></li>
-                            <li><a href="/video-library">Video Library</a></li>
+                            <li><a href="/find-prayer" data-i18n="nav.findPrayer">Find a Prayer</a></li>
+                            <li><a href="/read-in-time-of-need" data-i18n="nav.scriptureGuide">Scripture Guide</a></li>
+                            <li><a href="/prayer-room" data-i18n="nav.prayerRoom">Prayer Room</a></li>
+                            <li><a href="/video-library" data-i18n="nav.videoLibrary">Video Library</a></li>
                         </ul>
                     </li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/events">Events</a></li>
-                    <li><a href="/volunteer">Volunteer</a></li>
-                    <li><a href="/find-help">Find Help</a></li>
-                    <li><a href="/#contact">Contact</a></li>
+                    <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
+                    <li><a href="/events" data-i18n="nav.events">Events</a></li>
+                    <li><a href="/volunteer" data-i18n="nav.volunteer">Volunteer</a></li>
+                    <li><a href="/find-help" data-i18n="nav.findHelp">Find Help</a></li>
+                    <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+                    <li class="nav-lang-toggle">
+                        <LanguageToggle />
+                    </li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="header-right">
+                    <LanguageToggle />
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -88,8 +95,8 @@ const { title, description } = Astro.props;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Breath of Life Ministries</h4>
-                    <p>Providing hope, healing, and support through Catholic mental health ministry and suicide prevention.</p>
+                    <h4 data-i18n="header.title">Breath of Life Ministries</h4>
+                    <p data-i18n="footer.description">Providing hope, healing, and support through Catholic mental health ministry and suicide prevention.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61581911290693" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit our Facebook page">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -101,32 +108,32 @@ const { title, description } = Astro.props;
                 </div>
 
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="footer.quickLinks">Quick Links</h4>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/resources">Resources</a></li>
-                        <li style="padding-left: 1rem;"><a href="/find-prayer">Find a Prayer</a></li>
-                        <li style="padding-left: 1rem;"><a href="/read-in-time-of-need">Scripture Guide</a></li>
-                        <li style="padding-left: 1rem;"><a href="/prayer-room">Prayer Room</a></li>
-                        <li style="padding-left: 1rem;"><a href="/video-library">Video Library</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/events">Events</a></li>
-                        <li><a href="/volunteer">Volunteer</a></li>
-                        <li><a href="/find-help">Find Help</a></li>
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/about" data-i18n="nav.about">About</a></li>
+                        <li><a href="/resources" data-i18n="nav.resources">Resources</a></li>
+                        <li style="padding-left: 1rem;"><a href="/find-prayer" data-i18n="nav.findPrayer">Find a Prayer</a></li>
+                        <li style="padding-left: 1rem;"><a href="/read-in-time-of-need" data-i18n="nav.scriptureGuide">Scripture Guide</a></li>
+                        <li style="padding-left: 1rem;"><a href="/prayer-room" data-i18n="nav.prayerRoom">Prayer Room</a></li>
+                        <li style="padding-left: 1rem;"><a href="/video-library" data-i18n="nav.videoLibrary">Video Library</a></li>
+                        <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
+                        <li><a href="/events" data-i18n="nav.events">Events</a></li>
+                        <li><a href="/volunteer" data-i18n="nav.volunteer">Volunteer</a></li>
+                        <li><a href="/find-help" data-i18n="nav.findHelp">Find Help</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Crisis Support</h4>
-                    <p><strong>988</strong> - National Suicide and Crisis Lifeline</p>
-                    <p><strong>741741</strong> - Text HELLO for Crisis Text Line</p>
+                    <h4 data-i18n="footer.crisisSupport">Crisis Support</h4>
+                    <p><strong>988</strong> - <span data-i18n="crisis.lifeline">National Suicide and Crisis Lifeline</span></p>
+                    <p><strong>741741</strong> - <span data-i18n="crisis.textLine">Text HELLO for Crisis Text Line</span></p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Breath of Life Ministries. All rights reserved.</p>
-                <p>Inspired by the <a href="https://catholicmhm.org" target="_blank">Association of Catholic Mental Health Ministers</a></p>
+                <p>&copy; 2024 <span data-i18n="footer.copyright">Breath of Life Ministries. All rights reserved.</span></p>
+                <p><span data-i18n="footer.inspiredBy">Inspired by the</span> <a href="https://catholicmhm.org" target="_blank">Association of Catholic Mental Health Ministers</a></p>
             </div>
         </div>
     </footer>

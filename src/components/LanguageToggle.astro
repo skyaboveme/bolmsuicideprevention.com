@@ -1,0 +1,76 @@
+---
+// Language Toggle Component
+// Allows users to switch between English and Spanish
+---
+
+<div class="language-toggle" role="group" aria-label="Language selection">
+    <button
+        type="button"
+        class="lang-btn active"
+        data-lang="en"
+        aria-pressed="true"
+        aria-label="Switch to English"
+    >
+        EN
+    </button>
+    <span class="lang-divider">|</span>
+    <button
+        type="button"
+        class="lang-btn"
+        data-lang="es"
+        aria-pressed="false"
+        aria-label="Cambiar a Español"
+    >
+        ES
+    </button>
+</div>
+
+<style>
+    .language-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        margin-left: 1rem;
+    }
+
+    .lang-btn {
+        background: none;
+        border: none;
+        color: var(--text-medium, #666);
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+        color: var(--primary-color, #2c5f8d);
+        background: rgba(44, 95, 141, 0.1);
+    }
+
+    .lang-btn.active {
+        color: var(--primary-color, #2c5f8d);
+        background: rgba(44, 95, 141, 0.15);
+    }
+
+    .lang-divider {
+        color: var(--text-muted, #999);
+        font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+        .language-toggle {
+            margin: 1rem 0;
+            justify-content: center;
+            padding: 0.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-btn {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+</style>

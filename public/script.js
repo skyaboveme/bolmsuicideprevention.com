@@ -1,4 +1,117 @@
+// ===========================================
+// Language Translation System
+// ===========================================
+let translations = {};
+let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+
+// Load translations and apply them
+async function initTranslations() {
+    try {
+        const response = await fetch(`/i18n/${currentLang}.json`);
+        translations = await response.json();
+        applyTranslations();
+        updateLanguageToggle();
+        updateHtmlLang();
+    } catch (error) {
+        console.error('Error loading translations:', error);
+    }
+}
+
+// Apply translations to all elements with data-i18n attribute
+function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getNestedTranslation(key);
+        if (translation) {
+            // Check if it's an input placeholder
+            if (element.hasAttribute('placeholder')) {
+                element.placeholder = translation;
+            } else {
+                element.textContent = translation;
+            }
+        }
+    });
+
+    // Handle elements with data-i18n-html for HTML content
+    document.querySelectorAll('[data-i18n-html]').forEach(element => {
+        const key = element.getAttribute('data-i18n-html');
+        const translation = getNestedTranslation(key);
+        if (translation) {
+            element.innerHTML = translation;
+        }
+    });
+}
+
+// Get nested translation value (e.g., "nav.home" -> translations.nav.home)
+function getNestedTranslation(key) {
+    const keys = key.split('.');
+    let value = translations;
+    for (const k of keys) {
+        if (value && value[k]) {
+            value = value[k];
+        } else {
+            return null;
+        }
+    }
+    return value;
+}
+
+// Update the language toggle buttons
+function updateLanguageToggle() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        const lang = btn.getAttribute('data-lang');
+        if (lang === currentLang) {
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+        } else {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+        }
+    });
+}
+
+// Update the HTML lang attribute
+function updateHtmlLang() {
+    document.documentElement.lang = currentLang;
+}
+
+// Switch language
+async function switchLanguage(lang) {
+    if (lang === currentLang) return;
+
+    currentLang = lang;
+    localStorage.setItem('preferredLanguage', lang);
+
+    try {
+        const response = await fetch(`/i18n/${lang}.json`);
+        translations = await response.json();
+        applyTranslations();
+        updateLanguageToggle();
+        updateHtmlLang();
+    } catch (error) {
+        console.error('Error switching language:', error);
+    }
+}
+
+// Initialize language toggle event listeners
+function initLanguageToggle() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+        });
+    });
+}
+
+// Initialize translations on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initTranslations();
+    initLanguageToggle();
+});
+
+// ===========================================
 // Mobile Navigation Toggle
+// ===========================================
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
