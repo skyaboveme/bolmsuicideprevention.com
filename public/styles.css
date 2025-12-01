@@ -307,6 +307,15 @@ header {
     align-items: center;
 }
 
+a.nav-brand {
+    text-decoration: none;
+    display: block;
+}
+
+a.nav-brand:hover {
+    opacity: 0.9;
+}
+
 .nav-brand h1 {
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
