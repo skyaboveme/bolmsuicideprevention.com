@@ -4,14 +4,16 @@ interface Props {
     author?: string;
     role?: string;
     image?: string;
+    quoteKey?: string;
+    authorKey?: string;
 }
 
-const { quote, author, role, image } = Astro.props;
+const { quote, author, role, image, quoteKey, authorKey } = Astro.props;
 ---
 
 <div class="testimonial-card">
     <div class="testimonial-quote-icon">"</div>
-    <blockquote class="testimonial-quote">
+    <blockquote class="testimonial-quote" data-i18n={quoteKey}>
         {quote}
     </blockquote>
     {(author || image) && (
@@ -23,7 +25,7 @@ const { quote, author, role, image } = Astro.props;
             )}
             {author && (
                 <div class="testimonial-author">
-                    <div class="testimonial-name">{author}</div>
+                    <div class="testimonial-name" data-i18n={authorKey}>{author}</div>
                     {role && <div class="testimonial-role">{role}</div>}
                 </div>
             )}

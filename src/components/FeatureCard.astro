@@ -5,9 +5,12 @@ interface Props {
     description: string;
     link?: string;
     linkText?: string;
+    titleKey?: string;
+    descriptionKey?: string;
+    linkTextKey?: string;
 }
 
-const { icon, title, description, link, linkText = 'Learn More' } = Astro.props;
+const { icon, title, description, link, linkText = 'Learn More', titleKey, descriptionKey, linkTextKey } = Astro.props;
 ---
 
 <div class="feature-card">
@@ -15,11 +18,11 @@ const { icon, title, description, link, linkText = 'Learn More' } = Astro.props;
         <div class="feature-icon-wrapper">
             <div class="feature-icon">{icon}</div>
         </div>
-        <h3 class="feature-title">{title}</h3>
-        <p class="feature-description">{description}</p>
+        <h3 class="feature-title" data-i18n={titleKey}>{title}</h3>
+        <p class="feature-description" data-i18n={descriptionKey}>{description}</p>
         {link && (
             <a href={link} class="feature-link">
-                {linkText}
+                <span data-i18n={linkTextKey}>{linkText}</span>
                 <span class="feature-arrow">→</span>
             </a>
         )}

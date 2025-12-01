@@ -5,9 +5,11 @@ interface Props {
     backgroundImage?: string;
     useVideo?: boolean;
     height?: 'small' | 'medium' | 'large';
+    titleKey?: string;
+    subtitleKey?: string;
 }
 
-const { title, subtitle, backgroundImage = '/images/The_Hand_of_God_Collection_Banner.webp', useVideo = false, height = 'large' } = Astro.props;
+const { title, subtitle, backgroundImage = '/images/The_Hand_of_God_Collection_Banner.webp', useVideo = false, height = 'large', titleKey, subtitleKey } = Astro.props;
 ---
 
 <section class={`hero-modern hero-${height}`}>
@@ -23,8 +25,8 @@ const { title, subtitle, backgroundImage = '/images/The_Hand_of_God_Collection_B
     </div>
     <div class="container hero-content-wrapper">
         <div class="hero-content">
-            <h1 class="hero-title">{title}</h1>
-            {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+            <h1 class="hero-title" data-i18n={titleKey}>{title}</h1>
+            {subtitle && <p class="hero-subtitle" data-i18n={subtitleKey}>{subtitle}</p>}
             <div class="hero-actions">
                 <slot />
             </div>

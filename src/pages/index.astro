@@ -16,14 +16,16 @@ import DailyReflection from '../components/DailyReflection.astro';
     <HeroSection
         title="You Are Not Alone"
         subtitle="Finding hope and healing through faith, community, and compassionate support"
+        titleKey="home.heroTitle"
+        subtitleKey="home.heroSubtitle"
         useVideo={true}
         height="large"
     >
         <InteractiveButton href="#get-help" variant="primary" size="large">
-            Get Help Now
+            <span data-i18n="buttons.getHelpNow">Get Help Now</span>
         </InteractiveButton>
         <InteractiveButton href="/resources" variant="outline" size="large">
-            Explore Resources
+            <span data-i18n="buttons.exploreResources">Explore Resources</span>
         </InteractiveButton>
     </HeroSection>
 
@@ -33,19 +35,19 @@ import DailyReflection from '../components/DailyReflection.astro';
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">988</div>
-                    <div class="stat-label">Crisis Lifeline</div>
+                    <div class="stat-label" data-i18n="home.crisisLifeline">Crisis Lifeline</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Always Available</div>
+                    <div class="stat-label" data-i18n="home.alwaysAvailable">Always Available</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Confidential</div>
+                    <div class="stat-label" data-i18n="home.confidential">Confidential</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">Free</div>
-                    <div class="stat-label">No Cost Support</div>
+                    <div class="stat-number" data-i18n="home.free">Free</div>
+                    <div class="stat-label" data-i18n="home.noCostSupport">No Cost Support</div>
                 </div>
             </div>
         </div>
@@ -59,11 +61,11 @@ import DailyReflection from '../components/DailyReflection.astro';
                     <img src="/images/prayinghands.webp" alt="Praying hands" />
                 </div>
                 <div class="animate-on-scroll">
-                    <h2 class="text-gradient">Our Mission</h2>
-                    <p class="lead">Breath of Life Ministries provides vital spiritual accompaniment for people experiencing mental health challenges and mental illness, as well as those who care for them.</p>
-                    <p>Rooted in Catholic teaching and compassion, we offer hope, resources, and community support for suicide prevention and mental wellness. Every person is created in the image and likeness of God, possessing infinite dignity and worth.</p>
+                    <h2 class="text-gradient" data-i18n="home.ourMission">Our Mission</h2>
+                    <p class="lead" data-i18n="home.missionText1">Breath of Life Ministries provides vital spiritual accompaniment for people experiencing mental health challenges and mental illness, as well as those who care for them.</p>
+                    <p data-i18n="home.missionText2">Rooted in Catholic teaching and compassion, we offer hope, resources, and community support for suicide prevention and mental wellness. Every person is created in the image and likeness of God, possessing infinite dignity and worth.</p>
                     <InteractiveButton href="/about" variant="primary">
-                        Learn About Us
+                        <span data-i18n="home.learnAboutUs">Learn About Us</span>
                     </InteractiveButton>
                 </div>
             </div>
@@ -76,33 +78,33 @@ import DailyReflection from '../components/DailyReflection.astro';
     <!-- Get Help Section -->
     <section id="get-help" class="alt-bg">
         <div class="container">
-            <h2 class="text-center text-gradient">Immediate Help & Support</h2>
-            <p class="lead text-center">If you or someone you know is in crisis, help is available right now.</p>
+            <h2 class="text-center text-gradient" data-i18n="home.immediateHelp">Immediate Help & Support</h2>
+            <p class="lead text-center" data-i18n="home.immediateHelpSubtitle">If you or someone you know is in crisis, help is available right now.</p>
 
             <div class="grid-4">
-                <Card title="In Crisis?" icon="🆘" variant="urgent">
-                    <p>If you're experiencing a mental health crisis:</p>
+                <Card title="In Crisis?" icon="🆘" variant="urgent" titleKey="home.inCrisis">
+                    <p data-i18n="home.inCrisisText">If you're experiencing a mental health crisis:</p>
                     <div style="background: var(--crisis-red); color: white; padding: 1.5rem; border-radius: 12px; margin: 1rem 0;">
-                        <p style="color: white; margin: 0;"><strong style="font-size: 1.75rem; display: block; margin-bottom: 0.5rem;">Call or Text: 988</strong></p>
-                        <p style="color: white; margin: 0; font-size: 0.9rem;">National Suicide and Crisis Lifeline<br>Available 24/7, free and confidential</p>
+                        <p style="color: white; margin: 0;"><strong style="font-size: 1.75rem; display: block; margin-bottom: 0.5rem;" data-i18n="home.callOrText">Call or Text: 988</strong></p>
+                        <p style="color: white; margin: 0; font-size: 0.9rem;"><span data-i18n="crisis.lifeline">National Suicide and Crisis Lifeline</span><br><span data-i18n="home.available247">Available 24/7, free and confidential</span></p>
                     </div>
                 </Card>
 
-                <Card title="Crisis Text Line" icon="💬">
-                    <p>Text <strong>HELLO</strong> to <strong>741741</strong></p>
-                    <p>Connect with a crisis counselor via text, anytime day or night.</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Free, confidential, 24/7 support</p>
+                <Card title="Crisis Text Line" icon="💬" titleKey="home.crisisTextLine">
+                    <p data-i18n="home.textHello">Text HELLO to 741741</p>
+                    <p data-i18n="home.connectCounselor">Connect with a crisis counselor via text, anytime day or night.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="home.freeConfidential">Free, confidential, 24/7 support</p>
                 </Card>
 
-                <Card title="Online Chat" icon="🌐">
-                    <p>Visit <a href="https://988lifeline.org/chat/" target="_blank" style="font-weight: 600;">988lifeline.org/chat</a></p>
-                    <p>Chat with a trained counselor online through secure messaging.</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Available 24/7</p>
+                <Card title="Online Chat" icon="🌐" titleKey="home.onlineChat">
+                    <p><span data-i18n="home.visitLabel">Visit</span> <a href="https://988lifeline.org/chat/" target="_blank" style="font-weight: 600;">988lifeline.org/chat</a></p>
+                    <p data-i18n="home.chatOnline">Chat with a trained counselor online through secure messaging.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="home.available247Short">Available 24/7</p>
                 </Card>
 
-                <Card title="Spiritual Support" icon="⛪">
-                    <p>Speak with a priest or pastoral minister in your area.</p>
-                    <p>Find comfort in faith, sacraments, and your parish community during difficult times.</p>
+                <Card title="Spiritual Support" icon="⛪" titleKey="home.spiritualSupport">
+                    <p data-i18n="home.speakWithPriest">Speak with a priest or pastoral minister in your area.</p>
+                    <p data-i18n="home.findComfort">Find comfort in faith, sacraments, and your parish community during difficult times.</p>
                 </Card>
             </div>
         </div>
@@ -112,7 +114,7 @@ import DailyReflection from '../components/DailyReflection.astro';
     <section class="gradient-bg">
         <div class="container">
             <div class="youtube-section">
-                <h2 class="text-center text-gradient" style="margin-bottom: 2rem;">A Message of Hope</h2>
+                <h2 class="text-center text-gradient" style="margin-bottom: 2rem;" data-i18n="home.messageOfHope">A Message of Hope</h2>
                 <div class="video-wrapper">
                     <iframe
                         src="https://www.youtube.com/embed/kXivmHLYa3I?start=5"
@@ -129,17 +131,17 @@ import DailyReflection from '../components/DailyReflection.astro';
     <!-- Catholic Teaching Section -->
     <section>
         <div class="container-narrow">
-            <h2 class="text-center text-gradient">Catholic Teaching on Suicide & Mental Health</h2>
+            <h2 class="text-center text-gradient" data-i18n="home.catholicTeaching">Catholic Teaching on Suicide & Mental Health</h2>
 
             <div style="margin: 3rem 0;">
-                <p style="text-align: center; font-size: 1.125rem; line-height: 1.8;">The Catholic Church recognizes that suicide is a grave matter, but emphasizes God's infinite mercy and understanding of mental health issues. The Church teaches that psychological disturbances, anguish, grave fear of hardship, suffering, or torture can diminish the responsibility of the person who dies by suicide.</p>
+                <p style="text-align: center; font-size: 1.125rem; line-height: 1.8;" data-i18n="home.catholicTeachingText">The Catholic Church recognizes that suicide is a grave matter, but emphasizes God's infinite mercy and understanding of mental health issues. The Church teaches that psychological disturbances, anguish, grave fear of hardship, suffering, or torture can diminish the responsibility of the person who dies by suicide.</p>
 
                 <blockquote>
-                    "We should not despair of the eternal salvation of persons who have taken their own lives. By ways known to him alone, God can provide the opportunity for salutary repentance."
-                    <cite>- Catechism of the Catholic Church, 2283</cite>
+                    <span data-i18n="home.catechismQuote">"We should not despair of the eternal salvation of persons who have taken their own lives. By ways known to him alone, God can provide the opportunity for salutary repentance."</span>
+                    <cite>- <span data-i18n="home.catechismCitation">Catechism of the Catholic Church, 2283</span></cite>
                 </blockquote>
 
-                <p style="text-align: center; font-size: 1.125rem; line-height: 1.8;">Our ministry approaches mental health and suicide prevention with compassion, recognizing that those who struggle deserve our prayers, support, and accompaniment on their journey toward healing.</p>
+                <p style="text-align: center; font-size: 1.125rem; line-height: 1.8;" data-i18n="home.catholicTeachingText2">Our ministry approaches mental health and suicide prevention with compassion, recognizing that those who struggle deserve our prayers, support, and accompaniment on their journey toward healing.</p>
             </div>
         </div>
     </section>
@@ -147,8 +149,8 @@ import DailyReflection from '../components/DailyReflection.astro';
     <!-- Programs Section -->
     <section class="alt-bg">
         <div class="container">
-            <h2 class="text-center text-gradient">Our Programs & Services</h2>
-            <p class="lead text-center">Comprehensive support, training, and resources for mental health and suicide prevention</p>
+            <h2 class="text-center text-gradient" data-i18n="home.programsServices">Our Programs & Services</h2>
+            <p class="lead text-center" data-i18n="home.programsSubtitle">Comprehensive support, training, and resources for mental health and suicide prevention</p>
 
             <div class="grid-3">
                 <FeatureCard
@@ -157,6 +159,9 @@ import DailyReflection from '../components/DailyReflection.astro';
                     description="Learn practical skills to recognize warning signs and intervene effectively to help save lives. Our evidence-based training equips community members with knowledge and confidence to support those in crisis."
                     link="/#contact"
                     linkText="Contact for Training"
+                    titleKey="home.suicidePreventionTraining"
+                    descriptionKey="home.suicidePreventionDesc"
+                    linkTextKey="buttons.contactForTraining"
                 />
 
                 <FeatureCard
@@ -165,6 +170,9 @@ import DailyReflection from '../components/DailyReflection.astro';
                     description="Connect with others who understand the challenges of mental illness or the loss of a loved one to suicide. Find community, hope, and healing in a faith-filled environment where you're never alone."
                     link="/#contact"
                     linkText="Join a Group"
+                    titleKey="home.supportGroups"
+                    descriptionKey="home.supportGroupsDesc"
+                    linkTextKey="buttons.joinGroup"
                 />
 
                 <FeatureCard
@@ -173,6 +181,9 @@ import DailyReflection from '../components/DailyReflection.astro';
                     description="Compassionate support for those who have lost a loved one to suicide. We offer specialized resources, prayer support, and accompaniment through the journey of grief and healing."
                     link="/#contact"
                     linkText="Find Support"
+                    titleKey="home.griefMinistry"
+                    descriptionKey="home.griefMinistryDesc"
+                    linkTextKey="buttons.findSupport"
                 />
 
                 <FeatureCard
@@ -181,6 +192,9 @@ import DailyReflection from '../components/DailyReflection.astro';
                     description="Workshops, seminars, and resources to break the stigma around mental illness and promote understanding within the Catholic community and beyond."
                     link="/resources"
                     linkText="View Resources"
+                    titleKey="home.educationAwareness"
+                    descriptionKey="home.educationDesc"
+                    linkTextKey="buttons.viewResources"
                 />
 
                 <FeatureCard
@@ -189,6 +203,9 @@ import DailyReflection from '../components/DailyReflection.astro';
                     description="Faith-based support that honors the Catholic tradition while providing practical help for those facing mental health challenges. Prayer, sacraments, and pastoral care."
                     link="/about"
                     linkText="Learn More"
+                    titleKey="home.spiritualAccompaniment"
+                    descriptionKey="home.spiritualAccompanimentDesc"
+                    linkTextKey="buttons.learnMore"
                 />
 
                 <FeatureCard
@@ -197,6 +214,9 @@ import DailyReflection from '../components/DailyReflection.astro';
                     description="We partner with Catholic parishes to establish mental health ministries, providing consultation, training, and ongoing support to create welcoming, informed faith communities."
                     link="/#contact"
                     linkText="Partner With Us"
+                    titleKey="home.parishPartnerships"
+                    descriptionKey="home.parishPartnershipsDesc"
+                    linkTextKey="buttons.partnerWithUs"
                 />
             </div>
         </div>
@@ -209,17 +229,17 @@ import DailyReflection from '../components/DailyReflection.astro';
                 <div class="image-container">
                     <img src="/images/liseux.webp" alt="St. Thérèse of Lisieux" />
                     <div class="image-overlay">
-                        <h3 style="color: white; margin: 0;">St. Thérèse of Lisieux</h3>
+                        <h3 style="color: white; margin: 0;" data-i18n="home.stTherese">St. Thérèse of Lisieux</h3>
                     </div>
                 </div>
                 <div class="animate-on-scroll">
-                    <h2 class="text-gradient">Patron Saints for Mental Health</h2>
-                    <p class="lead">Throughout history, the Church has recognized saints who intercede for those suffering from mental illness and distress.</p>
-                    <p><strong>St. Thérèse of Lisieux</strong> is invoked for depression and anxiety. Her "Little Way" teaches us that even in our smallest struggles, God's love is present.</p>
-                    <p><strong>St. Dymphna</strong> is the patron saint of those with mental illness and nervous disorders.</p>
-                    <p><strong>St. Benedict Joseph Labre</strong> suffered from mental illness himself and is a powerful intercessor for those who struggle.</p>
+                    <h2 class="text-gradient" data-i18n="home.patronSaints">Patron Saints for Mental Health</h2>
+                    <p class="lead" data-i18n="home.patronSaintsSubtitle">Throughout history, the Church has recognized saints who intercede for those suffering from mental illness and distress.</p>
+                    <p><strong data-i18n="home.stTherese">St. Thérèse of Lisieux</strong> <span data-i18n="home.stThereseDesc">is invoked for depression and anxiety. Her "Little Way" teaches us that even in our smallest struggles, God's love is present.</span></p>
+                    <p><strong data-i18n="home.stDymphna">St. Dymphna</strong> <span data-i18n="home.stDymphnaDesc">is the patron saint of those with mental illness and nervous disorders.</span></p>
+                    <p><strong data-i18n="home.stBenedict">St. Benedict Joseph Labre</strong> <span data-i18n="home.stBenedictDesc">suffered from mental illness himself and is a powerful intercessor for those who struggle.</span></p>
                     <InteractiveButton href="/resources#prayer" variant="secondary">
-                        View Prayer Resources
+                        <span data-i18n="home.viewPrayerResources">View Prayer Resources</span>
                     </InteractiveButton>
                 </div>
             </div>
@@ -229,42 +249,42 @@ import DailyReflection from '../components/DailyReflection.astro';
     <!-- Resources Preview -->
     <section>
         <div class="container">
-            <h2 class="text-center text-gradient">Featured Resources</h2>
-            <p class="lead text-center">Books, training, and support materials for individuals, families, and faith communities</p>
+            <h2 class="text-center text-gradient" data-i18n="home.featuredResources">Featured Resources</h2>
+            <p class="lead text-center" data-i18n="home.featuredResourcesSubtitle">Books, training, and support materials for individuals, families, and faith communities</p>
 
             <div class="grid-3">
-                <Card title="When a Loved One Dies by Suicide" variant="featured">
-                    <p>Personal stories of loss, coping with grief, and finding hope through faith and community. Written by Catholics who have experienced this profound loss.</p>
+                <Card title="When a Loved One Dies by Suicide" variant="featured" titleKey="home.lovedOneDies">
+                    <p data-i18n="home.lovedOneDiesDesc">Personal stories of loss, coping with grief, and finding hope through faith and community. Written by Catholics who have experienced this profound loss.</p>
                     <InteractiveButton href="/resources#grief" variant="outline" size="small" fullWidth={true}>
-                        Learn More
+                        <span data-i18n="buttons.learnMore">Learn More</span>
                     </InteractiveButton>
                 </Card>
 
-                <Card title="Responding to Suicide" variant="featured">
-                    <p>The first book written for Catholic leaders that takes a holistic approach to understanding suicide and ministering effectively in its aftermath.</p>
+                <Card title="Responding to Suicide" variant="featured" titleKey="home.respondingToSuicide">
+                    <p data-i18n="home.respondingToSuicideDesc">The first book written for Catholic leaders that takes a holistic approach to understanding suicide and ministering effectively in its aftermath.</p>
                     <InteractiveButton href="/resources#leadership" variant="outline" size="small" fullWidth={true}>
-                        Learn More
+                        <span data-i18n="buttons.learnMore">Learn More</span>
                     </InteractiveButton>
                 </Card>
 
-                <Card title="Prayer & Liturgy Resources" variant="featured">
-                    <p>Sacred resources for worship, prayer services, and liturgical guidance for mental health awareness and suicide prevention.</p>
+                <Card title="Prayer & Liturgy Resources" variant="featured" titleKey="home.prayerLiturgy">
+                    <p data-i18n="home.prayerLiturgyDesc">Sacred resources for worship, prayer services, and liturgical guidance for mental health awareness and suicide prevention.</p>
                     <InteractiveButton href="/resources#prayer" variant="outline" size="small" fullWidth={true}>
-                        Learn More
+                        <span data-i18n="buttons.learnMore">Learn More</span>
                     </InteractiveButton>
                 </Card>
 
-                <Card title="AgriSafe Network" variant="featured">
-                    <p>Protecting the health and safety of agricultural workers and their families through education, training, and resources for rural communities.</p>
+                <Card title="AgriSafe Network" variant="featured" titleKey="home.agriSafe">
+                    <p data-i18n="home.agriSafeDesc">Protecting the health and safety of agricultural workers and their families through education, training, and resources for rural communities.</p>
                     <InteractiveButton href="https://www.agrisafe.org/agristress-helpline/" variant="outline" size="small" fullWidth={true}>
-                        Visit Website
+                        <span data-i18n="buttons.visitWebsite">Visit Website</span>
                     </InteractiveButton>
                 </Card>
             </div>
 
             <div class="text-center" style="margin-top: 3rem;">
                 <InteractiveButton href="/resources" variant="primary" size="large">
-                    View All Resources
+                    <span data-i18n="buttons.viewAllResources">View All Resources</span>
                 </InteractiveButton>
             </div>
         </div>
@@ -273,18 +293,22 @@ import DailyReflection from '../components/DailyReflection.astro';
     <!-- Testimonial Section -->
     <section class="alt-bg">
         <div class="container">
-            <h2 class="text-center text-gradient">Hope & Healing</h2>
-            <p class="lead text-center">Stories of faith, recovery, and the compassionate support that makes a difference</p>
+            <h2 class="text-center text-gradient" data-i18n="home.hopeHealing">Hope & Healing</h2>
+            <p class="lead text-center" data-i18n="home.hopeHealingSubtitle">Stories of faith, recovery, and the compassionate support that makes a difference</p>
 
             <div class="grid-2">
                 <TestimonialCard
                     quote="The Church's teaching on God's mercy gave me hope when I thought all was lost. Mental illness doesn't diminish God's love for us."
                     author="Parish Member"
+                    quoteKey="home.testimonial1"
+                    authorKey="home.testimonial1Author"
                 />
 
                 <TestimonialCard
                     quote="Suicide prevention training equipped our parish to respond with compassion and confidence. We've become a community of hope for those who suffer."
                     author="Parish Coordinator"
+                    quoteKey="home.testimonial2"
+                    authorKey="home.testimonial2Author"
                 />
             </div>
         </div>
@@ -293,34 +317,34 @@ import DailyReflection from '../components/DailyReflection.astro';
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="text-center text-gradient">Connect With Us</h2>
-            <p class="lead text-center">We're here to support you on your journey toward healing and hope</p>
+            <h2 class="text-center text-gradient" data-i18n="home.connectWithUs">Connect With Us</h2>
+            <p class="lead text-center" data-i18n="home.connectSubtitle">We're here to support you on your journey toward healing and hope</p>
 
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Breath of Life Ministries</h3>
-                    <p>Bringing the compassion of Christ to those affected by mental illness and suicide.</p>
+                    <h3 data-i18n="header.title">Breath of Life Ministries</h3>
+                    <p data-i18n="home.bringingCompassion">Bringing the compassion of Christ to those affected by mental illness and suicide.</p>
 
                     <div class="contact-details">
-                        <p><strong>Email:</strong> <a href="mailto:Breathoflifeministry3@gmail.com">Breathoflifeministry3@gmail.com</a></p>
+                        <p><strong data-i18n="home.email">Email:</strong> <a href="mailto:Breathoflifeministry3@gmail.com">Breathoflifeministry3@gmail.com</a></p>
                     </div>
 
                     <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-gradient-1); border-radius: var(--radius-lg);">
-                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Get Involved</h4>
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="home.getInvolved">Get Involved</h4>
                         <ul style="list-style: none; margin-left: 0;">
-                            <li style="margin-bottom: 0.75rem;">✓ Volunteer with our ministry</li>
-                            <li style="margin-bottom: 0.75rem;">✓ Bring suicide prevention training to your parish</li>
-                            <li style="margin-bottom: 0.75rem;">✓ Share our resources</li>
-                            <li style="margin-bottom: 0.75rem;">✓ Support our mission</li>
+                            <li style="margin-bottom: 0.75rem;">✓ <span data-i18n="home.volunteerMinistry">Volunteer with our ministry</span></li>
+                            <li style="margin-bottom: 0.75rem;">✓ <span data-i18n="home.bringTraining">Bring suicide prevention training to your parish</span></li>
+                            <li style="margin-bottom: 0.75rem;">✓ <span data-i18n="home.shareResources">Share our resources</span></li>
+                            <li style="margin-bottom: 0.75rem;">✓ <span data-i18n="home.supportMission">Support our mission</span></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <h3>Send Us a Message</h3>
+                    <h3 data-i18n="home.sendUsMessage">Send Us a Message</h3>
                     <form action="https://formspree.io/f/xnnnevzv" method="POST" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name" data-i18n="home.name">Name</label>
                             <input type="text" id="name" name="name" required>
                         </div>
 
@@ -330,16 +354,16 @@ import DailyReflection from '../components/DailyReflection.astro';
                         </div>
 
                         <div class="form-group">
-                            <label for="subject">Subject</label>
+                            <label for="subject" data-i18n="home.subject">Subject</label>
                             <input type="text" id="subject" name="subject" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message" data-i18n="home.message">Message</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
 
-                        <button type="submit" class="contact-submit-btn">
+                        <button type="submit" class="contact-submit-btn" data-i18n="buttons.sendMessage">
                             Send Message
                         </button>
                     </form>
