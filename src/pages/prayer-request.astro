@@ -1,0 +1,486 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+---
+
+<BaseLayout
+    title="Prayer Request | Breath of Life Ministries"
+    description="Submit your prayer intentions to Breath of Life Ministries. Our community will pray for you and your loved ones. All requests are confidential."
+>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-i18n="prayer.pageTitle">Submit a Prayer Request</h1>
+            <p data-i18n="prayer.pageSubtitle">Our community of faith is here to pray with you and for you</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section>
+        <div class="container">
+            <div class="prayer-intro">
+                <div class="intro-content">
+                    <h2 class="text-gradient" data-i18n="prayer.shareIntention">Share Your Prayer Intention</h2>
+                    <p class="lead" data-i18n="prayer.introText1">"Again I say to you, if two of you agree on earth about anything they ask, it will be done for them by my Father in heaven. For where two or three are gathered in my name, there am I among them."</p>
+                    <p class="scripture-cite">— Matthew 18:19-20</p>
+                    <p data-i18n="prayer.introText2">Whatever you are facing—mental health struggles, grief, anxiety, depression, or concern for a loved one—you don't have to carry it alone. Our ministry community will lift your intentions to God in prayer.</p>
+                    <p data-i18n="prayer.introText3"><strong>All prayer requests are kept confidential.</strong> You may share as much or as little as you feel comfortable with. First names only are sufficient.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="/images/prayinghands.webp" alt="Praying hands" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Request Form -->
+    <section class="alt-bg">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <Card variant="featured">
+                    <form id="prayerForm" class="prayer-form">
+                        <!-- Hidden Web3Forms fields -->
+                        <input type="hidden" name="access_key" value="040f8a8e-8892-4712-ab63-6567fabc93e7">
+                        <input type="hidden" name="subject" value="New Prayer Request">
+                        <input type="hidden" name="from_name" value="Prayer Request - Breath of Life Ministries">
+
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="name" data-i18n="prayer.yourName">Your Name (first name is fine)</label>
+                            <input type="text" id="name" name="name" placeholder="First name or Anonymous" required>
+                        </div>
+
+                        <!-- Email (optional) -->
+                        <div class="form-group">
+                            <label for="email" data-i18n="prayer.emailOptional">Email Address (optional - only if you'd like a response)</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                        </div>
+
+                        <!-- Prayer Type -->
+                        <div class="form-group">
+                            <label for="prayerType" data-i18n="prayer.typeLabel">Type of Prayer Request</label>
+                            <select id="prayerType" name="prayer_type" required>
+                                <option value="" data-i18n="prayer.selectType">-- Select a category --</option>
+                                <option value="Mental Health Struggle" data-i18n="prayer.typeMentalHealth">Mental Health Struggle</option>
+                                <option value="Grief and Loss" data-i18n="prayer.typeGrief">Grief and Loss</option>
+                                <option value="Suicide Loss Survivor" data-i18n="prayer.typeSuicideLoss">Suicide Loss Survivor</option>
+                                <option value="Anxiety or Depression" data-i18n="prayer.typeAnxiety">Anxiety or Depression</option>
+                                <option value="Prayer for a Loved One" data-i18n="prayer.typeLovedOne">Prayer for a Loved One</option>
+                                <option value="Thanksgiving" data-i18n="prayer.typeThanksgiving">Thanksgiving / Gratitude</option>
+                                <option value="Healing" data-i18n="prayer.typeHealing">Healing (Physical or Emotional)</option>
+                                <option value="Guidance and Discernment" data-i18n="prayer.typeGuidance">Guidance and Discernment</option>
+                                <option value="Other" data-i18n="prayer.typeOther">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Prayer Intention -->
+                        <div class="form-group">
+                            <label for="intention" data-i18n="prayer.intentionLabel">Your Prayer Intention *</label>
+                            <textarea id="intention" name="intention" rows="6" placeholder="Share your prayer intention here. You may be as specific or general as you like. All requests are confidential." required></textarea>
+                            <p class="form-hint" data-i18n="prayer.intentionHint">Share as much or as little as you feel comfortable with.</p>
+                        </div>
+
+                        <!-- Request Follow-up -->
+                        <div class="form-group">
+                            <label class="checkbox-label-single">
+                                <input type="checkbox" name="request_followup" value="Yes">
+                                <span data-i18n="prayer.requestFollowup">I would like someone to follow up with me</span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submitBtn" class="btn btn-primary prayer-submit-btn">
+                            <span data-i18n="prayer.submitButton">Submit Prayer Request</span>
+                        </button>
+
+                        <p id="formMessage" class="form-message"></p>
+                    </form>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens Next -->
+    <section>
+        <div class="container">
+            <h2 class="text-center text-gradient" data-i18n="prayer.whatHappens">What Happens to Your Prayer Request?</h2>
+            <p class="lead text-center" data-i18n="prayer.whatHappensSubtitle">Your intentions are held in sacred trust by our community</p>
+
+            <div class="grid-3">
+                <Card icon="🙏">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="prayer.step1Title">We Receive & Pray</h3>
+                    <p data-i18n="prayer.step1Desc">Our ministry team receives your intention and includes it in our daily prayers. Your request is treated with reverence and confidentiality.</p>
+                </Card>
+
+                <Card icon="⛪">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="prayer.step2Title">Community Intercession</h3>
+                    <p data-i18n="prayer.step2Desc">Your intention (without identifying details) may be shared with our prayer community for additional intercession, unless you request otherwise.</p>
+                </Card>
+
+                <Card icon="💌">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="prayer.step3Title">Follow-Up (If Requested)</h3>
+                    <p data-i18n="prayer.step3Desc">If you've requested follow-up and provided your email, a member of our ministry will reach out to offer additional support and resources.</p>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripture Comfort -->
+    <section class="gradient-bg">
+        <div class="container">
+            <h2 class="text-center" style="color: var(--primary-color);" data-i18n="prayer.scriptureSectionTitle">Words of Comfort from Scripture</h2>
+
+            <div class="scripture-cards">
+                <div class="scripture-card">
+                    <blockquote>"Cast all your anxiety on him because he cares for you."</blockquote>
+                    <cite>— 1 Peter 5:7</cite>
+                </div>
+
+                <div class="scripture-card">
+                    <blockquote>"The Lord is close to the brokenhearted and saves those who are crushed in spirit."</blockquote>
+                    <cite>— Psalm 34:18</cite>
+                </div>
+
+                <div class="scripture-card">
+                    <blockquote>"Come to me, all you who are weary and burdened, and I will give you rest."</blockquote>
+                    <cite>— Matthew 11:28</cite>
+                </div>
+
+                <div class="scripture-card">
+                    <blockquote>"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God."</blockquote>
+                    <cite>— Philippians 4:6</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer to St. Dymphna -->
+    <section>
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 class="text-gradient" data-i18n="prayer.stDymphnaTitle">Prayer to St. Dymphna</h2>
+                <p class="lead" style="margin-bottom: 2rem;" data-i18n="prayer.stDymphnaSubtitle">Patron Saint of Those with Mental Illness</p>
+
+                <Card variant="featured">
+                    <div class="saint-prayer">
+                        <img src="/images/st-dymphna.webp" alt="St. Dymphna" class="saint-image" onerror="this.style.display='none'">
+                        <p class="prayer-text">
+                            Lord, our God, you graciously chose St. Dymphna as patroness of those afflicted with mental and nervous disorders. She is thus an inspiration and a symbol of charity to the thousands who ask her intercession.
+                        </p>
+                        <p class="prayer-text">
+                            Please grant, Lord, through the prayers of this pure youthful martyr, relief and consolation to all suffering such trials, and especially those for whom we pray.
+                        </p>
+                        <p class="prayer-text">
+                            We beg you, Lord, to hear the prayers of St. Dymphna on our behalf. Grant all those for whom we pray patience in their sufferings and resignation to your divine will.
+                        </p>
+                        <p class="prayer-text" style="font-weight: 600;">
+                            Fill them with hope, and grant them the relief and cure they so much desire.
+                        </p>
+                        <p class="prayer-text">
+                            We ask this through Christ our Lord, who suffered agony in the garden. <strong>Amen.</strong>
+                        </p>
+                        <p class="prayer-text" style="font-style: italic; margin-top: 1.5rem;">
+                            St. Dymphna, pray for us.
+                        </p>
+                    </div>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis Resources -->
+    <section class="crisis-section">
+        <div class="container text-center">
+            <h2 style="color: white;" data-i18n="prayer.crisisTitle">In Immediate Crisis?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-bottom: 2rem;" data-i18n="prayer.crisisText">If you or someone you know is in crisis, please reach out for immediate help:</p>
+            <div class="crisis-numbers">
+                <div class="crisis-item">
+                    <strong>988</strong>
+                    <span data-i18n="crisis.lifeline">National Suicide and Crisis Lifeline</span>
+                </div>
+                <div class="crisis-item">
+                    <strong>741741</strong>
+                    <span data-i18n="prayer.textCrisis">Text HOME to Crisis Text Line</span>
+                </div>
+            </div>
+            <p style="color: rgba(255,255,255,0.8); margin-top: 1.5rem;" data-i18n="prayer.crisisAvailable">Available 24/7 • Free • Confidential</p>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .prayer-intro {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .prayer-intro {
+            grid-template-columns: 1fr;
+        }
+
+        .intro-image {
+            order: -1;
+        }
+    }
+
+    .intro-content .lead {
+        font-style: italic;
+        color: var(--text-medium);
+        border-left: 4px solid var(--primary-color);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .scripture-cite {
+        text-align: right;
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-image img {
+        width: 100%;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .prayer-form {
+        margin-top: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.875rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        font-size: 1rem;
+        font-family: 'Lato', sans-serif;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(44, 95, 141, 0.1);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+
+    .form-group select {
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .form-hint {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-top: 0.5rem;
+    }
+
+    .checkbox-label-single {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.75rem;
+        background: rgba(44, 95, 141, 0.05);
+        border-radius: var(--radius-sm);
+        transition: background-color 0.2s ease;
+    }
+
+    .checkbox-label-single:hover {
+        background: rgba(44, 95, 141, 0.1);
+    }
+
+    .checkbox-label-single input[type="checkbox"] {
+        margin-right: 0.75rem;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .prayer-submit-btn {
+        width: 100%;
+        padding: 1.25rem 2rem;
+        font-size: 1.125rem;
+        margin-top: 1rem;
+    }
+
+    .form-message {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.95rem;
+        display: none;
+    }
+
+    .scripture-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .scripture-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .scripture-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        text-align: center;
+    }
+
+    .scripture-card blockquote {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        margin: 0 0 1rem 0;
+        border: none;
+        padding: 0;
+        background: none;
+    }
+
+    .scripture-card cite {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .saint-prayer {
+        text-align: center;
+    }
+
+    .saint-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        border: 4px solid var(--primary-color);
+    }
+
+    .prayer-text {
+        line-height: 1.9;
+        color: var(--text-medium);
+        margin-bottom: 1rem;
+    }
+
+    .crisis-section {
+        background: linear-gradient(135deg, var(--crisis-red), var(--crisis-red-dark));
+        padding: 3rem 0;
+    }
+
+    .crisis-numbers {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .crisis-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+
+    .crisis-item strong {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .crisis-item span {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('prayerForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Sending your prayer request...</span>';
+            formMessage.style.display = 'none';
+
+            // Collect form data
+            const formData = new FormData(form);
+
+            // Convert FormData to JSON
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+
+            // Add checkbox value if not checked
+            if (!object.request_followup) {
+                object.request_followup = 'No';
+            }
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(object)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = '#2e7d32';
+                    formMessage.innerHTML = '🙏 <strong>Thank you for sharing your prayer intention.</strong><br>Our community will hold you in prayer. May God\'s peace be with you.';
+                    form.reset();
+                    submitBtn.innerHTML = '<span>Prayer Request Submitted</span>';
+
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<span data-i18n="prayer.submitButton">Submit Prayer Request</span>';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#d32f2f';
+                formMessage.textContent = 'An error occurred. Please try again or email us directly at Breathoflifeministry3@gmail.com';
+                submitBtn.innerHTML = '<span data-i18n="prayer.submitButton">Submit Prayer Request</span>';
+                submitBtn.disabled = false;
+            }
+        });
+    });
+</script>
