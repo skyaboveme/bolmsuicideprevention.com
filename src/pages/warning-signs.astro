@@ -1,0 +1,861 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Card from '../components/Card.astro';
+---
+
+<BaseLayout
+    title="Warning Signs - Recognizing Someone in Crisis | Breath of Life Ministries"
+    description="Learn to recognize the warning signs of suicide and mental health crisis. Know what to look for and how to help someone who may be struggling."
+>
+    <HeroSection
+        title="Recognizing Warning Signs"
+        subtitle="Learning to see when someone needs help could save a life"
+        height="medium"
+        titleKey="warningSigns.title"
+        subtitleKey="warningSigns.subtitle"
+    />
+
+    <!-- Introduction -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-icon">👁️</div>
+                <h2 data-i18n="warningSigns.introTitle">Your Awareness Matters</h2>
+                <p data-i18n="warningSigns.introText1">Recognizing the warning signs of suicide can be the first step in saving a life. While no single sign means someone is suicidal, multiple signs—especially when they represent a change in behavior—should be taken seriously.</p>
+                <p data-i18n="warningSigns.introText2">Most people who are suicidal don't want to die—they want the pain to stop. By learning to recognize the signs, you can reach out with compassion and connect them to help.</p>
+                <blockquote class="scripture-quote">
+                    <p data-i18n="warningSigns.scripture">"Carry each other's burdens, and in this way you will fulfill the law of Christ."</p>
+                    <cite data-i18n="warningSigns.scriptureCitation">— Galatians 6:2</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talk Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="warning-category">
+                <div class="category-header talk">
+                    <div class="category-icon">💬</div>
+                    <h2 data-i18n="warningSigns.talkTitle">Talk</h2>
+                    <p class="category-subtitle" data-i18n="warningSigns.talkSubtitle">Things a person might say that indicate they are thinking about suicide</p>
+                </div>
+                <div class="warning-signs-grid">
+                    <div class="warning-sign-card">
+                        <div class="sign-quote">"I want to kill myself"</div>
+                        <p data-i18n="warningSigns.talk1">Direct statements about wanting to end their life should always be taken seriously.</p>
+                    </div>
+                    <div class="warning-sign-card">
+                        <div class="sign-quote">"I wish I were dead"</div>
+                        <p data-i18n="warningSigns.talk2">Expressing a wish to die or not exist anymore.</p>
+                    </div>
+                    <div class="warning-sign-card">
+                        <div class="sign-quote">"I'm a burden to everyone"</div>
+                        <p data-i18n="warningSigns.talk3">Feeling like they are a burden to others or that people would be better off without them.</p>
+                    </div>
+                    <div class="warning-sign-card">
+                        <div class="sign-quote">"I have no reason to live"</div>
+                        <p data-i18n="warningSigns.talk4">Expressing feelings of hopelessness or having no purpose.</p>
+                    </div>
+                    <div class="warning-sign-card">
+                        <div class="sign-quote">"I can't take it anymore"</div>
+                        <p data-i18n="warningSigns.talk5">Feeling trapped or in unbearable pain, emotional or physical.</p>
+                    </div>
+                    <div class="warning-sign-card">
+                        <div class="sign-quote">"Soon you won't have to worry about me"</div>
+                        <p data-i18n="warningSigns.talk6">Indirect statements that hint at ending their life or going away permanently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Behavior Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="warning-category">
+                <div class="category-header behavior">
+                    <div class="category-icon">🔍</div>
+                    <h2 data-i18n="warningSigns.behaviorTitle">Behavior</h2>
+                    <p class="category-subtitle" data-i18n="warningSigns.behaviorSubtitle">Actions that may indicate someone is preparing to end their life or is in crisis</p>
+                </div>
+                <div class="behavior-grid">
+                    <div class="behavior-card">
+                        <div class="behavior-icon">🔎</div>
+                        <h3 data-i18n="warningSigns.behavior1Title">Searching for Methods</h3>
+                        <p data-i18n="warningSigns.behavior1">Looking for ways to kill themselves, such as searching online or trying to obtain a gun, pills, or other means.</p>
+                    </div>
+                    <div class="behavior-card">
+                        <div class="behavior-icon">🎁</div>
+                        <h3 data-i18n="warningSigns.behavior2Title">Giving Away Possessions</h3>
+                        <p data-i18n="warningSigns.behavior2">Giving away prized possessions or suddenly putting affairs in order, making a will, or saying goodbye.</p>
+                    </div>
+                    <div class="behavior-card">
+                        <div class="behavior-icon">🚫</div>
+                        <h3 data-i18n="warningSigns.behavior3Title">Withdrawing</h3>
+                        <p data-i18n="warningSigns.behavior3">Withdrawing from friends, family, and social activities. Isolating themselves from loved ones.</p>
+                    </div>
+                    <div class="behavior-card">
+                        <div class="behavior-icon">😴</div>
+                        <h3 data-i18n="warningSigns.behavior4Title">Sleep Changes</h3>
+                        <p data-i18n="warningSigns.behavior4">Sleeping too little or too much. Significant changes in sleep patterns.</p>
+                    </div>
+                    <div class="behavior-card">
+                        <div class="behavior-icon">⚡</div>
+                        <h3 data-i18n="warningSigns.behavior5Title">Reckless Behavior</h3>
+                        <p data-i18n="warningSigns.behavior5">Acting recklessly, engaging in risky activities, or increasing use of alcohol or drugs.</p>
+                    </div>
+                    <div class="behavior-card">
+                        <div class="behavior-icon">😶</div>
+                        <h3 data-i18n="warningSigns.behavior6Title">Sudden Calm</h3>
+                        <p data-i18n="warningSigns.behavior6">Appearing suddenly calm or happy after a period of depression—this could mean they've made a decision to end their life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mood Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="warning-category">
+                <div class="category-header mood">
+                    <div class="category-icon">💭</div>
+                    <h2 data-i18n="warningSigns.moodTitle">Mood</h2>
+                    <p class="category-subtitle" data-i18n="warningSigns.moodSubtitle">Emotional states that may indicate someone is struggling</p>
+                </div>
+                <div class="mood-grid">
+                    <div class="mood-card">
+                        <div class="mood-emoji">😔</div>
+                        <h3 data-i18n="warningSigns.mood1">Depression</h3>
+                        <p data-i18n="warningSigns.mood1Desc">Persistent sadness, tearfulness, or low mood that doesn't improve.</p>
+                    </div>
+                    <div class="mood-card">
+                        <div class="mood-emoji">😰</div>
+                        <h3 data-i18n="warningSigns.mood2">Anxiety</h3>
+                        <p data-i18n="warningSigns.mood2Desc">Extreme anxiety, agitation, or feeling on edge.</p>
+                    </div>
+                    <div class="mood-card">
+                        <div class="mood-emoji">😤</div>
+                        <h3 data-i18n="warningSigns.mood3">Irritability</h3>
+                        <p data-i18n="warningSigns.mood3Desc">Unusual irritability, anger, or rage—especially if out of character.</p>
+                    </div>
+                    <div class="mood-card">
+                        <div class="mood-emoji">😞</div>
+                        <h3 data-i18n="warningSigns.mood4">Hopelessness</h3>
+                        <p data-i18n="warningSigns.mood4Desc">Feeling hopeless about the future or that things will never get better.</p>
+                    </div>
+                    <div class="mood-card">
+                        <div class="mood-emoji">😣</div>
+                        <h3 data-i18n="warningSigns.mood5">Shame</h3>
+                        <p data-i18n="warningSigns.mood5Desc">Overwhelming feelings of shame, guilt, or self-hatred.</p>
+                    </div>
+                    <div class="mood-card">
+                        <div class="mood-emoji">😶</div>
+                        <h3 data-i18n="warningSigns.mood6">Emptiness</h3>
+                        <p data-i18n="warningSigns.mood6Desc">Feeling empty, numb, or like nothing matters anymore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Factors -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="warningSigns.riskTitle">Risk Factors</h2>
+            <p class="section-subtitle" data-i18n="warningSigns.riskSubtitle">Circumstances that can increase someone's vulnerability to suicide</p>
+
+            <div class="risk-factors-grid">
+                <div class="risk-category">
+                    <h3 data-i18n="warningSigns.healthRisks">Health Factors</h3>
+                    <ul>
+                        <li data-i18n="warningSigns.risk1">Mental health conditions (depression, bipolar disorder, anxiety, PTSD)</li>
+                        <li data-i18n="warningSigns.risk2">Substance abuse or addiction</li>
+                        <li data-i18n="warningSigns.risk3">Chronic pain or serious illness</li>
+                        <li data-i18n="warningSigns.risk4">Previous suicide attempt</li>
+                        <li data-i18n="warningSigns.risk5">Family history of suicide</li>
+                    </ul>
+                </div>
+                <div class="risk-category">
+                    <h3 data-i18n="warningSigns.lifeRisks">Life Events</h3>
+                    <ul>
+                        <li data-i18n="warningSigns.risk6">Recent loss (death, divorce, job loss, financial crisis)</li>
+                        <li data-i18n="warningSigns.risk7">Relationship problems or breakup</li>
+                        <li data-i18n="warningSigns.risk8">Legal problems or incarceration</li>
+                        <li data-i18n="warningSigns.risk9">Bullying, abuse, or trauma</li>
+                        <li data-i18n="warningSigns.risk10">Major life transitions</li>
+                    </ul>
+                </div>
+                <div class="risk-category">
+                    <h3 data-i18n="warningSigns.socialRisks">Social Factors</h3>
+                    <ul>
+                        <li data-i18n="warningSigns.risk11">Social isolation or lack of support</li>
+                        <li data-i18n="warningSigns.risk12">Exposure to others' suicide</li>
+                        <li data-i18n="warningSigns.risk13">Access to lethal means</li>
+                        <li data-i18n="warningSigns.risk14">Stigma around seeking help</li>
+                        <li data-i18n="warningSigns.risk15">Barriers to mental health care</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What To Do -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-i18n="warningSigns.whatToDoTitle">What To Do If You See Warning Signs</h2>
+            <p class="section-subtitle" data-i18n="warningSigns.whatToDoSubtitle">You don't need to be a professional to help. Your compassion can make a difference.</p>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 data-i18n="warningSigns.step1Title">Ask Directly</h3>
+                    <p data-i18n="warningSigns.step1Text">Don't be afraid to ask if they're thinking about suicide. Asking does not plant the idea—it shows you care and opens the door to conversation.</p>
+                    <div class="step-example">
+                        <strong data-i18n="warningSigns.tryAsking">Try asking:</strong>
+                        <ul>
+                            <li data-i18n="warningSigns.ask1">"Are you thinking about suicide?"</li>
+                            <li data-i18n="warningSigns.ask2">"Are you thinking about hurting yourself?"</li>
+                            <li data-i18n="warningSigns.ask3">"I'm worried about you. Are you okay?"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 data-i18n="warningSigns.step2Title">Listen with Compassion</h3>
+                    <p data-i18n="warningSigns.step2Text">Let them share their feelings without judgment. Don't try to minimize their pain or offer quick solutions. Sometimes the most powerful thing you can do is simply listen.</p>
+                    <div class="step-example">
+                        <strong data-i18n="warningSigns.thingsToSay">Things to say:</strong>
+                        <ul>
+                            <li data-i18n="warningSigns.say1">"I'm here for you."</li>
+                            <li data-i18n="warningSigns.say2">"You're not alone in this."</li>
+                            <li data-i18n="warningSigns.say3">"Help is available and you deserve it."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 data-i18n="warningSigns.step3Title">Keep Them Safe</h3>
+                    <p data-i18n="warningSigns.step3Text">If possible, help reduce their access to lethal means. Stay with them if they're in immediate danger. Don't promise to keep their thoughts of suicide a secret.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 data-i18n="warningSigns.step4Title">Connect Them to Help</h3>
+                    <p data-i18n="warningSigns.step4Text">Help them connect with professional support. Offer to help them call a crisis line or make an appointment. Follow up to show you care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protective Factors -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="warningSigns.protectiveTitle">Protective Factors</h2>
+            <p class="section-subtitle" data-i18n="warningSigns.protectiveSubtitle">Factors that can help protect against suicide and support recovery</p>
+
+            <div class="protective-grid">
+                <div class="protective-card">
+                    <div class="protective-icon">🤝</div>
+                    <h3 data-i18n="warningSigns.protective1">Strong Connections</h3>
+                    <p data-i18n="warningSigns.protective1Desc">Supportive relationships with family, friends, and community.</p>
+                </div>
+                <div class="protective-card">
+                    <div class="protective-icon">⛪</div>
+                    <h3 data-i18n="warningSigns.protective2">Faith & Purpose</h3>
+                    <p data-i18n="warningSigns.protective2Desc">Religious or spiritual beliefs that provide meaning and discourage suicide.</p>
+                </div>
+                <div class="protective-card">
+                    <div class="protective-icon">🏥</div>
+                    <h3 data-i18n="warningSigns.protective3">Access to Care</h3>
+                    <p data-i18n="warningSigns.protective3Desc">Access to effective mental health care and crisis services.</p>
+                </div>
+                <div class="protective-card">
+                    <div class="protective-icon">💪</div>
+                    <h3 data-i18n="warningSigns.protective4">Coping Skills</h3>
+                    <p data-i18n="warningSigns.protective4Desc">Healthy ways to manage stress, solve problems, and regulate emotions.</p>
+                </div>
+                <div class="protective-card">
+                    <div class="protective-icon">🌟</div>
+                    <h3 data-i18n="warningSigns.protective5">Reasons to Live</h3>
+                    <p data-i18n="warningSigns.protective5Desc">Children, pets, responsibilities, goals, or other reasons to stay alive.</p>
+                </div>
+                <div class="protective-card">
+                    <div class="protective-icon">🔒</div>
+                    <h3 data-i18n="warningSigns.protective6">Reduced Access</h3>
+                    <p data-i18n="warningSigns.protective6Desc">Limited access to lethal means such as firearms or medications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis Resources -->
+    <section class="section-padding crisis-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="warningSigns.crisisTitle">If Someone Is in Immediate Danger</h2>
+            <p class="section-subtitle light" data-i18n="warningSigns.crisisSubtitle">Don't leave them alone. Get help immediately.</p>
+
+            <div class="crisis-grid">
+                <div class="crisis-card">
+                    <div class="crisis-number">988</div>
+                    <p data-i18n="crisis.lifeline">National Suicide and Crisis Lifeline</p>
+                    <span class="crisis-badge" data-i18n="home.available247Short">Available 24/7</span>
+                </div>
+                <div class="crisis-card">
+                    <div class="crisis-number">911</div>
+                    <p data-i18n="warningSigns.emergency">Emergency Services</p>
+                    <span class="crisis-badge" data-i18n="warningSigns.immediateEmergency">For immediate emergencies</span>
+                </div>
+                <div class="crisis-card">
+                    <div class="crisis-number">741741</div>
+                    <p data-i18n="home.crisisTextLine">Crisis Text Line</p>
+                    <span class="crisis-badge" data-i18n="warningSigns.textHello">Text HELLO</span>
+                </div>
+            </div>
+
+            <div class="crisis-cta">
+                <a href="/find-help" class="btn btn-light" data-i18n="warningSigns.moreResources">Find More Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="prayer-section">
+                <div class="prayer-icon">🙏</div>
+                <h2 data-i18n="warningSigns.prayerTitle">A Prayer for Those in Crisis</h2>
+                <div class="prayer-text">
+                    <p data-i18n="warningSigns.prayer">Merciful God, we lift up to You all who are struggling with thoughts of suicide. Surround them with Your love and give them hope. Open their hearts to receive help and their eyes to see that they are not alone. Grant us the courage to reach out, the wisdom to speak with compassion, and the grace to walk with those who are suffering. May they find in You the peace that surpasses all understanding. We ask this through Christ our Lord. Amen.</p>
+                </div>
+                <cite data-i18n="warningSigns.prayerAttribution">— Breath of Life Ministries</cite>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .intro-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .intro-icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-content h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
+    }
+
+    .intro-content p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .scripture-quote {
+        background: white;
+        border-left: 4px solid var(--accent-color);
+        padding: 1.5rem 2rem;
+        margin: 2rem 0;
+        border-radius: 0 12px 12px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .scripture-quote p {
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .scripture-quote cite {
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
+
+    /* Category Headers */
+    .category-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .category-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .category-header h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .category-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Talk Section - Warning Signs Grid */
+    .warning-signs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .warning-sign-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid var(--crisis-red);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .warning-sign-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .sign-quote {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--crisis-red);
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .sign-quote::before {
+        content: '"';
+    }
+
+    .sign-quote::after {
+        content: '"';
+    }
+
+    .warning-sign-card p {
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    /* Behavior Section */
+    .behavior-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .behavior-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .behavior-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .behavior-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .behavior-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+    }
+
+    .behavior-card p {
+        color: var(--text-dark);
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* Mood Section */
+    .mood-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .mood-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mood-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .mood-emoji {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .mood-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .mood-card p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Risk Factors */
+    .risk-factors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .risk-category {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .risk-category h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.25rem;
+        font-size: 1.3rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid var(--accent-color);
+    }
+
+    .risk-category ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .risk-category li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-dark);
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .risk-category li::before {
+        content: '•';
+        color: var(--accent-color);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    .risk-category li:last-child {
+        border-bottom: none;
+    }
+
+    /* Steps Container */
+    .steps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .step-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .step-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+    }
+
+    .step-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .step-card > p {
+        color: var(--text-dark);
+        line-height: 1.7;
+        margin-bottom: 1.25rem;
+    }
+
+    .step-example {
+        background: var(--bg-light);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .step-example strong {
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+
+    .step-example ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .step-example li {
+        padding: 0.5rem 0;
+        color: var(--text-dark);
+        font-style: italic;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .step-example li:last-child {
+        border-bottom: none;
+    }
+
+    /* Protective Factors */
+    .protective-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .protective-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-top: 4px solid var(--accent-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .protective-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .protective-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .protective-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    .protective-card p {
+        color: var(--text-light);
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* Crisis Section */
+    .crisis-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        color: white;
+    }
+
+    .crisis-section .section-title {
+        color: white;
+    }
+
+    .crisis-section .section-subtitle.light {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .crisis-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .crisis-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .crisis-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+    .crisis-card p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.75rem;
+    }
+
+    .crisis-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.35rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: white;
+    }
+
+    .crisis-cta {
+        text-align: center;
+    }
+
+    .btn-light {
+        background: white;
+        color: var(--primary-color);
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-light:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Prayer Section */
+    .prayer-section {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .prayer-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .prayer-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    .prayer-text p {
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.9;
+        color: var(--text-dark);
+    }
+
+    .prayer-section cite {
+        display: block;
+        margin-top: 1.5rem;
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
+
+    /* Section Titles */
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: var(--primary-color);
+        margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+    }
+
+    .section-padding {
+        padding: 5rem 0;
+    }
+
+    .bg-light {
+        background-color: var(--bg-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .intro-content h2 {
+            font-size: 1.8rem;
+        }
+
+        .category-header h2 {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .section-padding {
+            padding: 3rem 0;
+        }
+
+        .prayer-section {
+            padding: 2rem;
+        }
+
+        .crisis-number {
+            font-size: 2.5rem;
+        }
+
+        .warning-signs-grid,
+        .behavior-grid,
+        .mood-grid,
+        .risk-factors-grid,
+        .steps-container,
+        .protective-grid,
+        .crisis-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
