@@ -1,0 +1,42 @@
+# Breath of Life Ministries - Suicide Prevention & Mental Health Ministry
+# We welcome all search engines and AI crawlers to help people find crisis support
+
+User-agent: *
+Allow: /
+
+# Welcome AI Crawlers - Help people find hope
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: BraveBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://bolmsuicideprevention.com/sitemap.xml
+
+# LLMs.txt for AI discoverability
+# See: https://bolmsuicideprevention.com/llms.txt

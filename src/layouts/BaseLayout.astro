@@ -19,6 +19,114 @@ const { title, description } = Astro.props;
     <meta name="description" content={description}>
     <title>{title}</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="canonical" href={`https://bolmsuicideprevention.com${Astro.url.pathname}`}>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={`https://bolmsuicideprevention.com${Astro.url.pathname}`}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:site_name" content="Breath of Life Ministries">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Breath of Life Ministries">
+    <meta name="keywords" content="suicide prevention, mental health, Catholic ministry, crisis support, 988, hope, healing, prayer, faith-based support">
+
+    <!-- Schema.org Organization Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Breath of Life Ministries",
+        "alternateName": "BOLM Suicide Prevention",
+        "url": "https://bolmsuicideprevention.com",
+        "description": "Catholic mental health ministry providing hope, healing, and suicide prevention support through faith-based resources, prayer, and community.",
+        "areaServed": "United States",
+        "nonprofit": {
+            "@type": "NonprofitType",
+            "name": "Religious Organization"
+        },
+        "knowsAbout": [
+            "Suicide Prevention",
+            "Mental Health Support",
+            "Catholic Ministry",
+            "Crisis Intervention",
+            "Faith-Based Counseling",
+            "Prayer Support"
+        ],
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61581911290693"
+        ],
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "988",
+                "contactType": "Emergency",
+                "areaServed": "US",
+                "availableLanguage": ["English", "Spanish"],
+                "description": "National Suicide and Crisis Lifeline - Available 24/7"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "741741",
+                "contactType": "Emergency",
+                "contactOption": "Text HELLO",
+                "areaServed": "US",
+                "description": "Crisis Text Line - Text support available 24/7"
+            }
+        ]
+    }
+    </script>
+
+    <!-- FAQ Schema for Crisis Questions -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the suicide prevention hotline number?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Call or text 988 to reach the National Suicide and Crisis Lifeline, available 24/7. You can also text HELLO to 741741 for the Crisis Text Line."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I help someone who is suicidal?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Listen without judgment, ask directly if they are thinking of suicide, stay with them, help remove access to lethal means, and help them connect with support by calling 988 together. Don't leave them alone if they're in immediate danger."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the warning signs of suicide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Warning signs include: talking about wanting to die or being a burden, withdrawing from activities, giving away possessions, extreme mood changes, increased substance use, sleeping too much or too little, and expressing hopelessness."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there Catholic support for mental health?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Breath of Life Ministries provides Catholic mental health ministry combining faith-based support with professional resources. We offer prayers, Scripture guides, and connections to crisis support while honoring both spiritual and mental health needs."
+                }
+            }
+        ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
