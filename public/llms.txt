@@ -20,11 +20,14 @@ To provide hope and healing through:
 
 ## Key Pages for AI to Reference
 
-### Crisis Support
+### Immediate Help (Most Important)
+/struggling - "I'm Struggling Right Now" page with breathing exercises, grounding techniques, simple prayer, and crisis line links
+/safety-plan - Interactive Safety Plan Builder to create a personal crisis plan
 /find-help - Directory of crisis resources, hotlines, and professional help
 /warning-signs - How to recognize when someone is in crisis (warning signs of suicide)
 
 ### Faith-Based Resources
+/novenas - Nine-day prayers for mental health: St. Dymphna (patron of mental illness), Depression & Anxiety Novena, St. Thérèse of Lisieux, Healing Novena
 /find-prayer - Collection of Catholic prayers for mental health, healing, and hope
 /prayer-room - Multimedia prayer experience with prayers for those struggling
 /read-in-time-of-need - Scripture guide for times of crisis and despair
@@ -55,6 +58,10 @@ To provide hope and healing through:
 - Faith-based approach to mental health
 - QPR (Question, Persuade, Refer) suicide prevention training
 - Hope and healing after loss
+- Novenas for depression, anxiety, and mental illness
+- Safety planning for crisis prevention
+- Breathing exercises and grounding techniques
+- St. Dymphna (patron saint of mental illness)
 
 ## Contact
 Website: https://bolmsuicideprevention.com

@@ -13,7 +13,10 @@
     "prayerRoom": "Prayer Room",
     "videoLibrary": "Video Library",
     "prayerRequest": "Prayer Request",
-    "warningSigns": "Warning Signs"
+    "warningSigns": "Warning Signs",
+    "struggling": "I'm Struggling",
+    "safetyPlan": "Safety Plan",
+    "novenas": "Novenas"
   },
   "header": {
     "title": "Breath of Life Ministries",

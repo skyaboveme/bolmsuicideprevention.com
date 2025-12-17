@@ -1,0 +1,872 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<BaseLayout
+    title="Safety Plan Builder - Create Your Personal Crisis Plan | Breath of Life Ministries"
+    description="Create a personalized safety plan to help you through moments of crisis. Identify warning signs, coping strategies, and reasons to live."
+>
+    <HeroSection
+        title="Safety Plan Builder"
+        subtitle="A personal plan to help you through difficult moments"
+        height="medium"
+        titleKey="safetyPlan.title"
+        subtitleKey="safetyPlan.subtitle"
+    />
+
+    <!-- Introduction -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="intro-box">
+                <div class="intro-icon">🛡️</div>
+                <h2 data-i18n="safetyPlan.introTitle">Your Safety Plan</h2>
+                <p data-i18n="safetyPlan.introText">A safety plan is a personalized, practical plan that helps you recognize when you're struggling and reminds you of specific actions to take. Creating one now, when you're calmer, gives you a lifeline to reach for during difficult moments.</p>
+                <p class="privacy-note" data-i18n="safetyPlan.privacyNote">Your plan stays on your device. Nothing is sent to any server. This is just for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Plan Form -->
+    <section class="section-padding">
+        <div class="container">
+            <form id="safety-plan-form" class="safety-plan-form">
+
+                <!-- Step 1: Warning Signs -->
+                <div class="plan-section">
+                    <div class="section-header">
+                        <span class="section-number">1</span>
+                        <div>
+                            <h3 data-i18n="safetyPlan.step1Title">My Warning Signs</h3>
+                            <p data-i18n="safetyPlan.step1Desc">What thoughts, feelings, or situations tell you that a crisis may be developing?</p>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="warning-signs" name="warning-signs" rows="4" placeholder="Example: When I start isolating myself, when I can't sleep, when I feel like a burden..." data-i18n-placeholder="safetyPlan.step1Placeholder"></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 2: Coping Strategies -->
+                <div class="plan-section">
+                    <div class="section-header">
+                        <span class="section-number">2</span>
+                        <div>
+                            <h3 data-i18n="safetyPlan.step2Title">Things I Can Do to Feel Better</h3>
+                            <p data-i18n="safetyPlan.step2Desc">Activities or coping strategies that help distract or calm you—things you can do on your own.</p>
+                        </div>
+                    </div>
+                    <div class="suggestions">
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion1">Prayer</span>
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion2">Go for a walk</span>
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion3">Listen to music</span>
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion4">Take deep breaths</span>
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion5">Read Scripture</span>
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion6">Pet an animal</span>
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion7">Take a shower</span>
+                        <span class="suggestion" data-i18n="safetyPlan.suggestion8">Call a friend</span>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="coping-strategies" name="coping-strategies" rows="4" placeholder="List activities that help you feel calmer or distracted..." data-i18n-placeholder="safetyPlan.step2Placeholder"></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 3: Reasons to Live -->
+                <div class="plan-section highlight">
+                    <div class="section-header">
+                        <span class="section-number">3</span>
+                        <div>
+                            <h3 data-i18n="safetyPlan.step3Title">My Reasons to Live</h3>
+                            <p data-i18n="safetyPlan.step3Desc">People, things, hopes, or responsibilities that matter to you and give you reasons to keep going.</p>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="reasons-to-live" name="reasons-to-live" rows="4" placeholder="Example: My children, my faith, seeing my niece graduate, my dog who needs me..." data-i18n-placeholder="safetyPlan.step3Placeholder"></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 4: People I Can Call -->
+                <div class="plan-section">
+                    <div class="section-header">
+                        <span class="section-number">4</span>
+                        <div>
+                            <h3 data-i18n="safetyPlan.step4Title">People I Can Reach Out To</h3>
+                            <p data-i18n="safetyPlan.step4Desc">Friends, family members, or others who can help distract you or provide support.</p>
+                        </div>
+                    </div>
+                    <div class="contact-inputs">
+                        <div class="contact-row">
+                            <input type="text" id="contact1-name" placeholder="Name" data-i18n-placeholder="safetyPlan.contactName">
+                            <input type="tel" id="contact1-phone" placeholder="Phone number" data-i18n-placeholder="safetyPlan.contactPhone">
+                        </div>
+                        <div class="contact-row">
+                            <input type="text" id="contact2-name" placeholder="Name" data-i18n-placeholder="safetyPlan.contactName">
+                            <input type="tel" id="contact2-phone" placeholder="Phone number" data-i18n-placeholder="safetyPlan.contactPhone">
+                        </div>
+                        <div class="contact-row">
+                            <input type="text" id="contact3-name" placeholder="Name" data-i18n-placeholder="safetyPlan.contactName">
+                            <input type="tel" id="contact3-phone" placeholder="Phone number" data-i18n-placeholder="safetyPlan.contactPhone">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Professional Help -->
+                <div class="plan-section">
+                    <div class="section-header">
+                        <span class="section-number">5</span>
+                        <div>
+                            <h3 data-i18n="safetyPlan.step5Title">Professional Support</h3>
+                            <p data-i18n="safetyPlan.step5Desc">Professionals or agencies you can contact during a crisis.</p>
+                        </div>
+                    </div>
+                    <div class="professional-contacts">
+                        <div class="pro-contact">
+                            <label data-i18n="safetyPlan.therapist">Therapist/Counselor:</label>
+                            <input type="text" id="therapist-name" placeholder="Name" data-i18n-placeholder="safetyPlan.contactName">
+                            <input type="tel" id="therapist-phone" placeholder="Phone" data-i18n-placeholder="safetyPlan.contactPhone">
+                        </div>
+                        <div class="pro-contact">
+                            <label data-i18n="safetyPlan.doctor">Doctor:</label>
+                            <input type="text" id="doctor-name" placeholder="Name" data-i18n-placeholder="safetyPlan.contactName">
+                            <input type="tel" id="doctor-phone" placeholder="Phone" data-i18n-placeholder="safetyPlan.contactPhone">
+                        </div>
+                        <div class="pro-contact">
+                            <label data-i18n="safetyPlan.pastor">Pastor/Priest:</label>
+                            <input type="text" id="pastor-name" placeholder="Name" data-i18n-placeholder="safetyPlan.contactName">
+                            <input type="tel" id="pastor-phone" placeholder="Phone" data-i18n-placeholder="safetyPlan.contactPhone">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Making Environment Safe -->
+                <div class="plan-section">
+                    <div class="section-header">
+                        <span class="section-number">6</span>
+                        <div>
+                            <h3 data-i18n="safetyPlan.step6Title">Making My Environment Safer</h3>
+                            <p data-i18n="safetyPlan.step6Desc">Steps you can take to reduce access to things that could be used to hurt yourself.</p>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="safety-steps" name="safety-steps" rows="3" placeholder="Example: Give medications to a friend to hold, lock up firearms, stay with someone..." data-i18n-placeholder="safetyPlan.step6Placeholder"></textarea>
+                    </div>
+                </div>
+
+                <!-- Crisis Lines (Pre-filled) -->
+                <div class="plan-section crisis-section-form">
+                    <div class="section-header">
+                        <span class="section-number crisis">!</span>
+                        <div>
+                            <h3 data-i18n="safetyPlan.crisisTitle">Crisis Lines - Always Available</h3>
+                            <p data-i18n="safetyPlan.crisisDesc">When the above steps don't help and you're in immediate danger.</p>
+                        </div>
+                    </div>
+                    <div class="crisis-lines">
+                        <div class="crisis-line">
+                            <span class="crisis-number">988</span>
+                            <span data-i18n="crisis.lifeline">National Suicide and Crisis Lifeline</span>
+                        </div>
+                        <div class="crisis-line">
+                            <span class="crisis-number">741741</span>
+                            <span data-i18n="safetyPlan.textCrisis">Text HOME to Crisis Text Line</span>
+                        </div>
+                        <div class="crisis-line">
+                            <span class="crisis-number">911</span>
+                            <span data-i18n="safetyPlan.emergency">Emergency Services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="button" id="save-plan" class="btn btn-primary" data-i18n="safetyPlan.saveBtn">Save My Plan</button>
+                    <button type="button" id="print-plan" class="btn btn-secondary" data-i18n="safetyPlan.printBtn">Print Plan</button>
+                    <button type="button" id="clear-plan" class="btn btn-outline" data-i18n="safetyPlan.clearBtn">Clear All</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Saved Plan Display (Hidden by default) -->
+    <section id="saved-plan-section" class="section-padding bg-light" style="display: none;">
+        <div class="container">
+            <div class="saved-plan-card">
+                <div class="saved-header">
+                    <h2 data-i18n="safetyPlan.savedTitle">Your Safety Plan</h2>
+                    <p class="saved-date"></p>
+                </div>
+                <div id="saved-plan-content"></div>
+                <div class="saved-actions">
+                    <button type="button" id="edit-plan" class="btn btn-secondary" data-i18n="safetyPlan.editBtn">Edit Plan</button>
+                    <button type="button" id="print-saved" class="btn btn-primary" data-i18n="safetyPlan.printBtn">Print Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Encouragement -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="encouragement-box">
+                <div class="encouragement-icon">💙</div>
+                <h2 data-i18n="safetyPlan.encourageTitle">You Matter</h2>
+                <p data-i18n="safetyPlan.encourageText">Creating a safety plan is an act of courage and self-care. It shows you want to get through difficult times. Remember: feelings are temporary, but you are not replaceable. There is hope, even when you can't see it.</p>
+                <blockquote class="scripture-quote">
+                    <p data-i18n="safetyPlan.scripture">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope."</p>
+                    <cite data-i18n="safetyPlan.scriptureCitation">— Jeremiah 29:11</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="safetyPlan.needHelpNow">Need Help Right Now?</h2>
+            <div class="quick-links">
+                <a href="/struggling" class="quick-link-card" data-i18n="safetyPlan.linkStruggling">I'm Struggling Right Now</a>
+                <a href="/find-prayer" class="quick-link-card" data-i18n="safetyPlan.linkPrayer">Find a Prayer</a>
+                <a href="/novenas" class="quick-link-card" data-i18n="safetyPlan.linkNovenas">Novenas for Healing</a>
+                <a href="/find-help" class="quick-link-card" data-i18n="safetyPlan.linkHelp">Find Professional Help</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .intro-box {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .intro-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .intro-box h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .intro-box p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .privacy-note {
+        background: #e8f5e9;
+        padding: 1rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: #2e7d32;
+    }
+
+    /* Form Styles */
+    .safety-plan-form {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .plan-section {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .plan-section.highlight {
+        background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+        border: 2px solid var(--accent-color);
+    }
+
+    .plan-section.crisis-section-form {
+        background: linear-gradient(135deg, #ffebee 0%, #ffffff 100%);
+        border: 2px solid var(--crisis-red);
+    }
+
+    .section-header {
+        display: flex;
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .section-number {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    .section-number.crisis {
+        background: var(--crisis-red);
+        font-size: 1.5rem;
+    }
+
+    .section-header h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+        font-size: 1.3rem;
+    }
+
+    .section-header p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .input-group textarea,
+    .contact-row input,
+    .pro-contact input {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .input-group textarea:focus,
+    .contact-row input:focus,
+    .pro-contact input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+    }
+
+    .input-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    /* Suggestions */
+    .suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .suggestion {
+        background: var(--bg-light);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--text-dark);
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .suggestion:hover {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .suggestion.selected {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    /* Contact Inputs */
+    .contact-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .professional-contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pro-contact {
+        display: grid;
+        grid-template-columns: 150px 1fr 150px;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .pro-contact label {
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    /* Crisis Lines */
+    .crisis-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .crisis-line {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: white;
+        border-radius: 10px;
+    }
+
+    .crisis-line .crisis-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--crisis-red);
+        min-width: 100px;
+    }
+
+    /* Form Actions */
+    .form-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-primary {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 8px 25px rgba(30, 58, 95, 0.3);
+    }
+
+    .btn-secondary {
+        background: var(--accent-color);
+        color: var(--primary-color);
+    }
+
+    .btn-outline {
+        background: transparent;
+        border: 2px solid var(--border-color);
+        color: var(--text-dark);
+    }
+
+    /* Saved Plan */
+    .saved-plan-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .saved-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .saved-header h2 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .saved-date {
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+
+    .saved-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid var(--border-color);
+    }
+
+    /* Encouragement */
+    .encouragement-box {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+        background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+        padding: 3rem;
+        border-radius: 20px;
+    }
+
+    .encouragement-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .encouragement-box h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .encouragement-box > p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+    }
+
+    .scripture-quote {
+        background: white;
+        border-left: 4px solid var(--accent-color);
+        padding: 1.5rem;
+        border-radius: 0 12px 12px 0;
+        text-align: left;
+    }
+
+    .scripture-quote p {
+        font-style: italic;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .scripture-quote cite {
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+
+    /* Quick Links */
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .quick-link-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .quick-link-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .section-title {
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-padding {
+        padding: 4rem 0;
+    }
+
+    .bg-light {
+        background: var(--bg-light);
+    }
+
+    /* Print Styles */
+    @media print {
+        .form-actions,
+        .saved-actions,
+        header,
+        footer,
+        .crisis-banner,
+        .quick-links,
+        .encouragement-box {
+            display: none !important;
+        }
+
+        .saved-plan-card {
+            box-shadow: none;
+            border: 2px solid #000;
+        }
+
+        .plan-section {
+            break-inside: avoid;
+            box-shadow: none;
+            border: 1px solid #ccc;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .contact-row {
+            grid-template-columns: 1fr;
+        }
+
+        .pro-contact {
+            grid-template-columns: 1fr;
+        }
+
+        .pro-contact label {
+            margin-bottom: -0.5rem;
+        }
+
+        .form-actions {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        .section-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .section-number {
+            margin: 0 auto;
+        }
+    }
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+    const STORAGE_KEY = 'bolm-safety-plan';
+
+    // Load saved plan
+    loadPlan();
+
+    // Suggestion click handler
+    document.querySelectorAll('.suggestion').forEach(function(suggestion) {
+        suggestion.addEventListener('click', function() {
+            const textarea = document.getElementById('coping-strategies');
+            const text = this.textContent;
+            if (textarea.value) {
+                textarea.value += ', ' + text;
+            } else {
+                textarea.value = text;
+            }
+            this.classList.add('selected');
+        });
+    });
+
+    // Save plan
+    document.getElementById('save-plan').addEventListener('click', function() {
+        const plan = {
+            warningSigns: document.getElementById('warning-signs').value,
+            copingStrategies: document.getElementById('coping-strategies').value,
+            reasonsToLive: document.getElementById('reasons-to-live').value,
+            contacts: [
+                { name: document.getElementById('contact1-name').value, phone: document.getElementById('contact1-phone').value },
+                { name: document.getElementById('contact2-name').value, phone: document.getElementById('contact2-phone').value },
+                { name: document.getElementById('contact3-name').value, phone: document.getElementById('contact3-phone').value }
+            ],
+            professionals: {
+                therapist: { name: document.getElementById('therapist-name').value, phone: document.getElementById('therapist-phone').value },
+                doctor: { name: document.getElementById('doctor-name').value, phone: document.getElementById('doctor-phone').value },
+                pastor: { name: document.getElementById('pastor-name').value, phone: document.getElementById('pastor-phone').value }
+            },
+            safetySteps: document.getElementById('safety-steps').value,
+            savedDate: new Date().toLocaleDateString()
+        };
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(plan));
+        alert('Your safety plan has been saved to this device.');
+        displaySavedPlan(plan);
+    });
+
+    // Print plan
+    document.getElementById('print-plan').addEventListener('click', function() {
+        window.print();
+    });
+
+    document.getElementById('print-saved')?.addEventListener('click', function() {
+        window.print();
+    });
+
+    // Clear plan
+    document.getElementById('clear-plan').addEventListener('click', function() {
+        if (confirm('Are you sure you want to clear your safety plan? This cannot be undone.')) {
+            localStorage.removeItem(STORAGE_KEY);
+            document.getElementById('safety-plan-form').reset();
+            document.querySelectorAll('.suggestion').forEach(s => s.classList.remove('selected'));
+            document.getElementById('saved-plan-section').style.display = 'none';
+        }
+    });
+
+    // Edit plan
+    document.getElementById('edit-plan')?.addEventListener('click', function() {
+        document.getElementById('saved-plan-section').style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function loadPlan() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            const plan = JSON.parse(saved);
+            document.getElementById('warning-signs').value = plan.warningSigns || '';
+            document.getElementById('coping-strategies').value = plan.copingStrategies || '';
+            document.getElementById('reasons-to-live').value = plan.reasonsToLive || '';
+
+            if (plan.contacts) {
+                document.getElementById('contact1-name').value = plan.contacts[0]?.name || '';
+                document.getElementById('contact1-phone').value = plan.contacts[0]?.phone || '';
+                document.getElementById('contact2-name').value = plan.contacts[1]?.name || '';
+                document.getElementById('contact2-phone').value = plan.contacts[1]?.phone || '';
+                document.getElementById('contact3-name').value = plan.contacts[2]?.name || '';
+                document.getElementById('contact3-phone').value = plan.contacts[2]?.phone || '';
+            }
+
+            if (plan.professionals) {
+                document.getElementById('therapist-name').value = plan.professionals.therapist?.name || '';
+                document.getElementById('therapist-phone').value = plan.professionals.therapist?.phone || '';
+                document.getElementById('doctor-name').value = plan.professionals.doctor?.name || '';
+                document.getElementById('doctor-phone').value = plan.professionals.doctor?.phone || '';
+                document.getElementById('pastor-name').value = plan.professionals.pastor?.name || '';
+                document.getElementById('pastor-phone').value = plan.professionals.pastor?.phone || '';
+            }
+
+            document.getElementById('safety-steps').value = plan.safetySteps || '';
+
+            displaySavedPlan(plan);
+        }
+    }
+
+    function displaySavedPlan(plan) {
+        const section = document.getElementById('saved-plan-section');
+        const content = document.getElementById('saved-plan-content');
+        const dateEl = document.querySelector('.saved-date');
+
+        dateEl.textContent = 'Last saved: ' + plan.savedDate;
+
+        let html = '';
+
+        if (plan.warningSigns) {
+            html += '<div class="saved-item"><h4>My Warning Signs</h4><p>' + plan.warningSigns + '</p></div>';
+        }
+        if (plan.copingStrategies) {
+            html += '<div class="saved-item"><h4>Things I Can Do to Feel Better</h4><p>' + plan.copingStrategies + '</p></div>';
+        }
+        if (plan.reasonsToLive) {
+            html += '<div class="saved-item highlight"><h4>My Reasons to Live</h4><p>' + plan.reasonsToLive + '</p></div>';
+        }
+
+        const validContacts = plan.contacts?.filter(c => c.name || c.phone) || [];
+        if (validContacts.length > 0) {
+            html += '<div class="saved-item"><h4>People I Can Reach Out To</h4><ul>';
+            validContacts.forEach(function(c) {
+                html += '<li>' + (c.name || 'Contact') + (c.phone ? ': ' + c.phone : '') + '</li>';
+            });
+            html += '</ul></div>';
+        }
+
+        const profs = plan.professionals;
+        const hasPros = (profs?.therapist?.name || profs?.therapist?.phone || profs?.doctor?.name || profs?.doctor?.phone || profs?.pastor?.name || profs?.pastor?.phone);
+        if (hasPros) {
+            html += '<div class="saved-item"><h4>Professional Support</h4><ul>';
+            if (profs.therapist?.name || profs.therapist?.phone) {
+                html += '<li>Therapist: ' + (profs.therapist.name || '') + (profs.therapist.phone ? ' - ' + profs.therapist.phone : '') + '</li>';
+            }
+            if (profs.doctor?.name || profs.doctor?.phone) {
+                html += '<li>Doctor: ' + (profs.doctor.name || '') + (profs.doctor.phone ? ' - ' + profs.doctor.phone : '') + '</li>';
+            }
+            if (profs.pastor?.name || profs.pastor?.phone) {
+                html += '<li>Pastor/Priest: ' + (profs.pastor.name || '') + (profs.pastor.phone ? ' - ' + profs.pastor.phone : '') + '</li>';
+            }
+            html += '</ul></div>';
+        }
+
+        if (plan.safetySteps) {
+            html += '<div class="saved-item"><h4>Making My Environment Safer</h4><p>' + plan.safetySteps + '</p></div>';
+        }
+
+        html += '<div class="saved-item crisis"><h4>Crisis Lines - Always Available</h4>';
+        html += '<p><strong>988</strong> - National Suicide and Crisis Lifeline</p>';
+        html += '<p><strong>741741</strong> - Text HOME to Crisis Text Line</p>';
+        html += '<p><strong>911</strong> - Emergency Services</p></div>';
+
+        content.innerHTML = html;
+        section.style.display = 'block';
+    }
+});
+</script>
+
+<style is:inline>
+    .saved-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .saved-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .saved-item h4 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .saved-item p {
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    .saved-item ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .saved-item li {
+        padding: 0.5rem 0;
+        color: var(--text-dark);
+    }
+
+    .saved-item.highlight {
+        background: #fff8e1;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 2px solid var(--accent-color);
+    }
+
+    .saved-item.crisis {
+        background: #ffebee;
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .saved-item.crisis p {
+        margin-bottom: 0.5rem;
+    }
+</style>

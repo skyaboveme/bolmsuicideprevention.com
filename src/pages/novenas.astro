@@ -1,0 +1,1096 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<BaseLayout
+    title="Novenas for Mental Health & Healing | Breath of Life Ministries"
+    description="Powerful nine-day prayers for those struggling with depression, anxiety, mental illness, and suicidal thoughts. Find hope through the intercession of the saints."
+>
+    <HeroSection
+        title="Novenas for Healing"
+        subtitle="Nine days of powerful prayer for those who are struggling"
+        height="medium"
+        titleKey="novenas.title"
+        subtitleKey="novenas.subtitle"
+    />
+
+    <!-- Introduction -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-icon">🙏</div>
+                <h2 data-i18n="novenas.introTitle">The Power of the Novena</h2>
+                <p data-i18n="novenas.introText1">A novena is a traditional Catholic devotion of nine days of prayer. This practice echoes the nine days the Apostles and Mary spent in prayer between the Ascension and Pentecost.</p>
+                <p data-i18n="novenas.introText2">These novenas are offered especially for those suffering from mental health challenges. Whether you're praying for yourself or someone you love, trust that God hears every word.</p>
+                <blockquote class="scripture-quote">
+                    <p data-i18n="novenas.scripture">"The prayer of a righteous person is powerful and effective."</p>
+                    <cite data-i18n="novenas.scriptureCitation">— James 5:16</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Novena Selection -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-i18n="novenas.chooseTitle">Choose a Novena</h2>
+            <p class="section-subtitle" data-i18n="novenas.chooseSubtitle">Select the prayer that speaks to your heart</p>
+
+            <div class="novena-grid">
+                <!-- St. Dymphna Novena -->
+                <div class="novena-card" id="dymphna-card">
+                    <div class="novena-image">
+                        <img src="/images/st-dymphna.jpg" alt="St. Dymphna" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display: none;">
+                            <span>🌸</span>
+                        </div>
+                    </div>
+                    <div class="novena-info">
+                        <h3 data-i18n="novenas.dymphnaTitle">Novena to St. Dymphna</h3>
+                        <p class="novena-patron" data-i18n="novenas.dymphnaPatron">Patron Saint of Mental Illness</p>
+                        <p data-i18n="novenas.dymphnaDesc">For those struggling with anxiety, depression, mental illness, and emotional disturbances.</p>
+                        <button class="btn btn-primary open-novena" data-novena="dymphna" data-i18n="novenas.beginBtn">Begin Novena</button>
+                    </div>
+                </div>
+
+                <!-- Depression & Anxiety Novena -->
+                <div class="novena-card" id="depression-card">
+                    <div class="novena-image">
+                        <div class="image-placeholder">
+                            <span>💙</span>
+                        </div>
+                    </div>
+                    <div class="novena-info">
+                        <h3 data-i18n="novenas.depressionTitle">Novena for Depression & Anxiety</h3>
+                        <p class="novena-patron" data-i18n="novenas.depressionPatron">Finding Peace in Darkness</p>
+                        <p data-i18n="novenas.depressionDesc">A nine-day prayer for those walking through the valley of depression and anxiety.</p>
+                        <button class="btn btn-primary open-novena" data-novena="depression" data-i18n="novenas.beginBtn">Begin Novena</button>
+                    </div>
+                </div>
+
+                <!-- St. Thérèse of Lisieux -->
+                <div class="novena-card" id="therese-card">
+                    <div class="novena-image">
+                        <img src="/images/st-therese.jpg" alt="St. Thérèse of Lisieux" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display: none;">
+                            <span>🌹</span>
+                        </div>
+                    </div>
+                    <div class="novena-info">
+                        <h3 data-i18n="novenas.thereseTitle">Novena to St. Thérèse of Lisieux</h3>
+                        <p class="novena-patron" data-i18n="novenas.theresePatron">The Little Flower</p>
+                        <p data-i18n="novenas.thereseDesc">For those who feel small and overwhelmed. She understood darkness and trusted in God's mercy.</p>
+                        <button class="btn btn-primary open-novena" data-novena="therese" data-i18n="novenas.beginBtn">Begin Novena</button>
+                    </div>
+                </div>
+
+                <!-- Healing Novena -->
+                <div class="novena-card" id="healing-card">
+                    <div class="novena-image">
+                        <div class="image-placeholder">
+                            <span>✝️</span>
+                        </div>
+                    </div>
+                    <div class="novena-info">
+                        <h3 data-i18n="novenas.healingTitle">Novena for Healing</h3>
+                        <p class="novena-patron" data-i18n="novenas.healingPatron">Body, Mind, and Spirit</p>
+                        <p data-i18n="novenas.healingDesc">A general novena for healing, trusting in Jesus the Divine Physician.</p>
+                        <button class="btn btn-primary open-novena" data-novena="healing" data-i18n="novenas.beginBtn">Begin Novena</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Novena Modal/Display Area -->
+    <div id="novena-modal" class="novena-modal" style="display: none;">
+        <div class="novena-modal-content">
+            <button class="close-modal">&times;</button>
+            <div id="novena-content"></div>
+        </div>
+    </div>
+
+    <!-- How to Pray Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="novenas.howToTitle">How to Pray a Novena</h2>
+            <div class="how-to-grid">
+                <div class="how-to-card">
+                    <div class="how-to-number">1</div>
+                    <h3 data-i18n="novenas.howTo1Title">Choose Your Intention</h3>
+                    <p data-i18n="novenas.howTo1Text">Hold in your heart the specific need or person you're praying for.</p>
+                </div>
+                <div class="how-to-card">
+                    <div class="how-to-number">2</div>
+                    <h3 data-i18n="novenas.howTo2Title">Pray for Nine Days</h3>
+                    <p data-i18n="novenas.howTo2Text">Commit to praying the novena each day for nine consecutive days.</p>
+                </div>
+                <div class="how-to-card">
+                    <div class="how-to-number">3</div>
+                    <h3 data-i18n="novenas.howTo3Title">Trust in God's Will</h3>
+                    <p data-i18n="novenas.howTo3Text">Release your intention to God, trusting He knows what is best.</p>
+                </div>
+                <div class="how-to-card">
+                    <div class="how-to-number">4</div>
+                    <h3 data-i18n="novenas.howTo4Title">Remain Open</h3>
+                    <p data-i18n="novenas.howTo4Text">God may answer in unexpected ways. Stay attentive to His grace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Reminder -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="reminder-box">
+                <h2 data-i18n="novenas.reminderTitle">Set a Daily Reminder</h2>
+                <p data-i18n="novenas.reminderText">It can help to pray at the same time each day. Set an alarm or choose a moment in your routine—morning coffee, lunch break, or before bed.</p>
+                <div class="reminder-tips">
+                    <div class="tip">
+                        <span class="tip-icon">☀️</span>
+                        <span data-i18n="novenas.tipMorning">Morning: Start your day with intention</span>
+                    </div>
+                    <div class="tip">
+                        <span class="tip-icon">🌙</span>
+                        <span data-i18n="novenas.tipEvening">Evening: End your day in prayer</span>
+                    </div>
+                    <div class="tip">
+                        <span class="tip-icon">⏰</span>
+                        <span data-i18n="novenas.tipAlarm">Set a phone reminder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Prayers -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="request-box">
+                <h2 data-i18n="novenas.requestTitle">Want Us to Pray With You?</h2>
+                <p data-i18n="novenas.requestText">Submit a prayer request and our ministry will join you in praying for your intention.</p>
+                <a href="/prayer-request" class="btn btn-primary" data-i18n="novenas.requestBtn">Submit Prayer Request</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis Note -->
+    <section class="crisis-note-section">
+        <div class="container">
+            <div class="crisis-note">
+                <p data-i18n="novenas.crisisNote">Prayer is powerful, but if you're in crisis right now, please also reach out for help. Call or text <strong>988</strong> to speak with someone who cares.</p>
+                <a href="/struggling" class="btn btn-light" data-i18n="novenas.needHelpNow">I Need Help Right Now</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .intro-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .intro-icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-content h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
+    }
+
+    .intro-content p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .scripture-quote {
+        background: white;
+        border-left: 4px solid var(--accent-color);
+        padding: 1.5rem 2rem;
+        margin: 2rem auto 0;
+        border-radius: 0 12px 12px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        max-width: 500px;
+    }
+
+    .scripture-quote p {
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .scripture-quote cite {
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
+
+    /* Novena Grid */
+    .novena-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .novena-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .novena-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .novena-image {
+        height: 180px;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .novena-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-placeholder span {
+        font-size: 4rem;
+    }
+
+    .novena-info {
+        padding: 2rem;
+    }
+
+    .novena-info h3 {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .novena-patron {
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .novena-info > p:not(.novena-patron) {
+        color: var(--text-dark);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.875rem 1.75rem;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(30, 58, 95, 0.3);
+    }
+
+    .btn-light {
+        background: white;
+        color: var(--primary-color);
+    }
+
+    /* How To Grid */
+    .how-to-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .how-to-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .how-to-number {
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 auto 1rem;
+    }
+
+    .how-to-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .how-to-card p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Reminder Box */
+    .reminder-box {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+        background: linear-gradient(135deg, #e3f2fd 0%, white 100%);
+        padding: 3rem;
+        border-radius: 20px;
+    }
+
+    .reminder-box h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .reminder-box > p {
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+    }
+
+    .reminder-tips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .tip {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: white;
+        padding: 0.75rem 1.25rem;
+        border-radius: 30px;
+        font-size: 0.95rem;
+    }
+
+    .tip-icon {
+        font-size: 1.2rem;
+    }
+
+    /* Request Box */
+    .request-box {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .request-box h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .request-box p {
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+    }
+
+    /* Crisis Note */
+    .crisis-note-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        padding: 3rem 0;
+    }
+
+    .crisis-note {
+        text-align: center;
+        color: white;
+    }
+
+    .crisis-note p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* Modal Styles */
+    .novena-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        overflow-y: auto;
+    }
+
+    .novena-modal-content {
+        background: white;
+        border-radius: 20px;
+        max-width: 700px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        padding: 2.5rem;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--bg-light);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-dark);
+        transition: background 0.2s ease;
+    }
+
+    .close-modal:hover {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    /* Section Titles */
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .section-padding {
+        padding: 5rem 0;
+    }
+
+    .bg-light {
+        background: var(--bg-light);
+    }
+
+    @media (max-width: 768px) {
+        .novena-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .how-to-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .reminder-tips {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .novena-modal-content {
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+    }
+</style>
+
+<!-- Novena Prayer Content -->
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('novena-modal');
+    const content = document.getElementById('novena-content');
+    const closeBtn = document.querySelector('.close-modal');
+
+    const novenas = {
+        dymphna: {
+            title: 'Novena to St. Dymphna',
+            patron: 'Patron Saint of Mental Illness',
+            intro: 'St. Dymphna was a young Irish princess who fled her father\'s mental illness and violence. She is invoked for those suffering from anxiety, depression, and mental illness.',
+            days: [
+                {
+                    title: 'Day 1: For Those Who Feel Alone',
+                    prayer: `Lord, through the intercession of St. Dymphna, we pray for all who feel alone in their suffering. May they know Your presence and find comfort in Your love. St. Dymphna, you understand isolation and fear. Please intercede for those who feel no one understands their pain.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 2: For Those with Anxiety',
+                    prayer: `Lord, through the intercession of St. Dymphna, we pray for all who suffer from anxiety. Calm their racing thoughts, ease their worried hearts, and grant them Your peace that surpasses understanding. St. Dymphna, intercede for those whose minds will not rest.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 3: For Those with Depression',
+                    prayer: `Lord, through the intercession of St. Dymphna, we lift up all who walk in darkness of depression. Shine Your light into their despair. Help them find hope when they see none. St. Dymphna, intercede for those who cannot feel joy.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 4: For Those with Suicidal Thoughts',
+                    prayer: `Lord, through the intercession of St. Dymphna, we pray urgently for all who are tempted to take their own lives. Surround them with Your angels. Put people in their path who can help. Give them one more reason to stay. St. Dymphna, intercede for those in their darkest hour.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 5: For Caregivers and Families',
+                    prayer: `Lord, through the intercession of St. Dymphna, we pray for those who care for loved ones with mental illness. Give them patience, strength, and wisdom. Help them find support when they are weary. St. Dymphna, intercede for those who carry another's burden.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 6: For Mental Health Professionals',
+                    prayer: `Lord, through the intercession of St. Dymphna, bless all therapists, psychiatrists, counselors, and doctors who treat mental illness. Guide their hands and minds. Help them see each patient as Your beloved child. St. Dymphna, intercede for healers of the mind.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 7: For Understanding and Compassion',
+                    prayer: `Lord, through the intercession of St. Dymphna, help us overcome the stigma of mental illness. Open hearts to understanding. Replace judgment with compassion. Help Your Church be a place of healing. St. Dymphna, intercede for greater understanding.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 8: For Healing and Recovery',
+                    prayer: `Lord, through the intercession of St. Dymphna, we pray for healing—for those in treatment, for those beginning their journey, for those who have struggled for years. Grant them breakthroughs. Give them patience. Restore their hope. St. Dymphna, intercede for complete healing.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us.`
+                },
+                {
+                    title: 'Day 9: For Hope and Trust',
+                    prayer: `Lord, through the intercession of St. Dymphna, as we complete this novena, we surrender our intentions to You. We trust in Your mercy. We believe in Your love. Even when we cannot see, help us to hope. St. Dymphna, thank you for walking with us these nine days. Continue to pray for all who suffer.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Dymphna, pray for us. Amen.`
+                }
+            ]
+        },
+        depression: {
+            title: 'Novena for Depression & Anxiety',
+            patron: 'Finding Peace in Darkness',
+            intro: 'This novena is for anyone walking through the valley of darkness. God sees you. He has not abandoned you.',
+            days: [
+                {
+                    title: 'Day 1: Acknowledging the Pain',
+                    prayer: `Lord, I come to You in my brokenness. I don't pretend to be okay. I am struggling. The darkness feels heavy. But I believe You are here with me, even when I cannot feel You.
+
+"The Lord is close to the brokenhearted and saves those who are crushed in spirit." — Psalm 34:18
+
+Lord, be close to me now. I trust You even when I cannot feel You.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 2: Surrendering Fear',
+                    prayer: `Lord, I give You my fears—the racing thoughts, the worries that won't stop, the dread I carry. I cannot quiet my mind on my own. Please bring Your peace.
+
+"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God." — Philippians 4:6
+
+Lord, take my anxiety. Replace it with Your peace.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 3: Asking for Light',
+                    prayer: `Lord, everything feels dark. I cannot see a way forward. I cannot feel hope. But Your word promises You are the light of the world. Shine into my darkness.
+
+"The light shines in the darkness, and the darkness has not overcome it." — John 1:5
+
+Lord, be my light. The darkness has not overcome me because You are with me.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 4: For Strength to Keep Going',
+                    prayer: `Lord, I am exhausted. Getting through each day takes everything I have. Some days I don't want to keep going. Give me strength for just this moment, just this hour, just this day.
+
+"He gives strength to the weary and increases the power of the weak." — Isaiah 40:29
+
+Lord, I am weak. Be my strength.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 5: Remembering I Am Loved',
+                    prayer: `Lord, I forget that I am loved. The lies tell me I am worthless, a burden, better off gone. But Your truth says otherwise. Help me hear Your voice above the lies.
+
+"See what great love the Father has lavished on us, that we should be called children of God! And that is what we are!" — 1 John 3:1
+
+Lord, remind me that I am Your beloved child.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 6: For Healing',
+                    prayer: `Lord, I ask for healing. Heal my mind. Heal my heart. Heal whatever is broken inside me. I know You can do all things.
+
+"He heals the brokenhearted and binds up their wounds." — Psalm 147:3
+
+Lord Jesus, Divine Physician, heal me according to Your will.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 7: For Help Through Others',
+                    prayer: `Lord, I cannot do this alone. Send people into my life who can help—doctors, therapists, friends, family. Help me accept help. Help me reach out.
+
+"Carry each other's burdens, and in this way you will fulfill the law of Christ." — Galatians 6:2
+
+Lord, connect me with those who can help me carry this burden.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 8: For Patience',
+                    prayer: `Lord, healing is slow. Some days I feel no different. Help me be patient with myself, with the process, with Your timing. I trust Your plan even when I don't understand it.
+
+"Wait for the Lord; be strong and take heart and wait for the Lord." — Psalm 27:14
+
+Lord, give me patience to wait for Your healing.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 9: For Hope',
+                    prayer: `Lord, as I finish this novena, I ask for hope. Not that my circumstances will change immediately, but that I can believe they can change. That tomorrow can be different. That You are working even now.
+
+"For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future." — Jeremiah 29:11
+
+Lord, I trust You have plans for me. I choose hope. Amen.
+
+Our Father, Hail Mary, Glory Be.`
+                }
+            ]
+        },
+        therese: {
+            title: 'Novena to St. Thérèse of Lisieux',
+            patron: 'The Little Flower',
+            intro: 'St. Thérèse understood darkness. Near the end of her life, she walked through a "trial of faith"—a darkness where heaven seemed closed. She trusted anyway. She intercedes for all who feel small and overwhelmed.',
+            days: [
+                {
+                    title: 'Day 1: Embracing Littleness',
+                    prayer: `St. Thérèse, you taught us that we don't need to be great—only faithful in small things. I feel small and weak. Help me see that God loves me not despite my weakness, but in it.
+
+"My grace is sufficient for you, for my power is made perfect in weakness." — 2 Corinthians 12:9
+
+St. Thérèse, help me embrace my littleness.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 2: Trusting in Darkness',
+                    prayer: `St. Thérèse, you walked through darkness yet kept trusting. I am in my own darkness now. Help me trust when I cannot see, believe when I cannot feel.
+
+St. Thérèse, you wrote: "If I did not simply LIVE from one moment to another, it would be impossible for me to be patient; but I only look at the present, I forget the past, and I take good care not to forestall the future."
+
+Help me live just this moment.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 3: The Little Way',
+                    prayer: `St. Thérèse, your "Little Way" teaches us that small acts of love matter. When I cannot do great things, help me do small things with great love. A smile. A prayer. Getting through today.
+
+St. Thérèse, help me see that my small efforts matter to God.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 4: Confidence in God\'s Mercy',
+                    prayer: `St. Thérèse, you had complete confidence in God's mercy. Help me believe that no matter what I have done, no matter how broken I feel, God's mercy is greater.
+
+"I will go to Him with confidence and love."
+
+St. Thérèse, help me trust in God's infinite mercy.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 5: When I Cannot Pray',
+                    prayer: `St. Thérèse, sometimes I have no words. Prayer feels impossible. You said Jesus doesn't need our works or beautiful thoughts—He needs only our love.
+
+Help me remember that God hears even my silence. My presence is prayer.
+
+St. Thérèse, pray for me when I cannot pray.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 6: For Healing Love',
+                    prayer: `St. Thérèse, you were filled with love for Jesus and for others. Fill my heart with love—love that heals, love that hopes, love that perseveres.
+
+"My vocation is love!"
+
+St. Thérèse, help me find healing through love.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 7: Offering Suffering',
+                    prayer: `St. Thérèse, you offered your suffering for souls. Help me find meaning in my pain. Not that God wants me to suffer, but that even this can be transformed by grace.
+
+St. Thérèse, help me unite my suffering to Christ's.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 8: The Promise of Roses',
+                    prayer: `St. Thérèse, you promised to spend your heaven doing good on earth—to let fall a shower of roses. I ask for a rose, a sign of hope, whatever form it may take.
+
+St. Thérèse, let me see signs of God's love and your intercession.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                },
+                {
+                    title: 'Day 9: Complete Trust',
+                    prayer: `St. Thérèse, as I complete this novena, I place my trust completely in God. I don't know what tomorrow holds, but I know Who holds tomorrow.
+
+"I have complete confidence... Even if I had on my conscience every crime one could commit, I would lose nothing of my confidence: my heart broken with sorrow, I would throw myself into the arms of my Savior."
+
+St. Thérèse, help me throw myself into the arms of Jesus. Amen.
+
+Our Father, Hail Mary, Glory Be.
+
+St. Thérèse, pray for us.`
+                }
+            ]
+        },
+        healing: {
+            title: 'Novena for Healing',
+            patron: 'To Jesus the Divine Physician',
+            intro: 'Jesus healed countless people during His ministry. He continues to heal today. This novena asks for healing of body, mind, and spirit.',
+            days: [
+                {
+                    title: 'Day 1: Lord, I Believe',
+                    prayer: `Lord Jesus, I believe You are the healer. You healed the blind, the lame, the sick. I believe You can heal me. Increase my faith where it falters.
+
+"Lord, I believe; help my unbelief!" — Mark 9:24
+
+Jesus, Divine Physician, heal me.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 2: Heal My Mind',
+                    prayer: `Lord Jesus, my mind is troubled. Anxious thoughts, dark thoughts, confusion—heal my mind. Bring clarity where there is fog. Bring peace where there is chaos.
+
+Jesus, Divine Physician, heal my mind.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 3: Heal My Heart',
+                    prayer: `Lord Jesus, my heart is wounded. Grief, sadness, disappointment—heal my heart. Help me feel again. Help me hope again. Help me love again.
+
+Jesus, Divine Physician, heal my heart.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 4: Heal My Spirit',
+                    prayer: `Lord Jesus, my spirit feels dry. I struggle to pray, to feel Your presence, to believe. Heal my spirit. Renew my faith. Restore my soul.
+
+Jesus, Divine Physician, heal my spirit.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 5: Heal My Body',
+                    prayer: `Lord Jesus, my body is tired, broken, sick. You know my physical struggles. Touch my body with Your healing hand. Whether through medicine, through miracle, or through both, bring healing.
+
+Jesus, Divine Physician, heal my body.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 6: Heal My Relationships',
+                    prayer: `Lord Jesus, heal the relationships that have been damaged by my struggles. Help me reconnect with loved ones. Help them understand. Bring reconciliation and restoration.
+
+Jesus, Divine Physician, heal my relationships.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 7: Heal My Past',
+                    prayer: `Lord Jesus, I carry wounds from my past—trauma, mistakes, regrets. I cannot change what happened, but You can heal its effects on me. Free me from the chains of the past.
+
+Jesus, Divine Physician, heal my past.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 8: Heal My Future',
+                    prayer: `Lord Jesus, I am afraid of the future. Will I always feel this way? Will things get better? Heal my fear. Fill me with hope for what is to come.
+
+Jesus, Divine Physician, heal my future with hope.
+
+Our Father, Hail Mary, Glory Be.`
+                },
+                {
+                    title: 'Day 9: Your Will Be Done',
+                    prayer: `Lord Jesus, I have asked for healing. I trust in Your goodness. Whatever form healing takes, I accept Your will. Even if the struggle continues, heal my soul. Be with me always.
+
+"Not my will, but Yours be done." — Luke 22:42
+
+Jesus, Divine Physician, I trust in You. Amen.
+
+Our Father, Hail Mary, Glory Be.`
+                }
+            ]
+        }
+    };
+
+    // Open novena modal
+    document.querySelectorAll('.open-novena').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const novenaKey = this.dataset.novena;
+            const novena = novenas[novenaKey];
+
+            let html = `
+                <div class="novena-header">
+                    <h2>${novena.title}</h2>
+                    <p class="novena-modal-patron">${novena.patron}</p>
+                    <p class="novena-modal-intro">${novena.intro}</p>
+                </div>
+                <div class="novena-days">
+            `;
+
+            novena.days.forEach(function(day, index) {
+                html += `
+                    <div class="novena-day">
+                        <div class="day-header" data-day="${index}">
+                            <span class="day-number">${index + 1}</span>
+                            <h3>${day.title}</h3>
+                            <span class="day-toggle">+</span>
+                        </div>
+                        <div class="day-content" id="day-${index}">
+                            <div class="prayer-content">${day.prayer.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+
+            content.innerHTML = html;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            // Add day toggle listeners
+            document.querySelectorAll('.day-header').forEach(function(header) {
+                header.addEventListener('click', function() {
+                    const dayIndex = this.dataset.day;
+                    const dayContent = document.getElementById('day-' + dayIndex);
+                    const toggle = this.querySelector('.day-toggle');
+
+                    if (dayContent.classList.contains('open')) {
+                        dayContent.classList.remove('open');
+                        toggle.textContent = '+';
+                    } else {
+                        // Close others
+                        document.querySelectorAll('.day-content').forEach(d => d.classList.remove('open'));
+                        document.querySelectorAll('.day-toggle').forEach(t => t.textContent = '+');
+
+                        dayContent.classList.add('open');
+                        toggle.textContent = '−';
+                    }
+                });
+            });
+
+            // Open first day by default
+            document.querySelector('.day-header[data-day="0"]').click();
+        });
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});
+</script>
+
+<style is:inline>
+    .novena-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .novena-header h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .novena-modal-patron {
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .novena-modal-intro {
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    .novena-day {
+        margin-bottom: 0.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .day-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        cursor: pointer;
+        background: var(--bg-light);
+        transition: background 0.2s ease;
+    }
+
+    .day-header:hover {
+        background: #e8eef5;
+    }
+
+    .day-number {
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .day-header h3 {
+        flex: 1;
+        color: var(--primary-color);
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .day-toggle {
+        font-size: 1.5rem;
+        color: var(--text-light);
+        font-weight: 300;
+    }
+
+    .day-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .day-content.open {
+        max-height: 2000px;
+    }
+
+    .prayer-content {
+        padding: 1.5rem;
+        background: white;
+        line-height: 1.8;
+        color: var(--text-dark);
+    }
+
+    .prayer-content p {
+        margin-bottom: 1rem;
+    }
+</style>
