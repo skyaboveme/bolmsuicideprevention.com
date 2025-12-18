@@ -541,20 +541,27 @@ import HeroSection from '../components/HeroSection.astro';
         }
 
         .novena-modal {
-            padding: 0.5rem;
-            padding-top: env(safe-area-inset-top, 0.5rem);
+            padding: 0;
+            align-items: stretch;
         }
 
         .novena-modal-content {
-            padding: 1.5rem;
-            padding-top: 2.5rem;
-            border-radius: 16px;
-            margin-top: 0.5rem;
+            padding: 1rem;
+            padding-top: 3.5rem;
+            border-radius: 0;
+            margin: 0;
+            min-height: 100vh;
+            max-height: none;
+            overflow-y: auto;
         }
 
         .close-modal {
-            top: 0.5rem;
-            right: 0.5rem;
+            position: fixed;
+            top: 0.75rem;
+            right: 0.75rem;
+            z-index: 1001;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
     }
 </style>
@@ -972,6 +979,10 @@ Our Father, Hail Mary, Glory Be.`
             content.innerHTML = html;
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+
+            // Scroll modal to top on open
+            modal.scrollTop = 0;
+            document.querySelector('.novena-modal-content').scrollTop = 0;
 
             // Add day toggle listeners
             document.querySelectorAll('.day-header').forEach(function(header) {
