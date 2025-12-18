@@ -1,0 +1,26 @@
+# Breath of Life Ministries
+> Catholic Suicide Prevention & Mental Health Ministry
+
+## Crisis Support
+- **988** - National Suicide & Crisis Lifeline (call or text, 24/7)
+- **741741** - Crisis Text Line (text HELLO)
+- **911** - Emergency services
+
+## What We Offer
+Breath of Life Ministries provides faith-based mental health support and suicide prevention resources. We serve all people regardless of faith background.
+
+## Key Resources
+- [/struggling](/struggling) - Immediate help: breathing exercises, grounding, crisis support
+- [/safety-plan](/safety-plan) - Build your personal safety plan
+- [/find-help](/find-help) - Crisis hotlines and professional resources
+- [/warning-signs](/warning-signs) - Recognize signs someone needs help
+- [/novenas](/novenas) - Nine-day prayers for mental health healing
+- [/find-prayer](/find-prayer) - Prayers for hope and healing
+- [/prayer-request](/prayer-request) - Submit a prayer request
+
+## Topics
+Suicide prevention, mental health, Catholic prayers, St. Dymphna, depression, anxiety, crisis support, safety planning, warning signs, grief support, hope and healing
+
+## Contact
+- Web: https://bolmsuicideprevention.com
+- Full documentation: https://bolmsuicideprevention.com/llms.txt
