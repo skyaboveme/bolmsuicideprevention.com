@@ -47,45 +47,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h2 data-i18n="struggling.groundTitle">Ground Yourself</h2>
             <p class="ground-intro" data-i18n="struggling.groundIntro">This exercise helps bring you back to the present moment.</p>
 
-            <div class="grounding-exercise">
-                <div class="ground-step active" data-step="5">
-                    <div class="ground-number">5</div>
-                    <div class="ground-content">
-                        <h3 data-i18n="struggling.ground5Title">things you can SEE</h3>
-                        <p data-i18n="struggling.ground5Text">Look around. Name 5 things you can see right now.</p>
-                    </div>
-                </div>
-                <div class="ground-step" data-step="4">
-                    <div class="ground-number">4</div>
-                    <div class="ground-content">
-                        <h3 data-i18n="struggling.ground4Title">things you can TOUCH</h3>
-                        <p data-i18n="struggling.ground4Text">Feel 4 things. The chair, your clothes, the ground beneath you.</p>
-                    </div>
-                </div>
-                <div class="ground-step" data-step="3">
-                    <div class="ground-number">3</div>
-                    <div class="ground-content">
-                        <h3 data-i18n="struggling.ground3Title">things you can HEAR</h3>
-                        <p data-i18n="struggling.ground3Text">Listen carefully. What 3 sounds can you hear?</p>
-                    </div>
-                </div>
-                <div class="ground-step" data-step="2">
-                    <div class="ground-number">2</div>
-                    <div class="ground-content">
-                        <h3 data-i18n="struggling.ground2Title">things you can SMELL</h3>
-                        <p data-i18n="struggling.ground2Text">Notice 2 scents around you, or imagine a comforting smell.</p>
-                    </div>
-                </div>
-                <div class="ground-step" data-step="1">
-                    <div class="ground-number">1</div>
-                    <div class="ground-content">
-                        <h3 data-i18n="struggling.ground1Title">thing you can TASTE</h3>
-                        <p data-i18n="struggling.ground1Text">Notice the taste in your mouth, or take a sip of water.</p>
-                    </div>
-                </div>
+            <!-- Progress Indicator -->
+            <div class="ground-progress">
+                <div class="progress-step completed-dot" data-dot="5">5</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-dot="4">4</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-dot="3">3</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-dot="2">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-dot="1">1</div>
             </div>
 
-            <button id="next-ground-step" class="btn btn-calm" data-i18n="struggling.nextStep">Next Step</button>
+            <!-- Single Step Display -->
+            <div class="grounding-card" id="grounding-card">
+                <div class="ground-number-large" id="ground-number">5</div>
+                <h3 class="ground-sense" id="ground-sense" data-i18n="struggling.ground5Title">things you can SEE</h3>
+                <p class="ground-instruction" id="ground-instruction" data-i18n="struggling.ground5Text">Look around. Name 5 things you can see right now.</p>
+                <p class="ground-hint" data-i18n="struggling.groundHint">Take your time. There's no rush.</p>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="ground-navigation">
+                <button id="prev-ground-step" class="btn btn-outline-calm" style="visibility: hidden;" data-i18n="struggling.prevStep">Previous</button>
+                <button id="next-ground-step" class="btn btn-calm" data-i18n="struggling.nextStep">Next Step</button>
+            </div>
+
+            <!-- Completion Message (hidden initially) -->
+            <div class="ground-complete" id="ground-complete" style="display: none;">
+                <div class="complete-icon">✓</div>
+                <h3 data-i18n="struggling.groundComplete">Well Done</h3>
+                <p data-i18n="struggling.groundCompleteText">You've completed the grounding exercise. Take a moment to notice how you feel.</p>
+                <button id="restart-ground" class="btn btn-calm" data-i18n="struggling.startOver">Start Over</button>
+            </div>
         </div>
     </section>
 
@@ -408,39 +403,158 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .ground-intro {
         color: var(--text-light);
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 
-    .grounding-exercise {
-        max-width: 500px;
-        margin: 0 auto 2rem;
-    }
-
-    .ground-step {
+    /* Progress Indicator */
+    .ground-progress {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
-        padding: 1.5rem;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .progress-step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
         background: var(--bg-light);
-        border-radius: 16px;
-        margin-bottom: 1rem;
-        opacity: 0.4;
-        transform: scale(0.95);
-        transition: all 0.5s ease;
+        color: var(--text-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
     }
 
-    .ground-step.active {
-        opacity: 1;
-        transform: scale(1);
-        background: var(--calm-blue-light);
+    .progress-step.completed-dot {
+        background: var(--calm-blue);
+        color: white;
+    }
+
+    .progress-step.done {
+        background: #4caf50;
+        color: white;
+    }
+
+    .progress-line {
+        width: 30px;
+        height: 3px;
+        background: var(--bg-light);
+        transition: background 0.3s ease;
+    }
+
+    .progress-line.done {
+        background: #4caf50;
+    }
+
+    /* Grounding Card */
+    .grounding-card {
+        max-width: 450px;
+        margin: 0 auto 2rem;
+        background: linear-gradient(135deg, var(--calm-blue-light) 0%, white 100%);
         border: 2px solid var(--calm-blue);
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        box-shadow: 0 10px 40px rgba(74, 144, 164, 0.15);
     }
 
-    .ground-step.completed {
-        opacity: 0.6;
-        background: #e8f5e9;
+    .ground-number-large {
+        width: 100px;
+        height: 100px;
+        background: var(--calm-blue);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 0 auto 1.5rem;
+        box-shadow: 0 8px 25px rgba(74, 144, 164, 0.3);
     }
 
+    .ground-sense {
+        color: var(--calm-blue-dark);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: lowercase;
+    }
+
+    .ground-instruction {
+        color: var(--text-dark);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .ground-hint {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        font-style: italic;
+    }
+
+    /* Navigation Buttons */
+    .ground-navigation {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-outline-calm {
+        background: transparent;
+        border: 2px solid var(--calm-blue);
+        color: var(--calm-blue);
+        padding: 0.875rem 2rem;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .btn-outline-calm:hover {
+        background: var(--calm-blue-light);
+    }
+
+    /* Completion Message */
+    .ground-complete {
+        max-width: 450px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #e8f5e9 0%, white 100%);
+        border: 2px solid #4caf50;
+        border-radius: 24px;
+        padding: 3rem 2rem;
+    }
+
+    .complete-icon {
+        width: 80px;
+        height: 80px;
+        background: #4caf50;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin: 0 auto 1.5rem;
+    }
+
+    .ground-complete h3 {
+        color: #2e7d32;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .ground-complete p {
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    /* Legacy - keep for compatibility */
     .ground-number {
         width: 60px;
         height: 60px;
@@ -768,13 +882,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             text-align: center;
         }
 
-        .ground-step {
-            flex-direction: column;
-            text-align: center;
+        .ground-progress {
+            gap: 0.25rem;
         }
 
-        .ground-content {
-            text-align: center;
+        .progress-step {
+            width: 32px;
+            height: 32px;
+            font-size: 0.85rem;
+        }
+
+        .progress-line {
+            width: 15px;
+        }
+
+        .grounding-card {
+            padding: 2rem 1.5rem;
+        }
+
+        .ground-number-large {
+            width: 80px;
+            height: 80px;
+            font-size: 2.5rem;
+        }
+
+        .ground-sense {
+            font-size: 1.25rem;
+        }
+
+        .ground-navigation {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .btn-outline-calm,
+        .btn-calm {
+            width: 100%;
         }
 
         .btn-outline {
@@ -912,38 +1055,97 @@ document.addEventListener('DOMContentLoaded', function() {
     startBtn.addEventListener('click', startBreathing);
     stopBtn.addEventListener('click', stopBreathing);
 
-    // Grounding Exercise
+    // Grounding Exercise - New single-card design
     let currentStep = 5;
-    const steps = document.querySelectorAll('.ground-step');
+    const groundingData = {
+        5: { number: '5', sense: 'things you can SEE', instruction: 'Look around. Name 5 things you can see right now.' },
+        4: { number: '4', sense: 'things you can TOUCH', instruction: 'Feel 4 things. The chair, your clothes, the ground beneath you.' },
+        3: { number: '3', sense: 'things you can HEAR', instruction: 'Listen carefully. What 3 sounds can you hear?' },
+        2: { number: '2', sense: 'things you can SMELL', instruction: 'Notice 2 scents around you, or imagine a comforting smell.' },
+        1: { number: '1', sense: 'thing you can TASTE', instruction: 'Notice the taste in your mouth, or take a sip of water.' }
+    };
+
+    const groundNumber = document.getElementById('ground-number');
+    const groundSense = document.getElementById('ground-sense');
+    const groundInstruction = document.getElementById('ground-instruction');
+    const groundCard = document.getElementById('grounding-card');
+    const groundComplete = document.getElementById('ground-complete');
+    const groundNav = document.querySelector('.ground-navigation');
     const nextBtn = document.getElementById('next-ground-step');
+    const prevBtn = document.getElementById('prev-ground-step');
+    const restartBtn = document.getElementById('restart-ground');
+
+    function updateGroundingDisplay() {
+        const data = groundingData[currentStep];
+        groundNumber.textContent = data.number;
+        groundSense.textContent = data.sense;
+        groundInstruction.textContent = data.instruction;
+
+        // Update progress dots
+        document.querySelectorAll('.progress-step').forEach(function(dot) {
+            const dotStep = parseInt(dot.dataset.dot);
+            dot.classList.remove('completed-dot', 'done');
+            if (dotStep === currentStep) {
+                dot.classList.add('completed-dot');
+            } else if (dotStep > currentStep) {
+                dot.classList.add('done');
+            }
+        });
+
+        // Update progress lines
+        const lines = document.querySelectorAll('.progress-line');
+        lines.forEach(function(line, index) {
+            const afterStep = 5 - index;
+            if (afterStep > currentStep) {
+                line.classList.add('done');
+            } else {
+                line.classList.remove('done');
+            }
+        });
+
+        // Show/hide prev button
+        prevBtn.style.visibility = currentStep < 5 ? 'visible' : 'hidden';
+    }
+
+    function showCompletion() {
+        groundCard.style.display = 'none';
+        groundNav.style.display = 'none';
+        groundComplete.style.display = 'block';
+
+        // Mark all progress as done
+        document.querySelectorAll('.progress-step').forEach(function(dot) {
+            dot.classList.remove('completed-dot');
+            dot.classList.add('done');
+        });
+        document.querySelectorAll('.progress-line').forEach(function(line) {
+            line.classList.add('done');
+        });
+    }
+
+    function resetGrounding() {
+        currentStep = 5;
+        groundCard.style.display = 'block';
+        groundNav.style.display = 'flex';
+        groundComplete.style.display = 'none';
+        updateGroundingDisplay();
+    }
 
     nextBtn.addEventListener('click', function() {
-        const current = document.querySelector('.ground-step[data-step="' + currentStep + '"]');
-        current.classList.remove('active');
-        current.classList.add('completed');
-
-        currentStep--;
-
-        if (currentStep > 0) {
-            const next = document.querySelector('.ground-step[data-step="' + currentStep + '"]');
-            next.classList.add('active');
+        if (currentStep > 1) {
+            currentStep--;
+            updateGroundingDisplay();
         } else {
-            nextBtn.textContent = 'Well done!';
-            nextBtn.disabled = true;
-            nextBtn.style.background = '#4caf50';
-
-            // Reset after delay
-            setTimeout(function() {
-                currentStep = 5;
-                steps.forEach(function(step) {
-                    step.classList.remove('active', 'completed');
-                });
-                document.querySelector('.ground-step[data-step="5"]').classList.add('active');
-                nextBtn.textContent = 'Next Step';
-                nextBtn.disabled = false;
-                nextBtn.style.background = '';
-            }, 3000);
+            showCompletion();
         }
     });
+
+    prevBtn.addEventListener('click', function() {
+        if (currentStep < 5) {
+            currentStep++;
+            updateGroundingDisplay();
+        }
+    });
+
+    restartBtn.addEventListener('click', resetGrounding);
 });
 </script>
