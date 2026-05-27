@@ -1100,6 +1100,128 @@ select:focus-visible {
 }
 
 /* ============================================
+   DONATE BUTTONS
+   ============================================ */
+
+/* Nav Donate Button */
+.nav-donate-btn {
+    background: linear-gradient(135deg, #8B1A1A, #B22222) !important;
+    color: #fff !important;
+    padding: 0.4rem 1rem !important;
+    border-radius: var(--radius-full) !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.3px;
+    transition: all var(--transition-base) !important;
+    border-bottom: none !important;
+}
+
+.nav-donate-btn::after {
+    display: none !important;
+}
+
+.nav-donate-btn:hover {
+    background: linear-gradient(135deg, #A52020, #D43030) !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(178, 34, 34, 0.4);
+}
+
+/* Floating Donate Button */
+.floating-donate-btn {
+    position: fixed;
+    bottom: 140px;
+    right: 24px;
+    z-index: var(--z-fixed);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #8B1A1A, #B22222);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 20px rgba(139, 26, 26, 0.45), 0 2px 8px rgba(0,0,0,0.2);
+    transition: all var(--transition-base);
+    animation: donate-pulse 3s ease-in-out infinite;
+}
+
+.floating-donate-btn:hover {
+    background: linear-gradient(135deg, #A52020, #D43030);
+    box-shadow: 0 6px 28px rgba(178, 34, 34, 0.55), 0 4px 12px rgba(0,0,0,0.25);
+    transform: translateY(-3px) scale(1.05);
+    color: #fff;
+}
+
+.floating-donate-btn:visited {
+    color: #fff;
+}
+
+.floating-donate-btn svg {
+    flex-shrink: 0;
+    fill: #fff;
+}
+
+@keyframes donate-pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(139, 26, 26, 0.45), 0 2px 8px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 30px rgba(178, 34, 34, 0.65), 0 2px 12px rgba(0,0,0,0.3); }
+}
+
+/* Footer Donate Button */
+.footer-donate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #8B1A1A, #B22222);
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: all var(--transition-base);
+    box-shadow: 0 3px 12px rgba(139, 26, 26, 0.35);
+    margin-top: var(--spacing-sm);
+}
+
+.footer-donate-btn:hover {
+    background: linear-gradient(135deg, #A52020, #D43030);
+    box-shadow: 0 5px 18px rgba(178, 34, 34, 0.5);
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+
+.footer-donate-btn svg {
+    flex-shrink: 0;
+    fill: #fff;
+}
+
+@media all and (max-width: 768px) {
+    .floating-donate-btn {
+        bottom: 130px;
+        right: 16px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .floating-donate-btn span {
+        display: none;
+    }
+
+    .floating-donate-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* ============================================
    PRINT STYLES
    ============================================ */
 @media print {
@@ -1109,6 +1231,7 @@ select:focus-visible {
     .hero-scroll-indicator,
     .hamburger,
     .interactive-btn,
+    .floating-donate-btn,
     .btn {
         display: none;
     }
